@@ -1,0 +1,125 @@
+{
+  "month": "2026-09",
+  "title": "September",
+  "lede": "Every day has its own deal at Valley Pure. Tap any date to see what's on sale, then shop it at your store.",
+
+  "links": {
+    "base": "https://valleypure.net",
+    "storePrefix": true,
+    "brandPath": "/brands/{slug}",
+    "offersPath": "/offers",
+    "overrides": {}
+  },
+
+  "stores": [
+    { "id": "woodlake",     "name": "Woodlake",     "pushaPrice": 24 },
+    { "id": "farmersville", "name": "Farmersville", "pushaPrice": 29 },
+    { "id": "lindsay",      "name": "Lindsay",      "pushaPrice": 29 },
+    { "id": "lemoore",      "name": "Lemoore",      "pushaPrice": 29 },
+    { "id": "tulare",       "name": "Tulare",       "pushaPrice": 29 }
+  ],
+  "defaultStore": "farmersville",
+
+  "everyday": {
+    "brand": "PUSHA",
+    "headline": "Pod BOGO — every day in September",
+    "sub": "Buy one pod, get one. First-time PUSHA customer gets a battery. Kinect portable charger only $10 with a BOGO pod purchase.",
+    "priceLabel": "per pod at {store}",
+    "deals": [
+      { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO all September — {price} at {store}. First-time PUSHA customer gets a battery; Kinect charger $10 with BOGO.", "pusha": true },
+      { "b": ["AHTI"], "pct": "30%", "o": "Off AIO vapes and prerolls · Sept 1–10", "from": 1, "to": 10 }
+    ]
+  },
+
+  "featureDays": { "1": "PUSHA", "21": "PUSHA", "30": "PUSHA" },
+  "featureLabels": { "1": "Kicking off September", "21": "Featured today", "30": "Last day for the Pod BOGO" },
+
+  "week": {
+    "mon": { "id": "Alien Labs Monday", "deals": [
+      { "b": ["Alien Labs"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g flower", "top": true },
+      { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" },
+      { "b": ["STIIIZY", "Dabwoods", "Jeeter", "Maven"], "pct": "30%", "o": "Off select items" },
+      { "b": ["UpNorth"], "pct": "30%", "o": "Off" },
+      { "b": ["C4", "Juiced", "Geek THCX"], "pct": "30%", "o": "Off select items" } ] },
+    "tue": { "id": "Dime Tuesday", "deals": [
+      { "b": ["Dime", "Lumpy's"], "pct": "40%", "o": "Off Dime and Lumpy's Flowers", "top": true },
+      { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" },
+      { "b": ["STIIIZY", "Jeeter", "Dabwoods", "Terpwoods"], "pct": "30%", "o": "Off select items" },
+      { "b": ["Kingroll", "Kingpen", "LAX", "Globs"], "pct": "30%", "o": "Off" },
+      { "b": ["C4", "Juiced", "Papa's Herb"], "pct": "30%", "o": "Off select items" } ] },
+    "wed": { "id": "Cake Wednesday", "deals": [
+      { "b": ["Cake"], "pct": "40%", "o": "Off Cake — she hits different", "top": true },
+      { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" },
+      { "b": ["STIIIZY", "Dabwoods", "Jeeter", "Raw Garden"], "pct": "30%", "o": "Off select items" },
+      { "b": ["Blem", "Lost Farm", "Maven"], "pct": "30%", "o": "Off" },
+      { "b": ["ABX", "C4", "Juiced", "Globs"], "pct": "30%", "o": "Off select items" } ] },
+    "thu": { "id": "Vape Thursday", "deals": [
+      { "b": ["PlugPlay"], "pct": "40%", "o": "Off PlugPlay", "top": true },
+      { "b": ["Connected", "Lumpy's"], "pct": "40%", "o": "Off Connected cold-chain vapes and Lumpy's" },
+      { "b": ["PUSHA", "Almora", "Zetti"], "pct": "BOGO", "o": "Buy one, get one on select items" },
+      { "b": ["STIIIZY", "Jeeter", "Dabwoods"], "pct": "30%", "o": "Off select items" },
+      { "b": ["Sluggers", "CAM", "Globs"], "pct": "30%", "o": "Off" },
+      { "b": ["C4", "Juiced", "Sense"], "pct": "30%", "o": "Off select items" } ] },
+    "fri": { "id": "Friday Stock-Up", "deals": [
+      { "b": ["Cowgirl"], "pct": "40%", "o": "Off Cowgirl 3.5g flower", "top": true },
+      { "b": ["Valley Pure"], "pct": "35%", "o": "Off prerolls, badder and edibles" },
+      { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" },
+      { "b": ["STIIIZY", "Dabwoods", "Jeeter"], "pct": "30%", "o": "Off" },
+      { "b": ["Heavy Hitters", "Loud + Clear", "Flavorade", "C4", "Juiced"], "pct": "30%", "o": "Off" },
+      { "b": ["ICED", "Maven", "LAX", "Daze Off", "Kanha"], "pct": "30%", "o": "Off select items" },
+      { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off" } ] },
+    "sat": { "id": "Deep-Discount Saturday", "deals": [
+      { "b": ["Made"], "pct": "50%", "o": "Off Made", "top": true },
+      { "b": ["Muha Meds", "Cowgirl"], "pct": "40%", "o": "Off select items" },
+      { "b": ["Timeless", "Alien Labs"], "pct": "40%", "o": "Off select items" },
+      { "b": ["Valley Pure"], "pct": "35%", "o": "Off prerolls, badder and edibles" },
+      { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" },
+      { "b": ["Kanha", "Jeeter", "C4", "Juiced", "Master Makers"], "pct": "30%", "o": "Off" },
+      { "b": ["STIIIZY", "Dabwoods", "Smoken Promises", "Loud + Clear", "Zen"], "pct": "30%", "o": "Off" },
+      { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off" } ] },
+    "sun": { "id": "Connected Sunday", "deals": [
+      { "b": ["Connected"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g flower", "top": true },
+      { "b": ["Yummi Karma"], "pct": "40%", "o": "Off" },
+      { "b": ["PUSHA", "Zetti"], "pct": "BOGO", "o": "Buy one, get one" },
+      { "b": ["STIIIZY", "Dabwoods", "Jeeter"], "pct": "30%", "o": "Off" },
+      { "b": ["Care By Design", "Duffy's", "Juiced", "C4", "Zen"], "pct": "30%", "o": "Off" },
+      { "b": ["CAM", "Kiva", "Camino"], "pct": "30%", "o": "Off" } ] }
+  },
+
+  "sales": [
+    {
+      "name": "Labor Day Sale",
+      "short": "Labor Day Sale",
+      "from": 4, "to": 7,
+      "tileHeadline": "Up to 50%|Labor Day Sale",
+      "tileSecondary": "Connected 50% · Made 50% · Alien Labs, Jeeter, PlugPlay 40%",
+      "lastDayHeadline": "50%|Dime · final day",
+      "lastDaySecondary": "Connected 50% · Made 50% · Alien Labs 40%",
+      "todayBig": "<em>Labor Day Sale</em> is on — up to 50% off",
+      "todayBigLast": "Last day of the <em>Labor Day Sale</em> — Dime is 50% off",
+      "todayRest": "Connected 50%, Made 50%, Alien Labs, Jeeter, PlugPlay, STIIIZY and Cake 40%, plus your PUSHA Pod BOGO.",
+      "deals": [
+        { "b": ["Connected"], "pct": "50%", "o": "Off cold-chain vapes", "top": true },
+        { "b": ["Made"], "pct": "50%", "o": "Off Made" },
+        { "b": ["Dime"], "pct": "50%", "o": "Off — Monday 9/7 only", "only": 7 },
+        { "b": ["Alien Labs"], "pct": "40%", "o": "Off flower (3.5g & 10g)" },
+        { "b": ["Jeeter"], "pct": "40%", "o": "Off" },
+        { "b": ["PlugPlay"], "pct": "40%", "o": "Off" },
+        { "b": ["STIIIZY"], "pct": "40%", "o": "Off" },
+        { "b": ["Cowgirl"], "pct": "40%", "o": "Off 3.5g flower" },
+        { "b": ["Cake"], "pct": "40%", "o": "Off" },
+        { "b": ["Dabwoods"], "pct": "40%", "o": "Off" },
+        { "b": ["Kingroll", "Kingpen"], "pct": "40%", "o": "Off" },
+        { "b": ["Smoken Promises"], "pct": "40%", "o": "Off 3.5g flower" },
+        { "b": ["Muha Meds"], "pct": "40%", "o": "Off" },
+        { "b": ["Valley Pure"], "pct": "35%", "o": "Off prerolls & edibles · BOGO concentrates" },
+        { "b": ["C4", "Juiced"], "pct": "30%", "o": "Off" },
+        { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off" },
+        { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" }
+      ]
+    }
+  ],
+
+  "finePrint": "Exclusions apply · While supplies last · Connected & Alien Labs deals are 3.5g and 10g flower only · Labor Day Sale Sept 4–7 · AHTI 30% off AIO & prerolls 9/1–9/10 · PUSHA battery & Kinect deal valid only with a Pod BOGO purchase. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
+  "modalFinePrint": "Exclusions apply. While supplies last. Connected & Alien Labs flower deals are 3.5g and 10g only. PUSHA battery and Kinect offers valid only with a Pod BOGO purchase. Discounts cannot be combined unless stated."
+}
