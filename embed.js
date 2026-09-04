@@ -142,6 +142,7 @@
 
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
 
+  if (window.VP_DEALS_DATA) { init(window.VP_DEALS_DATA); return; } // inline data (standalone/offline build)
   fetch(src, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(init)
     .catch(function (e) { host.innerHTML = '<div class="in"><div class="err">Deals are loading slowly — <a href="https://valleypure.net/deals/">refresh the page</a> or check your store\'s menu.</div></div>'; console.error('vp-deals', e); });
 
