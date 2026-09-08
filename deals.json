@@ -20,12 +20,12 @@
   "everyday": {
     "brand": "PUSHA",
     "headline": "Pod BOGO — every day in September",
-    "sub": "Buy one pod, get one. First-time PUSHA customer gets a battery. Kinect portable charger only $10 with a BOGO pod purchase.",
+    "sub": "Buy one pod, get one. First-time PUSHA customers get a free battery — one per BOGO. Kinect portable charger only $10 with a BOGO pod purchase.",
     "priceLabel": "per pod at {store}",
     "deals": [
-      { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO all September — {price} at {store}. First-time PUSHA customer gets a battery; Kinect charger $10 with BOGO.", "pusha": true },
+      { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO all September — {price} at {store}. First-time PUSHA customers get a free battery (one per BOGO); Kinect charger $10 with BOGO.", "pusha": true },
       { "b": ["PlugPlay"], "pct": "30%", "o": "Off PlugPlay — every day through the end of the year" },
-      { "b": ["AHTI"], "pct": "30%", "o": "Off AIO vapes and prerolls · Sept 1–10", "from": 1, "to": 10 }
+      { "b": ["Heavy Hitters"], "pct": "30%", "o": "Off AIO vapes and prerolls · Sept 1–10", "from": 1, "to": 10 }
     ]
   },
   "featureDays": {
@@ -150,6 +150,6 @@
       ]
     }
   ],
-  "finePrint": "Exclusions apply · While supplies last · Connected & Alien Labs deals are 3.5g and 10g flower only · Labor Day Sale Sept 4–7 · AHTI 30% off AIO & prerolls 9/1–9/10 · PlugPlay 30% off every day through Dec 31 · PUSHA battery & Kinect deal valid only with a Pod BOGO purchase. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
-  "modalFinePrint": "Exclusions apply. While supplies last. Connected & Alien Labs flower deals are 3.5g and 10g only. PUSHA battery and Kinect offers valid only with a Pod BOGO purchase. Discounts cannot be combined unless stated."
+  "finePrint": "Exclusions apply · While supplies last · Connected & Alien Labs deals are 3.5g and 10g flower only · Labor Day Sale Sept 4–7 · Heavy Hitters 30% off AIO & prerolls 9/1–9/10 · PlugPlay 30% off every day through Dec 31 · PUSHA battery (one per BOGO, first-time customers) & Kinect deal valid only with a Pod BOGO purchase. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
+  "modalFinePrint": "Exclusions apply. While supplies last. Connected & Alien Labs flower deals are 3.5g and 10g only. PUSHA battery (one per BOGO, first-time customers) and Kinect offers valid only with a Pod BOGO purchase. Discounts cannot be combined unless stated."
 }
