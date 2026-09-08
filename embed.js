@@ -159,7 +159,7 @@
     var dowOf = function (day) { return DOWS[(firstDow + day - 1) % 7]; };
     var WEEK = D.week, SALES = D.sales || [], EVERY = (D.everyday && D.everyday.deals) || [], FEATURE = D.featureDays || {};
     var saleOn = function (day) { for (var i = 0; i < SALES.length; i++) if (day >= SALES[i].from && day <= SALES[i].to) return SALES[i]; return null; };
-    var every = function (day) { return EVERY.filter(function (e) { return e.from == null || (day >= e.from && day <= e.to); }); };
+    var every = function (day) { return EVERY.filter(function (e) { return (e.from == null || (day >= e.from && day <= e.to)) && !(e.notDow && e.notDow.indexOf(dowOf(day)) !== -1); }); };
 
     /* ---------- links ---------- */
     var L = D.links;
