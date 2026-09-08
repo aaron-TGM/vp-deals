@@ -25,6 +25,7 @@
     "deals": [
       { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO all September — {price} at {store}. First-time PUSHA customers get a free battery (one per BOGO); Kinect charger $10 with BOGO.", "pusha": true },
       { "b": ["PlugPlay"], "pct": "30%", "o": "Off PlugPlay — every day through the end of the year" },
+      { "b": ["Dabwoods", "Juiced", "C4", "Vior"], "pct": "30%", "o": "Off — every day this month" },
       { "b": ["Heavy Hitters"], "pct": "30%", "o": "Off AIO vapes and prerolls · Sept 1–10", "from": 1, "to": 10 }
     ]
   },
@@ -44,9 +45,9 @@
       "deals": [
         { "b": ["Alien Labs"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g flower", "top": true },
         { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" },
-        { "b": ["STIIIZY", "Dabwoods", "Jeeter", "Maven"], "pct": "30%", "o": "Off select items" },
+        { "b": ["STIIIZY", "Jeeter", "Maven"], "pct": "30%", "o": "Off select items" },
         { "b": ["UpNorth"], "pct": "30%", "o": "Off" },
-        { "b": ["C4", "Juiced", "Geek THCX"], "pct": "30%", "o": "Off select items" }
+        { "b": ["Geek THCX"], "pct": "30%", "o": "Off select items" }
       ]
     },
     "tue": {
@@ -54,9 +55,9 @@
       "deals": [
         { "b": ["Dime", "Lumpy's"], "pct": "40%", "o": "Off Dime and Lumpy's Flowers", "top": true },
         { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" },
-        { "b": ["STIIIZY", "Jeeter", "Dabwoods", "Terpwoods"], "pct": "30%", "o": "Off select items" },
+        { "b": ["STIIIZY", "Jeeter", "Terpwoods"], "pct": "30%", "o": "Off select items" },
         { "b": ["Kingroll", "Kingpen", "LAX", "Globs"], "pct": "30%", "o": "Off" },
-        { "b": ["C4", "Juiced", "Papa's Herb"], "pct": "30%", "o": "Off select items" }
+        { "b": ["Papa's Herb"], "pct": "30%", "o": "Off select items" }
       ]
     },
     "wed": {
@@ -64,9 +65,9 @@
       "deals": [
         { "b": ["Cake"], "pct": "40%", "o": "Off Cake — she hits different", "top": true },
         { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" },
-        { "b": ["STIIIZY", "Dabwoods", "Jeeter", "Raw Garden"], "pct": "30%", "o": "Off select items" },
+        { "b": ["STIIIZY", "Jeeter", "Raw Garden"], "pct": "30%", "o": "Off select items" },
         { "b": ["Blem", "Lost Farm", "Maven"], "pct": "30%", "o": "Off" },
-        { "b": ["ABX", "C4", "Juiced", "Globs"], "pct": "30%", "o": "Off select items" }
+        { "b": ["ABX", "Globs"], "pct": "30%", "o": "Off select items" }
       ]
     },
     "thu": {
@@ -74,9 +75,9 @@
       "deals": [
         { "b": ["Connected", "Lumpy's"], "pct": "40%", "o": "Off Connected cold-chain vapes and Lumpy's", "top": true },
         { "b": ["PUSHA", "Almora", "Zetti"], "pct": "BOGO", "o": "Buy one, get one on select items" },
-        { "b": ["STIIIZY", "Jeeter", "Dabwoods"], "pct": "30%", "o": "Off select items" },
+        { "b": ["STIIIZY", "Jeeter"], "pct": "30%", "o": "Off select items" },
         { "b": ["Sluggers", "CAM", "Globs"], "pct": "30%", "o": "Off" },
-        { "b": ["C4", "Juiced", "Sense"], "pct": "30%", "o": "Off select items" }
+        { "b": ["Sense"], "pct": "30%", "o": "Off select items" }
       ]
     },
     "fri": {
@@ -85,8 +86,8 @@
         { "b": ["Cowgirl"], "pct": "40%", "o": "Off Cowgirl 3.5g flower", "top": true },
         { "b": ["Valley Pure"], "pct": "35%", "o": "Off prerolls, badder and edibles" },
         { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" },
-        { "b": ["STIIIZY", "Dabwoods", "Jeeter"], "pct": "30%", "o": "Off" },
-        { "b": ["Heavy Hitters", "Loud + Clear", "Flavorade", "C4", "Juiced"], "pct": "30%", "o": "Off" },
+        { "b": ["STIIIZY", "Jeeter"], "pct": "30%", "o": "Off" },
+        { "b": ["Heavy Hitters", "Loud + Clear", "Flavorade"], "pct": "30%", "o": "Off" },
         { "b": ["ICED", "Maven", "LAX", "Daze Off", "Kanha"], "pct": "30%", "o": "Off select items" },
         { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off" }
       ]
@@ -99,8 +100,8 @@
         { "b": ["Timeless", "Alien Labs"], "pct": "40%", "o": "Off select items" },
         { "b": ["Valley Pure"], "pct": "35%", "o": "Off prerolls, badder and edibles" },
         { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" },
-        { "b": ["Kanha", "Jeeter", "C4", "Juiced", "Master Makers"], "pct": "30%", "o": "Off" },
-        { "b": ["STIIIZY", "Dabwoods", "Smoken Promises", "Loud + Clear", "Zen"], "pct": "30%", "o": "Off" },
+        { "b": ["Kanha", "Jeeter", "Master Makers"], "pct": "30%", "o": "Off" },
+        { "b": ["STIIIZY", "Smoken Promises", "Loud + Clear", "Zen"], "pct": "30%", "o": "Off" },
         { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off" }
       ]
     },
@@ -110,8 +111,8 @@
         { "b": ["Connected"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g flower", "top": true },
         { "b": ["Yummi Karma"], "pct": "40%", "o": "Off" },
         { "b": ["PUSHA", "Zetti"], "pct": "BOGO", "o": "Buy one, get one" },
-        { "b": ["STIIIZY", "Dabwoods", "Jeeter"], "pct": "30%", "o": "Off" },
-        { "b": ["Care By Design", "Duffy's", "Juiced", "C4", "Zen"], "pct": "30%", "o": "Off" },
+        { "b": ["STIIIZY", "Jeeter"], "pct": "30%", "o": "Off" },
+        { "b": ["Care By Design", "Duffy's", "Zen"], "pct": "30%", "o": "Off" },
         { "b": ["CAM", "Kiva", "Camino"], "pct": "30%", "o": "Off" }
       ]
     }
