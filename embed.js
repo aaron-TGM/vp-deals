@@ -150,8 +150,8 @@
     /* ---------- calendar math ---------- */
     var ym = D.month.split('-'), Y = +ym[0], M = +ym[1];
     var daysIn = new Date(Y, M, 0).getDate();
-    var firstDow = (new Date(Y, M - 1, 1).getDay() + 6) % 7; // Mon=0
-    var DOWS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+    var firstDow = new Date(Y, M - 1, 1).getDay(); // Sun=0 — week runs Sunday → Saturday
+    var DOWS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
     var DNAME = { mon: 'Monday', tue: 'Tuesday', wed: 'Wednesday', thu: 'Thursday', fri: 'Friday', sat: 'Saturday', sun: 'Sunday' };
     var MONTH_NAME = new Date(Y, M - 1, 1).toLocaleString('en-US', { month: 'long' });
     var dowOf = function (day) { return DOWS[(firstDow + day - 1) % 7]; };
@@ -188,7 +188,7 @@
       '<div class="feat"><div class="today" id="vpToday"></div>' +
       (D.everyday ? '<div class="pusha"><div><div class="brand cond">' + esc(D.everyday.brand) + '</div><div class="what cond">' + esc(D.everyday.headline) + '</div><div class="sub">' + esc(D.everyday.sub) + '</div></div><div class="price"><b id="vpPushaPrice"></b><span id="vpPushaStore"></span></div></div>' : '') + '</div>' +
       '<div class="tools"><div class="legend" id="vpLegend"></div><div class="finder"><label for="vpBrand">When is my brand on sale?</label><select id="vpBrand"><option value="">Pick a brand</option></select><button class="x" id="vpBrandClear">Clear</button></div></div>' +
-      '<div class="dows"><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div></div><div class="grid" id="vpGrid"></div>' +
+      '<div class="dows"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div><div class="grid" id="vpGrid"></div>' +
       '<p class="foot">' + esc(D.finePrint || '') + '</p></div>' +
       '<div class="ov" id="vpOv"></div><div class="md" id="vpMd" role="dialog" aria-modal="true" aria-labelledby="vpMdTitle"></div>';
     var $ = function (id) { return host.querySelector('#' + id); };
