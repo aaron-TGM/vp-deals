@@ -58,6 +58,8 @@
 #vp-deals .finder select{font:inherit;font-size:13px;font-weight:700;color:var(--vp);background:#fff;border:2px solid var(--vp);padding:8px 34px 8px 12px;appearance:none;-webkit-appearance:none;margin:0;border-radius:0;background-image:url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'8\'%3E%3Cpath d=\'M1 1l5 5 5-5\' fill=\'none\' stroke=\'%23043B21\' stroke-width=\'2\'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}\
 #vp-deals .finder .x{font-size:12.5px;color:var(--acc);text-decoration:underline;text-underline-offset:3px;display:none;font-weight:700}\
 #vp-deals .finder .x.on{display:inline}\
+#vp-deals .earlier{display:none;width:100%;align-items:center;justify-content:space-between;gap:10px;border:1px dashed var(--line-2);background:var(--bg-2);padding:10px 14px;margin-bottom:6px;font-size:12.5px;font-weight:700;color:var(--tx-2);text-align:left}\
+#vp-deals .earlier span{color:var(--acc)}\
 #vp-deals .dows{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:6px}\
 #vp-deals .dows div{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--tx-3);font-weight:700;padding:0 4px}\
 #vp-deals .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}\
@@ -130,7 +132,7 @@
 #vp-deals .foot{margin-top:20px;font-size:11.5px;color:var(--tx-3);line-height:1.5}\
 #vp-deals .err{padding:24px;color:var(--tx-2);text-align:center}\
 @media (max-width:900px){#vp-deals .feat{grid-template-columns:1fr}#vp-deals h2.ttl{font-size:30px}}\
-@media (max-width:640px){#vp-deals{padding:20px 12px 48px}#vp-deals .dows{display:none}#vp-deals .grid{grid-template-columns:1fr 1fr}#vp-deals .day.blank{display:none}#vp-deals .day{min-height:116px}#vp-deals .today{grid-template-columns:1fr}#vp-deals .today .go{text-align:center}#vp-deals .deal{grid-template-columns:52px 1fr}#vp-deals .deal .shop,#vp-deals .shops{grid-column:2;justify-self:start;justify-content:flex-start;max-width:none}#vp-deals .md{top:auto;bottom:0;left:0;transform:none;width:100%;max-height:90vh}}\
+@media (max-width:640px){#vp-deals{padding:20px 12px 48px}#vp-deals .dows{display:none}#vp-deals .grid{grid-template-columns:1fr 1fr}#vp-deals .day.blank{display:none}#vp-deals .day{min-height:116px}#vp-deals .earlier.on{display:flex}#vp-deals .legend{display:none}#vp-deals .day.past.collapsed{display:none}#vp-deals .today{grid-template-columns:1fr}#vp-deals .today .go{text-align:center}#vp-deals .deal{grid-template-columns:52px 1fr}#vp-deals .deal .shop,#vp-deals .shops{grid-column:2;justify-self:start;justify-content:flex-start;max-width:none}#vp-deals .md{top:auto;bottom:0;left:0;transform:none;width:100%;max-height:90vh}}\
 @media (prefers-reduced-motion:reduce){#vp-deals *{transition:none !important}}';
 
   if (!document.getElementById('vp-deals-css')) {
@@ -172,7 +174,7 @@
       var q = new URLSearchParams(location.search).get('store'), s = localStorage.getItem('vp_store'), a = host.getAttribute('data-store');
       if (findStore(q)) store = q; else if (findStore(a)) store = a; else if (findStore(s)) store = s;
     } catch (e) {}
-    var sel = null, brandPick = '';
+    var sel = null, brandPick = '', showPast = false;
     var todayNum = (function () {
       try {
         var p = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', year: 'numeric', month: 'numeric', day: 'numeric' }).formatToParts(new Date());
@@ -188,7 +190,7 @@
       '<div class="feat"><div class="today" id="vpToday"></div>' +
       (D.everyday ? '<div class="pusha"><div><div class="brand cond">' + esc(D.everyday.brand) + '</div><div class="what cond">' + esc(D.everyday.headline) + '</div><div class="sub">' + esc(D.everyday.sub) + '</div></div><div class="price"><b id="vpPushaPrice"></b><span id="vpPushaStore"></span></div></div>' : '') + '</div>' +
       '<div class="tools"><div class="legend" id="vpLegend"></div><div class="finder"><label for="vpBrand">When is my brand on sale?</label><select id="vpBrand"><option value="">Pick a brand</option></select><button class="x" id="vpBrandClear">Clear</button></div></div>' +
-      '<div class="dows"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div><div class="grid" id="vpGrid"></div>' +
+      '<button type="button" class="earlier" id="vpEarlier"></button><div class="dows"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div><div class="grid" id="vpGrid"></div>' +
       '<p class="foot">' + esc(D.finePrint || '') + '</p></div>' +
       '<div class="ov" id="vpOv"></div><div class="md" id="vpMd" role="dialog" aria-modal="true" aria-labelledby="vpMdTitle"></div>';
     var $ = function (id) { return host.querySelector('#' + id); };
@@ -310,8 +312,13 @@
     });
 
     /* ---------- render ---------- */
+    var earlierBtn = $('vpEarlier');
+    earlierBtn.addEventListener('click', function () { showPast = !showPast; render(); if (!showPast) earlierBtn.scrollIntoView({ block: 'nearest' }); });
     function render() {
       var s = findStore(store);
+      var pastCount = todayNum ? todayNum - 1 : 0, collapse = pastCount > 0 && !brandPick && !showPast;
+      earlierBtn.classList.toggle('on', pastCount > 0 && !brandPick);
+      earlierBtn.innerHTML = showPast ? 'Hide earlier days <span>&uarr;</span>' : 'Earlier this month <span>Show ' + MONTH_NAME.slice(0, 4) + ' 1&ndash;' + pastCount + '</span>';
       Array.prototype.forEach.call(storesEl.querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', String(b.dataset.id === store)); });
       if (D.everyday) { $('vpPushaPrice').textContent = '$' + s.pushaPrice; $('vpPushaStore').textContent = (D.everyday.priceLabel || 'at {store}').replace('{store}', s.name); }
       $('vpBrandClear').classList.toggle('on', !!brandPick);
@@ -319,6 +326,7 @@
         var d = +t.dataset.day;
         t.classList.toggle('is-today', d === todayNum);
         t.classList.toggle('past', !!todayNum && d < todayNum && !brandPick);
+        t.classList.toggle('collapsed', collapse && d < todayNum);
         t.classList.toggle('hit', !!brandPick && dayHas(d, brandPick));
         t.classList.toggle('miss', !!brandPick && !dayHas(d, brandPick));
       });
