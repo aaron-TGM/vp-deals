@@ -199,7 +199,7 @@
     var storesEl = $('vpStores');
     D.stores.forEach(function (s) {
       var b = document.createElement('button'); b.type = 'button'; b.textContent = s.name; b.dataset.id = s.id; b.setAttribute('aria-pressed', 'false');
-      b.addEventListener('click', function () { store = s.id; try { localStorage.setItem('vp_store', store); } catch (e) {} render(); if (sel) openDay(sel); });
+      b.addEventListener('click', function () { store = s.id; try { localStorage.setItem('vp_store', store); } catch (e) {} buildGrid(); renderToday(); render(); if (sel) openDay(sel); });
       storesEl.appendChild(b);
     });
 
@@ -208,11 +208,14 @@
       SALES.map(function (S) { return '<span><i class="ld"></i>' + esc(S.name) + ' ' + M + '/' + S.from + '–' + M + '/' + S.to + '</span>'; }).join('');
 
     /* ---------- brand finder ---------- */
+    // per-store scoping: "stores": ["woodlake"] shows only there; "notStores": ["woodlake"] hides it there
+    var forStore = function (d) { return (!d.stores || d.stores.indexOf(store) !== -1) && (!d.notStores || d.notStores.indexOf(store) === -1); };
+    var wk = function (day) { return WEEK[dowOf(day)].deals.filter(forStore); };
     var dayDeals = function (day) {
       var out = [], S = saleOn(day);
-      if (S) S.deals.forEach(function (d) { if (!d.only || d.only === day) out.push(d); });
-      WEEK[dowOf(day)].deals.forEach(function (d) { out.push(d); });
-      every(day).forEach(function (d) { out.push(d); });
+      if (S) S.deals.forEach(function (d) { if ((!d.only || d.only === day) && forStore(d)) out.push(d); });
+      wk(day).forEach(function (d) { out.push(d); });
+      every(day).filter(forStore).forEach(function (d) { out.push(d); });
       return out;
     };
     var dayHas = function (day, brand) { return dayDeals(day).some(function (d) { return d.b.indexOf(brand) !== -1; }); };
@@ -228,16 +231,17 @@
     var split = function (s) { var p = s.split('|'); return '<em>' + esc(p[0]) + '</em> ' + esc(p[1] || ''); };
     function tileHero(day) {
       var S = saleOn(day);
-      if (FEATURE[day] === 'PUSHA') return { html: '<em class="ph">PUSHA</em> Pod BOGO', more: WEEK[dowOf(day)].deals[0] };
+      if (FEATURE[day] === 'PUSHA') return { html: '<em class="ph">PUSHA</em> Pod BOGO', more: wk(day)[0] };
       if (S) return { html: split(day === S.to && S.lastDayHeadline ? S.lastDayHeadline : S.tileHeadline), cls: 'ld', sec: (day === S.to && S.lastDaySecondary) || S.tileSecondary };
-      var t = WEEK[dowOf(day)].deals[0];
+      var t = wk(day)[0];
       return { html: '<em>' + esc(t.pct) + '</em> ' + esc(t.b[0]) };
     }
-    (function buildGrid() {
+    function buildGrid() {
+      grid.innerHTML = '';
       var blank = function () { var x = document.createElement('div'); x.className = 'day blank'; grid.appendChild(x); };
       for (var i = 0; i < firstDow; i++) blank();
       for (var day = 1; day <= daysIn; day++) (function (day) {
-        var k = dowOf(day), w = WEEK[k], b = document.createElement('button'); b.type = 'button';
+        var k = dowOf(day), w = { deals: wk(day) }, b = document.createElement('button'); b.type = 'button';
         b.className = 'day' + (saleOn(day) ? ' ld' : ''); b.dataset.day = day; b.style.setProperty('--c', 'var(--' + k + ')');
         b.setAttribute('aria-label', MONTH_NAME + ' ' + day + ', ' + DNAME[k] + ' deals');
         var h = tileHero(day);
@@ -251,18 +255,18 @@
       })(day);
       var tail = (7 - ((firstDow + daysIn) % 7)) % 7;
       for (var j = 0; j < tail; j++) blank();
-    })();
+    }
 
     /* ---------- today card ---------- */
-    (function renderToday() {
-      var el = $('vpToday'), day = todayNum || 1, k = dowOf(day), w = WEEK[k], S = saleOn(day);
+    function renderToday() {
+      var el = $('vpToday'), day = todayNum || 1, k = dowOf(day), w = { id: WEEK[k].id, deals: wk(day) }, S = saleOn(day);
       el.style.setProperty('--c', S ? 'var(--ld-red)' : 'var(--' + k + ')');
       var label = todayNum ? 'Today · ' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day : 'Starts ' + DNAME[dowOf(1)] + ', ' + MONTH_NAME + ' 1';
       var big = S ? (day === S.to && S.todayBigLast ? S.todayBigLast : S.todayBig) : '<em>' + esc(w.deals[0].pct) + '</em> ' + esc(w.deals[0].b[0]) + " — it's " + esc(w.id);
       var rest = S ? S.todayRest : 'Plus ' + w.deals.slice(1, 4).map(function (d) { return d.b.slice(0, 2).join(' & ') + ' ' + d.pct; }).join(', ') + ' and more.';
       el.innerHTML = '<div><div class="l">' + esc(label) + '</div><div class="big">' + big + '</div><div class="rest">' + esc(rest) + '</div></div><button type="button" class="go">See today\'s deals</button>';
       el.querySelector('.go').addEventListener('click', function () { openDay(day); });
-    })();
+    }
 
     /* ---------- modal ---------- */
     var ov = $('vpOv'), md = $('vpMd');
@@ -281,18 +285,18 @@
     };
     function openDay(day) {
       sel = day;
-      var k = dowOf(day), w = WEEK[k], S = saleOn(day), ph = FEATURE[day] === 'PUSHA', sName = findStore(store).name;
+      var k = dowOf(day), w = { id: WEEK[k].id, deals: wk(day) }, S = saleOn(day), ph = FEATURE[day] === 'PUSHA', sName = findStore(store).name;
       md.style.setProperty('--c', 'var(--' + k + ')');
       var html = '<div class="band' + (S ? ' ld' : ph ? ' ph' : '') + '"><div><div class="k">' + esc(S ? S.name + ' · ' + MONTH_NAME.slice(0, 4) + ' ' + S.from + '–' + S.to : w.id) + '</div><div class="d" id="vpMdTitle">' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day + '</div><div class="s">' + (S ? 'Limited time · ' : '') + 'Shopping at ' + esc(sName) + '</div></div><button type="button" class="cl" aria-label="Close">×</button></div>';
       html += '<div class="nav"><button type="button" data-nav="-1"' + (day === 1 ? ' disabled style="visibility:hidden"' : '') + '>← ' + MONTH_NAME.slice(0, 4) + ' ' + (day - 1) + '</button><button type="button" data-nav="1"' + (day === daysIn ? ' disabled style="visibility:hidden"' : '') + '>' + MONTH_NAME.slice(0, 4) + ' ' + (day + 1) + ' →</button></div><div class="bd">';
       if (ph && EVERY[0]) html += '<div class="sec"><div class="st"><h4 class="ph">' + esc((D.featureLabels && D.featureLabels[day]) || 'Featured today') + '</h4></div><div class="deals">' + dealRow(EVERY[0], 'var(--pusha)') + '</div></div>';
       if (S) {
-        html += '<div class="sec"><div class="st"><h4 class="ld">' + esc(S.name) + '</h4><small>' + (day === S.to ? 'Ends tonight' : 'Through ' + DNAME[dowOf(S.to)] + ' ' + M + '/' + S.to) + '</small></div><div class="deals">' + S.deals.filter(function (d) { return !d.only || d.only === day; }).map(function (d) { return dealRow(d, 'var(--ld-red)'); }).join('') + '</div></div>';
+        html += '<div class="sec"><div class="st"><h4 class="ld">' + esc(S.name) + '</h4><small>' + (day === S.to ? 'Ends tonight' : 'Through ' + DNAME[dowOf(S.to)] + ' ' + M + '/' + S.to) + '</small></div><div class="deals">' + S.deals.filter(function (d) { return (!d.only || d.only === day) && forStore(d); }).map(function (d) { return dealRow(d, 'var(--ld-red)'); }).join('') + '</div></div>';
         html += '<details class="reg"><summary>Regular ' + DNAME[k] + ' deals also on today</summary><div class="deals">' + w.deals.map(function (d) { return dealRow(d, 'var(--' + k + ')'); }).join('') + '</div></details>';
       } else {
         html += '<div class="sec"><div class="st"><h4>' + esc(w.id) + '</h4><small>Every ' + DNAME[k] + ' in ' + MONTH_NAME + '</small></div><div class="deals">' + w.deals.filter(function (d) { return !(ph && d.b.length === 1 && d.b[0] === 'PUSHA'); }).map(function (d) { return dealRow(d, 'var(--' + k + ')'); }).join('') + '</div></div>';
       }
-      var ev = every(day).filter(function (e) { return !(ph && e.pusha); });
+      var ev = every(day).filter(forStore).filter(function (e) { return !(ph && e.pusha); });
       if (ev.length) html += '<div class="sec"><div class="st"><h4>Every day</h4></div><div class="deals">' + ev.map(function (d) { return dealRow(d, d.pusha ? 'var(--pusha)' : 'var(--vp)'); }).join('') + '</div></div>';
       html += '<a class="allbtn" href="' + offersFor() + '" target="_blank" rel="noopener">Shop all deals at ' + esc(sName) + ' ' + arrow + '</a>';
       html += '<div class="fine">' + esc(D.modalFinePrint || '') + '</div></div>';
@@ -332,6 +336,6 @@
         t.classList.toggle('miss', !!brandPick && !dayHas(d, brandPick));
       });
     }
-    render();
+    buildGrid(); renderToday(); render();
   }
 })();
