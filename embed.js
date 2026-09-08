@@ -274,8 +274,9 @@
     };
     var dealRow = function (d, c) {
       var s = findStore(store);
-      var o = d.pusha ? d.o.replace('{price}', '<b>$' + s.pushaPrice + '</b>').replace('{store}', esc(s.name))
-        : d.o === 'Off' ? esc(d.pct + ' off ' + d.b.join(', ')) : esc(d.o);
+      var raw = (d.o && typeof d.o === 'object') ? (d.o[store] || d.o['default'] || '') : d.o; // per-store wording: "o": { "default": "...", "woodlake": "..." }
+      var o = d.pusha ? raw.replace('{price}', '<b>$' + s.pushaPrice + '</b>').replace('{store}', esc(s.name))
+        : raw === 'Off' ? esc(d.pct + ' off ' + d.b.join(', ')) : esc(raw);
       return '<div class="deal' + (d.top ? ' top' : '') + '" style="--c:' + c + '"><div class="pct' + (d.pct.length > 3 ? ' sm' : '') + '">' + esc(d.pct) + '</div><div><div class="b">' + esc(d.b.join(', ')) + '</div><div class="o">' + o + '</div></div>' + shopLinks(d) + '</div>';
     };
     function openDay(day) {

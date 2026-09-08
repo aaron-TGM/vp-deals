@@ -26,7 +26,7 @@
       { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO all September — {price} at {store}. First-time PUSHA customers get a free battery (one per BOGO); Kinect charger $10 with BOGO.", "pusha": true },
       { "b": ["PlugPlay"], "pct": "30%", "o": "Off PlugPlay — every day through the end of the year (40% on Thursdays)", "notDow": [ "thu" ] },
       { "b": ["Dabwoods", "Juiced", "C4", "Vior"], "pct": "30%", "o": "Off — every day this month" },
-      { "b": ["Heavy Hitters"], "pct": "30%", "o": "Off AIO vapes and prerolls · Sept 1–10", "from": 1, "to": 10 }
+      { "b": ["Heavy Hitters"], "pct": "30%", "o": { "default": "Off AIO vapes and prerolls · Sept 1–10", "woodlake": "Off carts and prerolls · Sept 1–10 (Woodlake)" }, "from": 1, "to": 10 }
     ]
   },
   "featureDays": {
