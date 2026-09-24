@@ -47,8 +47,8 @@
       "deals": [
         { "b": ["Alien Labs"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g flower", "top": true },
         { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" },
-        { "b": ["STIIIZY", "Jeeter", "Maven"], "pct": "30%", "o": "Off select items" },
-        { "b": ["UpNorth"], "pct": "30%", "o": "Off" },
+        { "b": ["STIIIZY", "Jeeter"], "pct": "30%", "o": "Off select items" },
+        { "b": ["UpNorth", "Maven"], "pct": "30%", "o": "Off" },
         { "b": ["Geek THCX"], "pct": "30%", "o": "Off select items" }
       ]
     },
@@ -87,6 +87,7 @@
       "id": "Friday Stock-Up",
       "deals": [
         { "b": ["Cowgirl"], "pct": "40%", "o": "Off Cowgirl 3.5g flower", "top": true },
+        { "b": ["West Coast Cure"], "pct": "40%", "o": "Off select items — starts Fri 9/25", "from": 25 },
         { "b": ["Valley Pure"], "pct": "35%", "o": "Off infused prerolls and edibles" },
         { "b": ["Kanha"], "pct": "30%", "o": "Off Kanha — Fridays & Saturdays", "notStores": [ "woodlake", "lindsay" ] },
         { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" },
@@ -106,8 +107,9 @@
         { "b": ["Kanha"], "pct": "30%", "o": "Off Kanha — Fridays & Saturdays", "notStores": [ "woodlake", "lindsay" ] },
         { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO" },
         { "b": ["Jeeter", "Master Makers"], "pct": "30%", "o": "Off" },
-        { "b": ["STIIIZY", "Smoken Promises", "Loud + Clear", "Zen"], "pct": "30%", "o": "Off" },
-        { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off" }
+        { "b": ["STIIIZY", "Smoken Promises", "Loud + Clear"], "pct": "30%", "o": "Off" },
+        { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off" },
+        { "b": ["Geek THCX"], "pct": "30%", "o": "Off — Saturdays starting 9/26", "from": 26 }
       ]
     },
     "sun": {
@@ -117,7 +119,7 @@
         { "b": ["Yummi Karma"], "pct": "40%", "o": "Off" },
         { "b": ["PUSHA", "Zetti"], "pct": "BOGO", "o": "Buy one, get one" },
         { "b": ["STIIIZY", "Jeeter"], "pct": "30%", "o": "Off" },
-        { "b": ["Care By Design", "Duffy's", "Zen"], "pct": "30%", "o": "Off" },
+        { "b": ["Care By Design", "Duffy's"], "pct": "30%", "o": "Off" },
         { "b": ["CAM", "Kiva", "Camino"], "pct": "30%", "o": "Off" }
       ]
     }

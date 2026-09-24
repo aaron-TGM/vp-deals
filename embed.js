@@ -210,7 +210,8 @@
     /* ---------- brand finder ---------- */
     // per-store scoping: "stores": ["woodlake"] shows only there; "notStores": ["woodlake"] hides it there
     var forStore = function (d) { return (!d.stores || d.stores.indexOf(store) !== -1) && (!d.notStores || d.notStores.indexOf(store) === -1); };
-    var wk = function (day) { return WEEK[dowOf(day)].deals.filter(forStore); };
+    var inRange = function (d, day) { return (d.from == null || day >= d.from) && (d.to == null || day <= d.to); };
+    var wk = function (day) { return WEEK[dowOf(day)].deals.filter(function (d) { return forStore(d) && inRange(d, day); }); };
     var dayDeals = function (day) {
       var out = [], S = saleOn(day);
       if (S) S.deals.forEach(function (d) { if ((!d.only || d.only === day) && forStore(d)) out.push(d); });
