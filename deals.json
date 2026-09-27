@@ -24,6 +24,7 @@
     "priceLabel": "per pod at {store}",
     "deals": [
       { "b": ["PUSHA"], "pct": "BOGO", "o": "Pod BOGO all September — {price} at {store}. First-time PUSHA customers get a free battery (one per BOGO); Kinect charger $10 with BOGO.", "pusha": true },
+      { "b": ["Connected", "Alien Labs"], "pct": "FREE", "o": "Buy a cold-chain cart, get a free battery · Sept 25–27", "from": 25, "to": 27, "tile": "Cold-chain cart + free battery (Connected & Alien Labs)" },
       { "b": ["Valley Pure"], "pct": "BOGO", "o": "Concentrates — buy one, get one, every day" },
       { "b": ["PlugPlay"], "pct": "30%", "o": "Off PlugPlay — every day through the end of the year (40% on Thursdays)", "notDow": [ "thu" ] },
       { "b": ["Dabwoods", "Juiced", "C4", "Vior"], "pct": "30%", "o": "Off — every day this month" },

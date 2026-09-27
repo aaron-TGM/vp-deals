@@ -246,10 +246,11 @@
         b.className = 'day' + (saleOn(day) ? ' ld' : ''); b.dataset.day = day; b.style.setProperty('--c', 'var(--' + k + ')');
         b.setAttribute('aria-label', MONTH_NAME + ' ' + day + ', ' + DNAME[k] + ' deals');
         var h = tileHero(day);
-        var secondary = h.sec || ((h.more ? esc(h.more.b[0] + ' ' + h.more.pct) + ' · ' : '') +
-          w.deals.slice(1).filter(function (d) { return !(h.more && d.b[0] === 'PUSHA'); }).slice(0, 2).map(function (d) { return d.b.slice(0, 2).join(' · '); }).join(' · '));
+        var promo = every(day).filter(forStore).filter(function (e) { return e.tile; }).map(function (e) { return '<b>' + esc(e.tile) + '</b>'; }).join(' · ');
+        var secondary = (promo ? promo + ' · ' : '') + (h.sec || ((h.more ? esc(h.more.b[0] + ' ' + h.more.pct) + ' · ' : '') +
+          w.deals.slice(1).filter(function (d) { return !(h.more && d.b[0] === 'PUSHA'); }).slice(0, 2).map(function (d) { return d.b.slice(0, 2).join(' · '); }).join(' · ')));
         b.innerHTML = '<div class="n"><b>' + day + '</b><span class="' + (day === todayNum ? 'tdy' : '') + '">' + (day === todayNum ? 'Today' : k) + '</span></div>' +
-          '<div class="h ' + (h.cls || '') + '">' + h.html + '</div><div class="m">' + esc(secondary).replace(/&amp;/g, '&') + '</div>' +
+          '<div class="h ' + (h.cls || '') + '">' + h.html + '</div><div class="m">' + secondary + '</div>' +
           '<div class="more">See all ' + dayDeals(day).length + ' deals →</div><span class="hitb">On sale</span>';
         b.addEventListener('click', function () { openDay(day); });
         grid.appendChild(b);
@@ -264,7 +265,8 @@
       el.style.setProperty('--c', S ? 'var(--ld-red)' : 'var(--' + k + ')');
       var label = todayNum ? 'Today · ' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day : 'Starts ' + DNAME[dowOf(1)] + ', ' + MONTH_NAME + ' 1';
       var big = S ? (day === S.to && S.todayBigLast ? S.todayBigLast : S.todayBig) : '<em>' + esc(w.deals[0].pct) + '</em> ' + esc(w.deals[0].b[0]) + " — it's " + esc(w.id);
-      var rest = S ? S.todayRest : 'Plus ' + w.deals.slice(1, 4).map(function (d) { return d.b.slice(0, 2).join(' & ') + ' ' + d.pct; }).join(', ') + ' and more.';
+      var promoT = every(day).filter(forStore).filter(function (e) { return e.tile; }).map(function (e) { return e.tile; }).join(' · ');
+      var rest = (promoT ? promoT + '. ' : '') + (S ? S.todayRest : 'Plus ' + w.deals.slice(1, 4).map(function (d) { return d.b.slice(0, 2).join(' & ') + ' ' + d.pct; }).join(', ') + ' and more.');
       el.innerHTML = '<div><div class="l">' + esc(label) + '</div><div class="big">' + big + '</div><div class="rest">' + esc(rest) + '</div></div><button type="button" class="go">See today\'s deals</button>';
       el.querySelector('.go').addEventListener('click', function () { openDay(day); });
     }
