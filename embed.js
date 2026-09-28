@@ -34,6 +34,7 @@
 #vp-deals .stores button:hover{background:var(--bg-3)}\
 #vp-deals .stores button[aria-pressed="true"]{background:var(--vp);color:#fff}\
 #vp-deals .feat{display:grid;grid-template-columns:1.35fr 1fr;gap:12px;margin-bottom:24px}\
+#vp-deals .feat.one{grid-template-columns:1fr}\
 #vp-deals .today{background:var(--vp);color:#fff;padding:22px 24px;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}\
 #vp-deals .today::before{content:"";position:absolute;inset:0 auto 0 0;width:8px;background:var(--c,var(--acc))}\
 #vp-deals .today .l{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:700}\
@@ -145,7 +146,11 @@
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
 
   if (window.VP_DEALS_DATA) { init(window.VP_DEALS_DATA); return; } // inline data (standalone/offline build)
-  fetch(src, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(init)
+  // Monthly rollover: if deals-YYYY-MM.json exists for the current month (Pacific time), use it; otherwise deals.json.
+  var ym = (function () { try { var p = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit' }).formatToParts(new Date()); var g = function (t) { for (var i = 0; i < p.length; i++) if (p[i].type === t) return p[i].value; }; return g('year') + '-' + g('month'); } catch (e) { return null; } })();
+  var monthly = (!host.getAttribute('data-src') && ym) ? new URL('deals-' + ym + '.json', src).href : null;
+  var load = function (u) { return fetch(u, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); };
+  (monthly ? load(monthly).catch(function () { return load(src); }) : load(src)).then(init)
     .catch(function (e) { host.innerHTML = '<div class="in"><div class="err">Deals are loading slowly — <a href="https://valleypure.net/deals/">refresh the page</a> or check your store\'s menu.</div></div>'; console.error('vp-deals', e); });
 
   function init(D) {
@@ -187,8 +192,8 @@
     host.innerHTML =
       '<div class="in"><header class="hd"><div><div class="kicker">Valley Pure · Daily deals</div><h2 class="ttl">' + esc(D.title || MONTH_NAME) + ' <span>Deals</span></h2><p class="lede">' + esc(D.lede || '') + '</p></div>' +
       '<div class="store"><div class="l">Shopping at</div><div class="stores" id="vpStores" role="group" aria-label="Choose your store"></div></div></header>' +
-      '<div class="feat"><div class="today" id="vpToday"></div>' +
-      (D.everyday ? '<div class="pusha"><div><div class="brand cond">' + esc(D.everyday.brand) + '</div><div class="what cond">' + esc(D.everyday.headline) + '</div><div class="sub">' + esc(D.everyday.sub) + '</div></div><div class="price"><b id="vpPushaPrice"></b><span id="vpPushaStore"></span></div></div>' : '') + '</div>' +
+      '<div class="feat' + ((D.everyday && D.everyday.brand) ? '' : ' one') + '"><div class="today" id="vpToday"></div>' +
+      ((D.everyday && D.everyday.brand) ? '<div class="pusha"><div><div class="brand cond">' + esc(D.everyday.brand) + '</div><div class="what cond">' + esc(D.everyday.headline) + '</div><div class="sub">' + esc(D.everyday.sub) + '</div></div><div class="price"><b id="vpPushaPrice"></b><span id="vpPushaStore"></span></div></div>' : '') + '</div>' +
       '<div class="tools"><div class="legend" id="vpLegend"></div><div class="finder"><label for="vpBrand">When is my brand on sale?</label><select id="vpBrand"><option value="">Pick a brand</option></select><button class="x" id="vpBrandClear">Clear</button></div></div>' +
       '<button type="button" class="earlier" id="vpEarlier"></button><div class="dows"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div><div class="grid" id="vpGrid"></div>' +
       '<p class="foot">' + esc(D.finePrint || '') + '</p></div>' +
@@ -328,7 +333,7 @@
       earlierBtn.classList.toggle('on', pastCount > 0 && !brandPick);
       earlierBtn.innerHTML = showPast ? 'Hide earlier days <span>&uarr;</span>' : 'Earlier this month <span>Show ' + MONTH_NAME.slice(0, 4) + ' 1&ndash;' + pastCount + '</span>';
       Array.prototype.forEach.call(storesEl.querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', String(b.dataset.id === store)); });
-      if (D.everyday) { $('vpPushaPrice').textContent = '$' + s.pushaPrice; $('vpPushaStore').textContent = (D.everyday.priceLabel || 'at {store}').replace('{store}', s.name); }
+      if (D.everyday && D.everyday.brand) { $('vpPushaPrice').textContent = '$' + s.pushaPrice; $('vpPushaStore').textContent = (D.everyday.priceLabel || 'at {store}').replace('{store}', s.name); }
       $('vpBrandClear').classList.toggle('on', !!brandPick);
       Array.prototype.forEach.call(grid.querySelectorAll('.day[data-day]'), function (t) {
         var d = +t.dataset.day;

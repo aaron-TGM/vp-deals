@@ -21,7 +21,7 @@ Optional: if you'd rather it live on `deals.valleypure.net`, add that as a custo
 
 ## Updating deals each month
 
-Edit `deals.json` on github.com (pencil icon → edit → commit). It's live within about a minute. Things you'll touch:
+The calendar picks its data by the current month (Pacific time): it loads `deals-YYYY-MM.json` if that file exists (e.g. `deals-2026-10.json` for October), otherwise it falls back to `deals.json`. So to prepare a month ahead, add `deals-YYYY-MM.json` any time before the 1st and it switches over on its own at midnight. Edit files on github.com (pencil icon → edit → commit); changes are live within about a minute. Things you'll touch:
 
 - `month` — `"2026-10"` for October. Day-of-week math and the grid are computed from this.
 - `title` / `lede` — headline and intro sentence.
