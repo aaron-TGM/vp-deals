@@ -102,6 +102,7 @@
   "modalFinePrint": "Exclusions apply. While supplies last. Connected & Alien Labs flower deals are 3.5g and 10g only. Discounts cannot be combined unless stated.",
   "everyday": {
     "deals": [
+      { "b": ["Dabwoods"], "pct": "BOGO", "o": "Pods & kits — buy one, get one · through Sun Oct 4 · while supplies last", "from": 1, "to": 4, "tile": "Dabwoods pods & kits BOGO" },
       { "b": ["Valley Pure"], "pct": "BOGO", "o": "Concentrates — buy one, get one, every day" },
       { "b": ["PlugPlay"], "pct": "30%", "o": "Off PlugPlay — every day through the end of the year (40% on Thursdays)", "notDow": [ "thu" ] },
       { "b": ["Dabwoods", "Juiced", "C4", "Vior"], "pct": "30%", "o": "Off — every day this month" },
