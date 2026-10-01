@@ -295,8 +295,8 @@
       sel = day;
       var k = dowOf(day), w = { id: WEEK[k].id, deals: wk(day) }, S = saleOn(day), ph = FEATURE[day] === 'PUSHA', sName = findStore(store).name;
       md.style.setProperty('--c', 'var(--' + k + ')');
-      var html = '<div class="band' + (S ? ' ld' : ph ? ' ph' : '') + '"><div><div class="k">' + esc(S ? S.name + ' · ' + MONTH_NAME.slice(0, 4) + ' ' + S.from + '–' + S.to : w.id) + '</div><div class="d" id="vpMdTitle">' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day + '</div><div class="s">' + (S ? 'Limited time · ' : '') + 'Shopping at ' + esc(sName) + '</div></div><button type="button" class="cl" aria-label="Close">×</button></div>';
-      html += '<div class="nav"><button type="button" data-nav="-1"' + (day === 1 ? ' disabled style="visibility:hidden"' : '') + '>← ' + MONTH_NAME.slice(0, 4) + ' ' + (day - 1) + '</button><button type="button" data-nav="1"' + (day === daysIn ? ' disabled style="visibility:hidden"' : '') + '>' + MONTH_NAME.slice(0, 4) + ' ' + (day + 1) + ' →</button></div><div class="bd">';
+      var html = '<div class="band' + (S ? ' ld' : ph ? ' ph' : '') + '"><div><div class="k">' + esc(S ? S.name + ' · ' + MONTH_NAME.slice(0, 3) + ' ' + S.from + '–' + S.to : w.id) + '</div><div class="d" id="vpMdTitle">' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day + '</div><div class="s">' + (S ? 'Limited time · ' : '') + 'Shopping at ' + esc(sName) + '</div></div><button type="button" class="cl" aria-label="Close">×</button></div>';
+      html += '<div class="nav"><button type="button" data-nav="-1"' + (day === 1 ? ' disabled style="visibility:hidden"' : '') + '>← ' + MONTH_NAME.slice(0, 3) + ' ' + (day - 1) + '</button><button type="button" data-nav="1"' + (day === daysIn ? ' disabled style="visibility:hidden"' : '') + '>' + MONTH_NAME.slice(0, 3) + ' ' + (day + 1) + ' →</button></div><div class="bd">';
       if (ph && EVERY[0]) html += '<div class="sec"><div class="st"><h4 class="ph">' + esc((D.featureLabels && D.featureLabels[day]) || 'Featured today') + '</h4></div><div class="deals">' + dealRow(EVERY[0], 'var(--pusha)') + '</div></div>';
       if (S) {
         html += '<div class="sec"><div class="st"><h4 class="ld">' + esc(S.name) + '</h4><small>' + (day === S.to ? 'Ends tonight' : 'Through ' + DNAME[dowOf(S.to)] + ' ' + M + '/' + S.to) + '</small></div><div class="deals">' + S.deals.filter(function (d) { return (!d.only || d.only === day) && forStore(d); }).map(function (d) { return dealRow(d, 'var(--ld-red)'); }).join('') + '</div></div>';
@@ -331,7 +331,7 @@
       var s = findStore(store);
       var pastCount = todayNum ? todayNum - 1 : 0, collapse = pastCount > 0 && !brandPick && !showPast;
       earlierBtn.classList.toggle('on', pastCount > 0 && !brandPick);
-      earlierBtn.innerHTML = showPast ? 'Hide earlier days <span>&uarr;</span>' : 'Earlier this month <span>Show ' + MONTH_NAME.slice(0, 4) + ' 1&ndash;' + pastCount + '</span>';
+      earlierBtn.innerHTML = showPast ? 'Hide earlier days <span>&uarr;</span>' : 'Earlier this month <span>Show ' + MONTH_NAME.slice(0, 3) + ' 1&ndash;' + pastCount + '</span>';
       Array.prototype.forEach.call(storesEl.querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', String(b.dataset.id === store)); });
       if (D.everyday && D.everyday.brand) { $('vpPushaPrice').textContent = '$' + s.pushaPrice; $('vpPushaStore').textContent = (D.everyday.priceLabel || 'at {store}').replace('{store}', s.name); }
       $('vpBrandClear').classList.toggle('on', !!brandPick);

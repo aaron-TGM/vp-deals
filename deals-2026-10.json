@@ -23,17 +23,17 @@
     "mon": {
       "id": "Alien Labs Monday",
       "deals": [
-        { "b": ["Alien Labs"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g flower", "top": true },
-        { "b": ["STIIIZY", "Jeeter"], "pct": "30%", "o": "Off select items" },
+        { "b": ["Alien Labs"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g & 10g flower", "top": true },
         { "b": ["UpNorth", "Maven"], "pct": "30%", "o": "Off" },
-        { "b": ["Geek THCX"], "pct": "30%", "o": "Off select items" }
+        { "b": ["Geek THCX"], "pct": "30%", "o": "Off select items" },
+        { "b": ["Tutti"], "pct": "30%", "o": "Off" }
       ]
     },
     "tue": {
       "id": "Dime Tuesday",
       "deals": [
         { "b": ["Dime", "Lumpy's"], "pct": "40%", "o": "Off Dime and Lumpy's Flowers", "top": true },
-        { "b": ["STIIIZY", "Jeeter", "Terpwoods"], "pct": "30%", "o": "Off select items" },
+        { "b": ["Terpwoods"], "pct": "30%", "o": "Off select items" },
         { "b": ["Kingroll", "Kingpen", "LAX", "Globs"], "pct": "30%", "o": "Off" },
         { "b": ["Papa's Herb"], "pct": "30%", "o": "Off select items" }
       ]
@@ -42,18 +42,18 @@
       "id": "Cake Wednesday",
       "deals": [
         { "b": ["Cake"], "pct": "40%", "o": "Off Cake — she hits different", "top": true },
-        { "b": ["STIIIZY", "Jeeter", "Raw Garden"], "pct": "30%", "o": "Off select items" },
+        { "b": ["Raw Garden"], "pct": "30%", "o": "Off select items" },
         { "b": ["Blem", "Lost Farm", "Maven"], "pct": "30%", "o": "Off" },
-        { "b": ["ABX", "Globs"], "pct": "30%", "o": "Off select items" }
+        { "b": ["ABX", "Globs"], "pct": "30%", "o": "Off select items" },
+        { "b": ["Dee Thai"], "pct": "30%", "o": "Off" }
       ]
     },
     "thu": {
-      "id": "Vape Thursday",
+      "id": "Connected Thursday",
       "deals": [
-        { "b": ["PlugPlay"], "pct": "40%", "o": "Off PlugPlay — Thursdays only", "top": true },
-        { "b": ["Connected", "Lumpy's"], "pct": "40%", "o": "Off Connected cold-chain vapes and Lumpy's" },
+        { "b": ["Connected"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g & 10g flower", "top": true },
+        { "b": ["Lumpy's"], "pct": "40%", "o": "Off Lumpy's" },
         { "b": ["Almora", "Zetti"], "pct": "BOGO", "o": "Buy one, get one on select items" },
-        { "b": ["STIIIZY", "Jeeter"], "pct": "30%", "o": "Off select items" },
         { "b": ["Sluggers", "CAM", "Globs"], "pct": "30%", "o": "Off" },
         { "b": ["Sense"], "pct": "30%", "o": "Off select items" }
       ]
@@ -64,8 +64,8 @@
         { "b": ["Cowgirl"], "pct": "40%", "o": "Off Cowgirl 3.5g flower", "top": true },
         { "b": ["West Coast Cure"], "pct": "40%", "o": "Off select items" },
         { "b": ["Valley Pure"], "pct": "35%", "o": "Off infused prerolls and edibles" },
+        { "b": ["PUSHA"], "pct": "30%", "o": "Off PUSHA — Fridays & Saturdays" },
         { "b": ["Kanha"], "pct": "30%", "o": "Off Kanha — Fridays & Saturdays", "notStores": [ "woodlake", "lindsay" ] },
-        { "b": ["STIIIZY", "Jeeter"], "pct": "30%", "o": "Off" },
         { "b": ["Heavy Hitters", "Loud + Clear", "Flavorade"], "pct": "30%", "o": "Off" },
         { "b": ["ICED", "Maven", "LAX", "Daze Off"], "pct": "30%", "o": "Off select items" },
         { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off" }
@@ -75,37 +75,59 @@
       "id": "Deep-Discount Saturday",
       "deals": [
         { "b": ["Made"], "pct": "50%", "o": "Off Made", "top": true },
+        { "b": ["Alien Labs"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g & 10g flower" },
+        { "b": ["Timeless"], "pct": "40%", "o": "Off select items" },
+        { "b": ["Smoken Promises"], "pct": "30%", "o": "Off 3.5g & 7g flower" },
         { "b": ["Muha Meds", "Cowgirl"], "pct": "40%", "o": "Off select items" },
-        { "b": ["Timeless", "Alien Labs"], "pct": "40%", "o": "Off select items" },
+        { "b": ["PUSHA"], "pct": "30%", "o": "Off PUSHA — Fridays & Saturdays" },
         { "b": ["Valley Pure"], "pct": "35%", "o": "Off infused prerolls and edibles" },
         { "b": ["Kanha"], "pct": "30%", "o": "Off Kanha — Fridays & Saturdays", "notStores": [ "woodlake", "lindsay" ] },
-        { "b": ["Jeeter", "Master Makers"], "pct": "30%", "o": "Off" },
-        { "b": ["STIIIZY", "Smoken Promises", "Loud + Clear"], "pct": "30%", "o": "Off" },
+        { "b": ["Master Makers"], "pct": "30%", "o": "Off" },
+        { "b": ["Loud + Clear"], "pct": "30%", "o": "Off" },
         { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off" },
-        { "b": ["Geek THCX"], "pct": "30%", "o": "Off" }
+        { "b": ["Geek THCX"], "pct": "30%", "o": "Off" },
+        { "b": ["Raw Garden"], "pct": "30%", "o": "Off AIO vapes — Saturdays & Sundays in October" }
       ]
     },
     "sun": {
       "id": "Connected Sunday",
       "deals": [
-        { "b": ["Connected"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g flower", "top": true },
+        { "b": ["Connected"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g & 10g flower", "top": true },
         { "b": ["Yummi Karma"], "pct": "40%", "o": "Off" },
         { "b": ["Zetti"], "pct": "BOGO", "o": "Buy one, get one" },
-        { "b": ["STIIIZY", "Jeeter"], "pct": "30%", "o": "Off" },
         { "b": ["Care By Design", "Duffy's"], "pct": "30%", "o": "Off" },
-        { "b": ["CAM", "Kiva", "Camino"], "pct": "30%", "o": "Off" }
+        { "b": ["CAM", "Kiva", "Camino"], "pct": "30%", "o": "Off" },
+        { "b": ["Raw Garden"], "pct": "30%", "o": "Off AIO vapes — Saturdays & Sundays in October" }
       ]
     }
   },
-  "sales": [],
-  "finePrint": "Exclusions apply · While supplies last · Connected & Alien Labs deals are 3.5g and 10g flower only · PlugPlay 30% off every day through Dec 31 (40% Thursdays). Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
+  "sales": [
+    {
+      "name": "Connected × Alien Labs Weekend",
+      "short": "Oct 9–11",
+      "from": 9,
+      "to": 11,
+      "tileHeadline": "50%|Cold-chain vapes",
+      "tileSecondary": "Connected & Alien Labs 50% cold chain · 40% 3.5g & 10g · Smoken Promises 40%",
+      "todayBig": "<em>Connected & Alien Labs</em> — 50% off cold chain, 40% off flower",
+      "todayRest": "Smoken Promises 40% off 3.5g & 7g and buy 2 get 1 on prerolls. Oct 9–11 only.",
+      "deals": [
+        { "b": ["Connected", "Alien Labs"], "pct": "50%", "o": "Off cold-chain vapes · Oct 9–11", "top": true },
+        { "b": ["Connected", "Alien Labs"], "pct": "40%", "o": "Off 3.5g & 10g flower · Oct 9–11" },
+        { "b": ["Smoken Promises"], "pct": "40%", "o": "Off 3.5g & 7g flower · Oct 9–11" },
+        { "b": ["Smoken Promises"], "pct": "B2G1", "o": "Prerolls — buy 2, get 1 · Oct 9–11" }
+      ]
+    }
+  ],
+  "finePrint": "Exclusions apply · While supplies last · STIIIZY, Jeeter, Dabwoods & PlugPlay 40% off and Connected/Alien Labs straight rolls B2G2 are October only · Connected & Alien Labs flower deals are 3.5g and 10g only · Oct 9–11 sale pricing cannot be combined with daily deals. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
   "modalFinePrint": "Exclusions apply. While supplies last. Connected & Alien Labs flower deals are 3.5g and 10g only. Discounts cannot be combined unless stated.",
   "everyday": {
     "deals": [
       { "b": ["Dabwoods"], "pct": "BOGO", "o": "Pods & kits — buy one, get one · through Sun Oct 4 · while supplies last", "from": 1, "to": 4, "tile": "Dabwoods pods & kits BOGO" },
+      { "b": ["STIIIZY", "Jeeter", "Dabwoods", "PlugPlay"], "pct": "40%", "o": "Off — every day in October", "top": true },
+      { "b": ["Connected", "Alien Labs"], "pct": "B2G2", "o": "Straight rolls — buy 2, get 2, every day in October" },
       { "b": ["Valley Pure"], "pct": "BOGO", "o": "Concentrates — buy one, get one, every day" },
-      { "b": ["PlugPlay"], "pct": "30%", "o": "Off PlugPlay — every day through the end of the year (40% on Thursdays)", "notDow": [ "thu" ] },
-      { "b": ["Dabwoods", "Juiced", "C4", "Vior"], "pct": "30%", "o": "Off — every day this month" },
+      { "b": ["Juiced", "C4", "Vior"], "pct": "30%", "o": "Off — every day this month" },
       { "b": ["Kanha"], "pct": "30%", "o": "Off Kanha — every day at Woodlake & Lindsay", "stores": [ "woodlake", "lindsay" ] }
     ]
   }
