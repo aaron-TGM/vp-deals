@@ -21,39 +21,36 @@
   "featureLabels": {},
   "week": {
     "mon": {
-      "id": "Alien Labs Monday",
+      "id": "STIIIZY Monday",
       "deals": [
-        { "b": ["Alien Labs"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g & 10g flower", "top": true },
-        { "b": ["UpNorth", "Maven"], "pct": "30%", "o": "Off" },
-        { "b": ["Geek THCX"], "pct": "30%", "o": "Off select items" },
-        { "b": ["Tutti"], "pct": "30%", "o": "Off" }
+        { "b": ["STIIIZY"], "pct": "40%", "o": "Off STIIIZY vapes & edibles", "top": true },
+        { "b": ["Geek THCX"], "pct": "30%", "o": "Off" },
+        { "b": ["UpNorth", "Maven", "Tutti"], "pct": "30%", "o": "Off" }
       ]
     },
     "tue": {
       "id": "Dime Tuesday",
       "deals": [
         { "b": ["Dime", "Lumpy's"], "pct": "40%", "o": "Off Dime and Lumpy's Flowers", "top": true },
-        { "b": ["Terpwoods"], "pct": "30%", "o": "Off select items" },
-        { "b": ["Kingroll", "Kingpen", "LAX", "Globs"], "pct": "30%", "o": "Off" },
-        { "b": ["Papa's Herb"], "pct": "30%", "o": "Off select items" }
+        { "b": ["Terpwoods", "Papa's Herb"], "pct": "30%", "o": "Off" },
+        { "b": ["Kingroll", "Kingpen", "LAX", "Globs"], "pct": "30%", "o": "Off" }
       ]
     },
     "wed": {
       "id": "Cake Wednesday",
       "deals": [
         { "b": ["Cake"], "pct": "40%", "o": "Off Cake — she hits different", "top": true },
-        { "b": ["Raw Garden"], "pct": "30%", "o": "Off select items" },
+        { "b": ["Raw Garden", "Dee Thai"], "pct": "30%", "o": "Off" },
         { "b": ["Blem", "Lost Farm", "Maven"], "pct": "30%", "o": "Off" },
-        { "b": ["ABX", "Globs"], "pct": "30%", "o": "Off select items" },
-        { "b": ["Dee Thai"], "pct": "30%", "o": "Off" }
+        { "b": ["ABX", "Globs"], "pct": "30%", "o": "Off select items" }
       ]
     },
     "thu": {
       "id": "Connected Thursday",
       "deals": [
         { "b": ["Connected"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g & 10g flower", "top": true },
-        { "b": ["Lumpy's"], "pct": "40%", "o": "Off Lumpy's" },
-        { "b": ["Almora", "Zetti"], "pct": "BOGO", "o": "Buy one, get one on select items" },
+        { "b": ["Lumpy's"], "pct": "40%", "o": "Off select items" },
+        { "b": ["Almora"], "pct": "BOGO", "o": "Buy one, get one on select items" },
         { "b": ["Sluggers", "CAM", "Globs"], "pct": "30%", "o": "Off" },
         { "b": ["Sense"], "pct": "30%", "o": "Off select items" }
       ]
@@ -61,13 +58,12 @@
     "fri": {
       "id": "Friday Stock-Up",
       "deals": [
-        { "b": ["Cowgirl"], "pct": "40%", "o": "Off Cowgirl 3.5g flower", "top": true },
-        { "b": ["West Coast Cure"], "pct": "40%", "o": "Off select items" },
+        { "b": ["West Coast Cure", "Cowgirl"], "pct": "40%", "o": "Off select items", "top": true },
         { "b": ["Valley Pure"], "pct": "35%", "o": "Off infused prerolls and edibles" },
-        { "b": ["PUSHA"], "pct": "30%", "o": "Off PUSHA — Fridays & Saturdays" },
+        { "b": ["Heavy Hitters", "PUSHA"], "pct": "30%", "o": "Off" },
+        { "b": ["Loud + Clear", "Flavorade"], "pct": "30%", "o": "Off select items" },
+        { "b": ["ICED", "Maven", "LAX", "Daze Off"], "pct": "30%", "o": "Off" },
         { "b": ["Kanha"], "pct": "30%", "o": "Off Kanha — Fridays & Saturdays", "notStores": [ "woodlake", "lindsay" ] },
-        { "b": ["Heavy Hitters", "Loud + Clear", "Flavorade"], "pct": "30%", "o": "Off" },
-        { "b": ["ICED", "Maven", "LAX", "Daze Off"], "pct": "30%", "o": "Off select items" },
         { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off" }
       ]
     },
@@ -76,25 +72,21 @@
       "deals": [
         { "b": ["Made"], "pct": "50%", "o": "Off Made", "top": true },
         { "b": ["Alien Labs"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g & 10g flower" },
-        { "b": ["Timeless"], "pct": "40%", "o": "Off select items" },
-        { "b": ["Smoken Promises"], "pct": "30%", "o": "Off 3.5g & 7g flower" },
         { "b": ["Muha Meds", "Cowgirl"], "pct": "40%", "o": "Off select items" },
-        { "b": ["PUSHA"], "pct": "30%", "o": "Off PUSHA — Fridays & Saturdays" },
+        { "b": ["Timeless"], "pct": "40%", "o": "Off" },
         { "b": ["Valley Pure"], "pct": "35%", "o": "Off infused prerolls and edibles" },
+        { "b": ["PUSHA", "Master Makers"], "pct": "30%", "o": "Off" },
+        { "b": ["Smoken Promises"], "pct": "30%", "o": "Off 3.5g & 7g flower" },
+        { "b": ["Loud + Clear", "Geek THCX"], "pct": "30%", "o": "Off" },
         { "b": ["Kanha"], "pct": "30%", "o": "Off Kanha — Fridays & Saturdays", "notStores": [ "woodlake", "lindsay" ] },
-        { "b": ["Master Makers"], "pct": "30%", "o": "Off" },
-        { "b": ["Loud + Clear"], "pct": "30%", "o": "Off" },
-        { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off" },
-        { "b": ["Geek THCX"], "pct": "30%", "o": "Off" },
-        { "b": ["Raw Garden"], "pct": "30%", "o": "Off AIO vapes — Saturdays & Sundays in October" }
+        { "b": ["Raw Garden"], "pct": "30%", "o": "Off AIO vapes — Saturdays & Sundays in October" },
+        { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off" }
       ]
     },
     "sun": {
-      "id": "Connected Sunday",
+      "id": "Dabwoods Sunday",
       "deals": [
-        { "b": ["Connected"], "pct": "40%", "o": "40% off cold-chain vapes · 30% off 3.5g & 10g flower", "top": true },
-        { "b": ["Yummi Karma"], "pct": "40%", "o": "Off" },
-        { "b": ["Zetti"], "pct": "BOGO", "o": "Buy one, get one" },
+        { "b": ["Dabwoods"], "pct": "40%", "o": "Off Dabwoods", "top": true },
         { "b": ["Care By Design", "Duffy's"], "pct": "30%", "o": "Off" },
         { "b": ["CAM", "Kiva", "Camino"], "pct": "30%", "o": "Off" },
         { "b": ["Raw Garden"], "pct": "30%", "o": "Off AIO vapes — Saturdays & Sundays in October" }
