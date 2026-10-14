@@ -117,6 +117,7 @@
     "deals": [
       { "b": ["Dabwoods"], "pct": "BOGO", "o": "Pods & kits — buy one, get one · through Sun Oct 4 · while supplies last", "from": 1, "to": 4, "tile": "Dabwoods pods & kits BOGO" },
       { "b": ["STIIIZY", "Jeeter", "Dabwoods", "PlugPlay"], "pct": "40%", "o": "Off — every day in October", "top": true },
+      { "b": ["Dime"], "pct": "30%", "o": "Off Dime — Wednesday through Monday (40% on Tuesdays)", "from": 14, "to": 31, "notDow": [ "tue" ] },
       { "b": ["Connected", "Alien Labs"], "pct": "B2G2", "o": "Straight rolls — buy 2, get 2, every day in October" },
       { "b": ["Valley Pure"], "pct": "BOGO", "o": "Concentrates — buy one, get one, every day" },
       { "b": ["Juiced", "C4", "Vior"], "pct": "30%", "o": "Off — every day this month" },
