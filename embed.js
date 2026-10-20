@@ -35,6 +35,20 @@
 #vp-deals .stores button[aria-pressed="true"]{background:var(--vp);color:#fff}\
 #vp-deals .feat{display:grid;grid-template-columns:1.35fr 1fr;gap:12px;margin-bottom:24px}\
 #vp-deals .feat.one{grid-template-columns:1fr}\
+#vp-deals .house{border:2px solid var(--vp);background:#fff;padding:18px 20px;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;align-items:start;position:relative}\
+#vp-deals .house .lg{grid-row:1/span 2;width:72px;height:72px;background:var(--vp);display:grid;place-items:center}\
+#vp-deals .house .lg img{width:60px;height:auto;display:block}\
+#vp-deals .house .ey{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--acc)}\
+#vp-deals .house .tt{font-weight:800;font-size:17px;line-height:1.15;text-transform:uppercase;letter-spacing:.04em;color:var(--vp);margin-top:2px}\
+#vp-deals .house .items{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}\
+#vp-deals .house .it{background:#F1F8EF;border-left:4px solid var(--acc);padding:10px 12px}\
+#vp-deals .house .it b{display:block;font-weight:900;font-size:22px;line-height:1;color:var(--vp);letter-spacing:-.01em}\
+#vp-deals .house .it span{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--tx-2);margin-top:6px}\
+#vp-deals .house .it em{display:block;font-style:normal;font-size:12.5px;color:var(--tx);margin-top:3px;font-weight:600}\
+#vp-deals .house .go{grid-column:1/-1;justify-self:start;margin-top:10px;background:var(--vp);color:#fff;text-decoration:none;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;display:inline-flex;gap:8px;align-items:center}\
+#vp-deals .house .go:hover{background:var(--acc)}\
+#vp-deals .sec .st h4.hs{color:var(--acc)}\
+#vp-deals .deal.house-row{border-color:var(--acc);border-left:4px solid var(--acc);background:#F1F8EF}\
 #vp-deals .today{background:var(--vp);color:#fff;padding:22px 24px;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}\
 #vp-deals .today::before{content:"";position:absolute;inset:0 auto 0 0;width:8px;background:var(--c,var(--acc))}\
 #vp-deals .today .l{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:700}\
@@ -133,7 +147,7 @@
 #vp-deals .foot{margin-top:20px;font-size:11.5px;color:var(--tx-3);line-height:1.5}\
 #vp-deals .err{padding:24px;color:var(--tx-2);text-align:center}\
 @media (max-width:900px){#vp-deals .feat{grid-template-columns:1fr}#vp-deals h2.ttl{font-size:30px}}\
-@media (max-width:640px){#vp-deals{padding:20px 12px 48px}#vp-deals .dows{display:none}#vp-deals .grid{grid-template-columns:1fr 1fr}#vp-deals .day.blank{display:none}#vp-deals .day{min-height:116px}#vp-deals .earlier.on{display:flex}#vp-deals .legend{display:none}#vp-deals .day.past.collapsed{display:none}#vp-deals .today{grid-template-columns:1fr}#vp-deals .today .go{text-align:center}#vp-deals .deal{grid-template-columns:52px 1fr}#vp-deals .deal .shop,#vp-deals .shops{grid-column:2;justify-self:start;justify-content:flex-start;max-width:none}#vp-deals .md{top:auto;bottom:0;left:0;transform:none;width:100%;max-height:90vh}}\
+@media (max-width:640px){#vp-deals .house .items{grid-template-columns:1fr}#vp-deals{padding:20px 12px 48px}#vp-deals .dows{display:none}#vp-deals .grid{grid-template-columns:1fr 1fr}#vp-deals .day.blank{display:none}#vp-deals .day{min-height:116px}#vp-deals .earlier.on{display:flex}#vp-deals .legend{display:none}#vp-deals .day.past.collapsed{display:none}#vp-deals .today{grid-template-columns:1fr}#vp-deals .today .go{text-align:center}#vp-deals .deal{grid-template-columns:52px 1fr}#vp-deals .deal .shop,#vp-deals .shops{grid-column:2;justify-self:start;justify-content:flex-start;max-width:none}#vp-deals .md{top:auto;bottom:0;left:0;transform:none;width:100%;max-height:90vh}}\
 @media (prefers-reduced-motion:reduce){#vp-deals *{transition:none !important}}';
 
   if (!document.getElementById('vp-deals-css')) {
@@ -192,7 +206,8 @@
     host.innerHTML =
       '<div class="in"><header class="hd"><div><div class="kicker">Valley Pure · Daily deals</div><h2 class="ttl">' + esc(D.title || MONTH_NAME) + ' <span>Deals</span></h2><p class="lede">' + esc(D.lede || '') + '</p></div>' +
       '<div class="store"><div class="l">Shopping at</div><div class="stores" id="vpStores" role="group" aria-label="Choose your store"></div></div></header>' +
-      '<div class="feat' + ((D.everyday && D.everyday.brand) ? '' : ' one') + '"><div class="today" id="vpToday"></div>' +
+      '<div class="feat' + ((D.everyday && D.everyday.brand) || D.house ? '' : ' one') + '"><div class="today" id="vpToday"></div>' +
+      (D.house && !(D.everyday && D.everyday.brand) ? '<div class="house"><div class="lg">' + (D.house.logo ? '<img src="' + esc(D.house.logo) + '" alt="Valley Pure">' : '') + '</div><div><div class="ey">' + esc(D.house.eyebrow || '') + '</div><div class="tt">' + esc(D.house.title || '') + '</div></div><div class="items">' + (D.house.items || []).map(function (i) { return '<div class="it"><b>' + esc(i.big) + '</b><span>' + esc(i.label) + '</span><em>' + esc(i.detail || '') + '</em></div>'; }).join('') + '</div><a class="go" id="vpHouseGo" target="_blank" rel="noopener" href="#">Shop ' + esc(D.house.brand) + ' &rarr;</a></div>' : '') +
       ((D.everyday && D.everyday.brand) ? '<div class="pusha"><div><div class="brand cond">' + esc(D.everyday.brand) + '</div><div class="what cond">' + esc(D.everyday.headline) + '</div><div class="sub">' + esc(D.everyday.sub) + '</div></div><div class="price"><b id="vpPushaPrice"></b><span id="vpPushaStore"></span></div></div>' : '') + '</div>' +
       '<div class="tools"><div class="legend" id="vpLegend"></div><div class="finder"><label for="vpBrand">When is my brand on sale?</label><select id="vpBrand"><option value="">Pick a brand</option></select><button class="x" id="vpBrandClear">Clear</button></div></div>' +
       '<button type="button" class="earlier" id="vpEarlier"></button><div class="dows"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div><div class="grid" id="vpGrid"></div>' +
@@ -289,7 +304,7 @@
       var raw = (d.o && typeof d.o === 'object') ? (d.o[store] || d.o['default'] || '') : d.o; // per-store wording: "o": { "default": "...", "woodlake": "..." }
       var o = d.pusha ? raw.replace('{price}', '<b>$' + s.pushaPrice + '</b>').replace('{store}', esc(s.name))
         : raw === 'Off' ? esc(d.pct + ' off ' + d.b.join(', ')) : esc(raw);
-      return '<div class="deal' + (d.top ? ' top' : '') + '" style="--c:' + c + '"><div class="pct' + (d.pct.length > 3 ? ' sm' : '') + '">' + esc(d.pct) + '</div><div><div class="b">' + esc(d.b.join(', ')) + '</div><div class="o">' + o + '</div></div>' + shopLinks(d) + '</div>';
+      return '<div class="deal' + (d.top ? ' top' : '') + '" style="--c:' + c + '"><div class="pct' + (d.pct.length > 3 ? ' sm' : '') + '">' + esc(d.pct) + '</div><div><div class="b">' + esc(d.name || d.b.join(', ')) + '</div><div class="o">' + o + '</div></div>' + shopLinks(d) + '</div>';
     };
     function openDay(day) {
       sel = day;
@@ -297,6 +312,8 @@
       md.style.setProperty('--c', 'var(--' + k + ')');
       var html = '<div class="band' + (S ? ' ld' : ph ? ' ph' : '') + '"><div><div class="k">' + esc(S ? S.name + ' · ' + MONTH_NAME.slice(0, 3) + ' ' + S.from + '–' + S.to : w.id) + '</div><div class="d" id="vpMdTitle">' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day + '</div><div class="s">' + (S ? 'Limited time · ' : '') + 'Shopping at ' + esc(sName) + '</div></div><button type="button" class="cl" aria-label="Close">×</button></div>';
       html += '<div class="nav"><button type="button" data-nav="-1"' + (day === 1 ? ' disabled style="visibility:hidden"' : '') + '>← ' + MONTH_NAME.slice(0, 3) + ' ' + (day - 1) + '</button><button type="button" data-nav="1"' + (day === daysIn ? ' disabled style="visibility:hidden"' : '') + '>' + MONTH_NAME.slice(0, 3) + ' ' + (day + 1) + ' →</button></div><div class="bd">';
+      var hs = every(day).filter(forStore).filter(function (e) { return e.house; });
+      if (hs.length) html += '<div class="sec"><div class="st"><h4 class="hs">' + esc((D.house && D.house.section) || 'House deals') + '</h4><small>Every day</small></div><div class="deals">' + hs.map(function (d) { return dealRow(d, 'var(--acc)').replace('class="deal', 'class="deal house-row'); }).join('') + '</div></div>';
       if (ph && EVERY[0]) html += '<div class="sec"><div class="st"><h4 class="ph">' + esc((D.featureLabels && D.featureLabels[day]) || 'Featured today') + '</h4></div><div class="deals">' + dealRow(EVERY[0], 'var(--pusha)') + '</div></div>';
       if (S) {
         html += '<div class="sec"><div class="st"><h4 class="ld">' + esc(S.name) + '</h4><small>' + (day === S.to ? 'Ends tonight' : 'Through ' + DNAME[dowOf(S.to)] + ' ' + M + '/' + S.to) + '</small></div><div class="deals">' + S.deals.filter(function (d) { return (!d.only || d.only === day) && forStore(d); }).map(function (d) { return dealRow(d, 'var(--ld-red)'); }).join('') + '</div></div>';
@@ -304,7 +321,7 @@
       } else {
         html += '<div class="sec"><div class="st"><h4>' + esc(w.id) + '</h4><small>Every ' + DNAME[k] + ' in ' + MONTH_NAME + '</small></div><div class="deals">' + w.deals.filter(function (d) { return !(ph && d.b.length === 1 && d.b[0] === 'PUSHA'); }).map(function (d) { return dealRow(d, 'var(--' + k + ')'); }).join('') + '</div></div>';
       }
-      var ev = every(day).filter(forStore).filter(function (e) { return !(ph && e.pusha); });
+      var ev = every(day).filter(forStore).filter(function (e) { return !(ph && e.pusha) && !e.house; });
       if (ev.length) html += '<div class="sec"><div class="st"><h4>Every day</h4></div><div class="deals">' + ev.map(function (d) { return dealRow(d, d.pusha ? 'var(--pusha)' : 'var(--vp)'); }).join('') + '</div></div>';
       html += '<a class="allbtn" href="' + offersFor() + '" target="_blank" rel="noopener">Shop all deals at ' + esc(sName) + ' ' + arrow + '</a>';
       html += '<div class="fine">' + esc(D.modalFinePrint || '') + '</div></div>';
@@ -333,6 +350,7 @@
       earlierBtn.classList.toggle('on', pastCount > 0 && !brandPick);
       earlierBtn.innerHTML = showPast ? 'Hide earlier days <span>&uarr;</span>' : 'Earlier this month <span>Show ' + MONTH_NAME.slice(0, 3) + ' 1&ndash;' + pastCount + '</span>';
       Array.prototype.forEach.call(storesEl.querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', String(b.dataset.id === store)); });
+      if ($('vpHouseGo') && D.house) $('vpHouseGo').href = linkFor(D.house.brand);
       if (D.everyday && D.everyday.brand) { $('vpPushaPrice').textContent = '$' + s.pushaPrice; $('vpPushaStore').textContent = (D.everyday.priceLabel || 'at {store}').replace('{store}', s.name); }
       $('vpBrandClear').classList.toggle('on', !!brandPick);
       Array.prototype.forEach.call(grid.querySelectorAll('.day[data-day]'), function (t) {
