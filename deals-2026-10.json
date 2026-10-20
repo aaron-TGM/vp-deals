@@ -111,7 +111,7 @@
       ]
     }
   ],
-  "finePrint": "Exclusions apply · While supplies last · STIIIZY, Jeeter, Dabwoods & PlugPlay 40% off and Connected/Alien Labs straight rolls B2G2 are October only · Connected & Alien Labs flower deals are 3.5g and 10g only · Oct 9–11 sale pricing cannot be combined with daily deals. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
+  "finePrint": "Exclusions apply · While supplies last · STIIIZY, Jeeter, Dabwoods & PlugPlay 40% off and Connected/Alien Labs straight rolls B2G1 are October only · Connected & Alien Labs flower deals are 3.5g and 10g only · Oct 9–11 sale pricing cannot be combined with daily deals. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
   "modalFinePrint": "Exclusions apply. While supplies last. Connected & Alien Labs flower deals are 3.5g and 10g only. Discounts cannot be combined unless stated.",
   "everyday": {
     "deals": [
@@ -120,7 +120,7 @@
       { "b": ["Dabwoods"], "pct": "BOGO", "o": "Pods & kits — buy one, get one · through Sun Oct 4 · while supplies last", "from": 1, "to": 4, "tile": "Dabwoods pods & kits BOGO" },
       { "b": ["STIIIZY", "Jeeter", "Dabwoods", "PlugPlay"], "pct": "40%", "o": "Off — every day in October", "top": true },
       { "b": ["Dime"], "pct": "30%", "o": "Off Dime — Wednesday through Monday (40% on Tuesdays)", "from": 14, "to": 31, "notDow": [ "tue" ] },
-      { "b": ["Connected", "Alien Labs"], "pct": "B2G2", "o": "Straight rolls — buy 2, get 2, every day in October" },
+      { "b": ["Connected", "Alien Labs"], "pct": "B2G1", "o": "Straight rolls — buy 2, get 1, every day in October" },
       { "b": ["Valley Pure"], "pct": "BOGO", "o": "Concentrates — buy one, get one, every day" },
       { "b": ["Juiced", "C4", "Vior"], "pct": "30%", "o": "Off — every day this month" },
       { "b": ["Kanha"], "pct": "30%", "o": "Off Kanha — every day at Woodlake & Lindsay", "stores": [ "woodlake", "lindsay" ] }
