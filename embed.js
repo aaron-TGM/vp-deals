@@ -40,7 +40,7 @@
 #vp-deals .house .lg img{width:60px;height:auto;display:block}\
 #vp-deals .house .ey{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--acc)}\
 #vp-deals .house .tt{font-weight:800;font-size:17px;line-height:1.15;text-transform:uppercase;letter-spacing:.04em;color:var(--vp);margin-top:2px}\
-#vp-deals .house .items{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}\
+#vp-deals .house .items{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:8px;margin-top:10px}\
 #vp-deals .house .it{background:#F1F8EF;border-left:4px solid var(--acc);padding:10px 12px}\
 #vp-deals .house .it b{display:block;font-weight:900;font-size:22px;line-height:1;color:var(--vp);letter-spacing:-.01em}\
 #vp-deals .house .it span{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--tx-2);margin-top:6px}\
@@ -146,6 +146,68 @@
 #vp-deals details.reg .deals{margin-top:10px}\
 #vp-deals .foot{margin-top:20px;font-size:11.5px;color:var(--tx-3);line-height:1.5}\
 #vp-deals .err{padding:24px;color:var(--tx-2);text-align:center}\
+/* ---------- #vp-deals.th-halloweenalloween theme (data "theme" block; auto on/off by date) ---------- */\
+#vp-deals.th-halloween{--bg:#0B090C;--bg-2:#16121A;--bg-3:#211A26;--line:#2E2534;--line-2:#4B3B55;--tx:#F5EEE6;--tx-2:#D2C6BB;--tx-3:#9A8E98;--vp:#FF7518;--vp-2:#FF9A3D;--acc:#FF9A3D;--ink:#0B090C;--ld-red:#FF7518;--ld-blue:#9B5DE5;--mon:#FF7518;--tue:#9B5DE5;--wed:#7BD148;--thu:#FF7518;--fri:#9B5DE5;--sat:#FF7518;--sun:#7BD148;--shadow:0 10px 34px rgba(255,117,24,.22);position:relative;padding-top:72px;background:radial-gradient(1200px 420px at 50% -120px,rgba(255,117,24,.18),transparent 70%),var(--bg);color:var(--tx);overflow:hidden}\
+#vp-deals.th-halloween .drip{position:absolute;top:0;left:0;width:100%;height:56px;display:block}\
+#vp-deals.th-halloween .hd{position:relative}\
+#vp-deals.th-halloween .kicker{color:var(--vp);text-shadow:0 0 12px rgba(255,117,24,.45)}\
+#vp-deals.th-halloween h2.ttl{color:#fff;text-shadow:0 0 18px rgba(255,117,24,.55),0 2px 0 #000}\
+#vp-deals.th-halloween h2.ttl span{color:var(--vp)}\
+#vp-deals.th-halloween .bats{position:absolute;left:min(520px,60%);top:-18px;width:180px;height:70px;pointer-events:none;color:#F5EEE6}\
+#vp-deals.th-halloween .bats i{position:absolute;display:block;width:44px;opacity:.85;animation:vpBat 4.5s ease-in-out infinite}\
+#vp-deals.th-halloween .bats i:nth-child(1){left:0;top:24px}\
+#vp-deals.th-halloween .bats i:nth-child(2){left:70px;top:0;width:30px;animation-delay:-1.4s;opacity:.65}\
+#vp-deals.th-halloween .bats i:nth-child(3){left:128px;top:34px;width:24px;animation-delay:-2.6s;opacity:.5}\
+#vp-deals.th-halloween .bats svg{width:100%;height:auto;display:block}\
+@keyframes vpBat{0%,100%{transform:translate(0,0) rotate(-4deg)}50%{transform:translate(6px,-8px) rotate(4deg)}}\
+#vp-deals.th-halloween .stores button{background:var(--bg-2);border-color:var(--vp);color:var(--vp)}\
+#vp-deals.th-halloween .stores button:hover{background:var(--bg-3)}\
+#vp-deals.th-halloween .stores button[aria-pressed="true"]{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-halloween .today{background:linear-gradient(135deg,#1C1222,#0B090C 70%);border:2px solid var(--vp);color:#fff}\
+#vp-deals.th-halloween .today .big em{color:var(--vp)}\
+#vp-deals.th-halloween .today .go{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-halloween .today .go:hover{background:#fff;color:var(--ink)}\
+#vp-deals.th-halloween .house{background:var(--bg-2);border-color:var(--vp)}\
+#vp-deals.th-halloween .house .lg{background:#000;border:1px solid var(--line-2)}\
+#vp-deals.th-halloween .house .ey{color:var(--vp)}\
+#vp-deals.th-halloween .house .tt{color:#fff}\
+#vp-deals.th-halloween .house .it{background:var(--bg-3);border-left-color:var(--vp)}\
+#vp-deals.th-halloween .house .it b{color:var(--vp)}\
+#vp-deals.th-halloween .house .it em{color:var(--tx)}\
+#vp-deals.th-halloween .house .go{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-halloween .house .go:hover{background:#fff;color:var(--ink)}\
+#vp-deals.th-halloween .sec .st h4.hs{color:var(--vp)}\
+#vp-deals.th-halloween .deal.house-row{background:var(--bg-3);border-color:var(--vp);border-left-color:var(--vp)}\
+#vp-deals.th-halloween .finder select{background-color:var(--bg-2);color:var(--vp);border-color:var(--vp);background-image:url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'8\'%3E%3Cpath d=\'M1 1l5 5 5-5\' fill=\'none\' stroke=\'%23FF7518\' stroke-width=\'2\'/%3E%3C/svg%3E")}\
+#vp-deals.th-halloween .finder select option{background:#16121A;color:#F5EEE6}\
+#vp-deals.th-halloween .earlier{background:var(--bg-2)}\
+#vp-deals.th-halloween .dows div{color:var(--tx-3)}\
+#vp-deals.th-halloween .day{background:var(--bg-2);border-color:var(--line)}\
+#vp-deals.th-halloween .day.blank{background:transparent;border-color:var(--line)}\
+#vp-deals.th-halloween .day .n b{color:#fff}\
+#vp-deals.th-halloween .day .n span.tdy{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-halloween .day.is-today{border-color:var(--vp);box-shadow:0 0 0 2px var(--vp),0 0 22px rgba(255,117,24,.35)}\
+#vp-deals.th-halloween .day.ld{background:linear-gradient(160deg,#2A1530,#16121A 60%);border-color:var(--vp)}\
+#vp-deals.th-halloween .day.ld::before{background:repeating-linear-gradient(90deg,var(--ld-red) 0 12px,#000 12px 16px,var(--ld-blue) 16px 28px,#000 28px 32px)}\
+#vp-deals.th-halloween .day.ld .h em{color:var(--vp)}\
+#vp-deals.th-halloween .day.hit{background:#2A1A0F;border-color:var(--vp)}\
+#vp-deals.th-halloween .day .hitb{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-halloween .ov{background:rgba(0,0,0,.72)}\
+#vp-deals.th-halloween .md{background:var(--bg);border-color:var(--vp);color:var(--tx)}\
+#vp-deals.th-halloween .md .band{background:#000;border-bottom:4px solid var(--c,var(--vp))}\
+#vp-deals.th-halloween .md .band.ld{background:linear-gradient(100deg,#3A1A05,#2A1540);border-bottom-color:var(--vp)}\
+#vp-deals.th-halloween .md .band .d{color:#fff}\
+#vp-deals.th-halloween .md .nav button:hover{color:var(--vp)}\
+#vp-deals.th-halloween .sec .st h4{color:#fff}\
+#vp-deals.th-halloween .deal{background:var(--bg-2);border-color:var(--line)}\
+#vp-deals.th-halloween .deal.top{background:linear-gradient(90deg,color-mix(in srgb,var(--c,var(--vp)) 22%,#16121A),#16121A);border-color:var(--c,var(--vp))}\
+#vp-deals.th-halloween .deal .shop,#vp-deals.th-halloween .md .allbtn{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-halloween .deal .shop:hover,#vp-deals.th-halloween .md .allbtn:hover{background:#fff;color:var(--ink)}\
+#vp-deals.th-halloween .shops a{border-color:var(--vp);color:var(--vp)}\
+#vp-deals.th-halloween .shops a:hover{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-halloween details.reg{border-color:var(--line-2)}\
+@media (max-width:640px){#vp-deals.th-halloween{padding-top:60px}#vp-deals.th-halloween .drip{height:42px}#vp-deals.th-halloween .bats{left:auto;right:0;top:-46px;width:110px;height:40px}#vp-deals.th-halloween .bats i:nth-child(3){display:none}}\
+@media (prefers-reduced-motion:reduce){#vp-deals.th-halloween .bats i{animation:none}}\
 @media (max-width:900px){#vp-deals .feat{grid-template-columns:1fr}#vp-deals h2.ttl{font-size:30px}}\
 @media (max-width:640px){#vp-deals .house .items{grid-template-columns:1fr}#vp-deals{padding:20px 12px 48px}#vp-deals .dows{display:none}#vp-deals .grid{grid-template-columns:1fr 1fr}#vp-deals .day.blank{display:none}#vp-deals .day{min-height:116px}#vp-deals .earlier.on{display:flex}#vp-deals .legend{display:none}#vp-deals .day.past.collapsed{display:none}#vp-deals .today{grid-template-columns:1fr}#vp-deals .today .go{text-align:center}#vp-deals .deal{grid-template-columns:52px 1fr}#vp-deals .deal .shop,#vp-deals .shops{grid-column:2;justify-self:start;justify-content:flex-start;max-width:none}#vp-deals .md{top:auto;bottom:0;left:0;transform:none;width:100%;max-height:90vh}}\
 @media (prefers-reduced-motion:reduce){#vp-deals *{transition:none !important}}';
@@ -202,9 +264,16 @@
       } catch (e) { return null; }
     })();
 
-    /* ---------- shell ---------- */
+    /* ---------- seasonal theme: "theme": { "name": "halloween", "from": 27, "to": 31 } — on only while today is in range ---------- */
+    var TH = D.theme && todayNum && todayNum >= D.theme.from && todayNum <= D.theme.to ? D.theme : null;
+    try { var tq = new URLSearchParams(location.search).get('vptheme'); if (tq && D.theme && tq === D.theme.name) TH = D.theme; } catch (e) {} // preview: ?vptheme=halloween
+    Array.prototype.slice.call(host.classList).forEach(function (c) { if (c.indexOf('th-') === 0) host.classList.remove(c); });
+    if (TH) host.classList.add('th-' + TH.name);
+    var bat = '<svg viewBox="0 0 64 28" aria-hidden="true"><path fill="currentColor" d="M32 9c1.3-3 2.6-4.2 2.6-4.2l.9 3.4c1.6-.4 2.9-.1 3.9.5 2.6-4.4 9-7.2 15.6-6.4-2.4 1.6-3.4 3.8-2.8 6 2.8-.6 6.1.4 8.8 2.8-3.4.1-5.5 1.6-6 3.9-2.9-1.2-6.4-.4-8.7 1.9-1.4-2-3.9-3-6.2-2.4C38.7 18 35.6 23 32 26c-3.6-3-6.7-8-8.1-11.5-2.3-.6-4.8.4-6.2 2.4-2.3-2.3-5.8-3.1-8.7-1.9-.5-2.3-2.6-3.8-6-3.9 2.7-2.4 6-3.4 8.8-2.8.6-2.2-.4-4.4-2.8-6 6.6-.8 13 2 15.6 6.4 1-.6 2.3-.9 3.9-.5l.9-3.4S30.7 6 32 9z"/></svg>';
+    var drip = '<svg class="drip" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path fill="#FF7518" d="M0 0h1200v14c-22 0-26 30-44 30s-18-26-40-26-20 12-42 12-24 26-46 26-18-36-46-36-30 16-52 16-20-22-44-22-28 40-50 40-16-34-40-34-28 14-52 14-24-24-46-24-22 30-46 30-20-20-44-20-26 26-50 26-22-34-46-34-26 12-50 12-22 22-46 22-24-28-48-28-26 16-50 16-20-14-44-14-26 34-50 34-24-30-48-30-22 10-46 10-24 24-48 24-22-26-46-26-26 8-50 8-22 16-46 16-24-20-48-20-26 22-50 22-22-26-46-26-14 4-20 4z"/><path fill="#9B5DE5" opacity=".9" d="M0 0h1200v6c-30 0-34 18-60 18s-30-12-58-12-30 20-56 20-28-16-54-16-36 10-60 10-26 22-52 22-30-24-58-24-28 14-54 14-30-10-58-10-26 26-52 26-32-22-60-22-28 10-54 10-28 18-56 18-26-24-52-24-32 14-58 14-28-8-56-8-26 20-52 20-30-18-58-18-26 8-54 8-30 14-58 14-24-14-50-14-12 2-10 2z"/></svg>';
     host.innerHTML =
-      '<div class="in"><header class="hd"><div><div class="kicker">Valley Pure · Daily deals</div><h2 class="ttl">' + esc(D.title || MONTH_NAME) + ' <span>Deals</span></h2><p class="lede">' + esc(D.lede || '') + '</p></div>' +
+      (TH ? drip : '') +
+      '<div class="in"><header class="hd"><div><div class="kicker">' + esc(TH && TH.kicker ? TH.kicker : 'Valley Pure · Daily deals') + '</div>' + (TH ? '<div class="bats"><i>' + bat + '</i><i>' + bat + '</i><i>' + bat + '</i></div>' : '') + '<h2 class="ttl">' + esc(D.title || MONTH_NAME) + ' <span>Deals</span></h2><p class="lede">' + esc(D.lede || '') + '</p></div>' +
       '<div class="store"><div class="l">Shopping at</div><div class="stores" id="vpStores" role="group" aria-label="Choose your store"></div></div></header>' +
       '<div class="feat' + ((D.everyday && D.everyday.brand) || D.house ? '' : ' one') + '"><div class="today" id="vpToday"></div>' +
       (D.house && !(D.everyday && D.everyday.brand) ? '<div class="house"><div class="lg">' + (D.house.logo ? '<img src="' + esc(D.house.logo) + '" alt="Valley Pure">' : '') + '</div><div><div class="ey">' + esc(D.house.eyebrow || '') + '</div><div class="tt">' + esc(D.house.title || '') + '</div></div><div class="items">' + (D.house.items || []).map(function (i) { return '<div class="it"><b>' + esc(i.big) + '</b><span>' + esc(i.label) + '</span><em>' + esc(i.detail || '') + '</em></div>'; }).join('') + '</div><a class="go" id="vpHouseGo" target="_blank" rel="noopener" href="#">Shop ' + esc(D.house.brand) + ' &rarr;</a></div>' : '') +
@@ -232,11 +301,19 @@
     var forStore = function (d) { return (!d.stores || d.stores.indexOf(store) !== -1) && (!d.notStores || d.notStores.indexOf(store) === -1); };
     var inRange = function (d, day) { return (d.from == null || day >= d.from) && (d.to == null || day <= d.to); };
     var wk = function (day) { return WEEK[dowOf(day)].deals.filter(function (d) { return forStore(d) && inRange(d, day); }); };
+    // a sale with "replaces": true is the whole lineup for its days: the regular weekday list is hidden,
+    // and every-day deals whose brands are all in the sale are folded into it (house deals always stay)
+    var saleDeals = function (S, day) { return S.deals.filter(function (d) { return (!d.only || d.only === day) && forStore(d); }); };
+    var covered = function (d, day) {
+      var S = saleOn(day); if (!S || !S.replaces || d.house) return false;
+      var bs = {}; saleDeals(S, day).forEach(function (x) { x.b.forEach(function (b) { bs[b] = 1; }); });
+      return d.b.every(function (b) { return bs[b]; });
+    };
     var dayDeals = function (day) {
       var out = [], S = saleOn(day);
-      if (S) S.deals.forEach(function (d) { if ((!d.only || d.only === day) && forStore(d)) out.push(d); });
-      wk(day).forEach(function (d) { out.push(d); });
-      every(day).filter(forStore).forEach(function (d) { out.push(d); });
+      if (S) saleDeals(S, day).forEach(function (d) { out.push(d); });
+      if (!(S && S.replaces)) wk(day).forEach(function (d) { out.push(d); });
+      every(day).filter(forStore).filter(function (d) { return !covered(d, day); }).forEach(function (d) { out.push(d); });
       return out;
     };
     var dayHas = function (day, brand) { return dayDeals(day).some(function (d) { return d.b.indexOf(brand) !== -1; }); };
@@ -316,12 +393,12 @@
       if (hs.length) html += '<div class="sec"><div class="st"><h4 class="hs">' + esc((D.house && D.house.section) || 'House deals') + '</h4><small>Every day</small></div><div class="deals">' + hs.map(function (d) { return dealRow(d, 'var(--acc)').replace('class="deal', 'class="deal house-row'); }).join('') + '</div></div>';
       if (ph && EVERY[0]) html += '<div class="sec"><div class="st"><h4 class="ph">' + esc((D.featureLabels && D.featureLabels[day]) || 'Featured today') + '</h4></div><div class="deals">' + dealRow(EVERY[0], 'var(--pusha)') + '</div></div>';
       if (S) {
-        html += '<div class="sec"><div class="st"><h4 class="ld">' + esc(S.name) + '</h4><small>' + (day === S.to ? 'Ends tonight' : 'Through ' + DNAME[dowOf(S.to)] + ' ' + M + '/' + S.to) + '</small></div><div class="deals">' + S.deals.filter(function (d) { return (!d.only || d.only === day) && forStore(d); }).map(function (d) { return dealRow(d, 'var(--ld-red)'); }).join('') + '</div></div>';
-        html += '<details class="reg"><summary>Regular ' + DNAME[k] + ' deals also on today</summary><div class="deals">' + w.deals.map(function (d) { return dealRow(d, 'var(--' + k + ')'); }).join('') + '</div></details>';
+        html += '<div class="sec"><div class="st"><h4 class="ld">' + esc(S.name) + '</h4><small>' + (day === S.to ? 'Ends tonight' : 'Through ' + DNAME[dowOf(S.to)] + ' ' + M + '/' + S.to) + '</small></div><div class="deals">' + saleDeals(S, day).map(function (d) { return dealRow(d, 'var(--ld-red)'); }).join('') + '</div></div>';
+        if (!S.replaces) html += '<details class="reg"><summary>Regular ' + DNAME[k] + ' deals also on today</summary><div class="deals">' + w.deals.map(function (d) { return dealRow(d, 'var(--' + k + ')'); }).join('') + '</div></details>';
       } else {
         html += '<div class="sec"><div class="st"><h4>' + esc(w.id) + '</h4><small>Every ' + DNAME[k] + ' in ' + MONTH_NAME + '</small></div><div class="deals">' + w.deals.filter(function (d) { return !(ph && d.b.length === 1 && d.b[0] === 'PUSHA'); }).map(function (d) { return dealRow(d, 'var(--' + k + ')'); }).join('') + '</div></div>';
       }
-      var ev = every(day).filter(forStore).filter(function (e) { return !(ph && e.pusha) && !e.house; });
+      var ev = every(day).filter(forStore).filter(function (e) { return !(ph && e.pusha) && !e.house && !covered(e, day); });
       if (ev.length) html += '<div class="sec"><div class="st"><h4>Every day</h4></div><div class="deals">' + ev.map(function (d) { return dealRow(d, d.pusha ? 'var(--pusha)' : 'var(--vp)'); }).join('') + '</div></div>';
       html += '<a class="allbtn" href="' + offersFor() + '" target="_blank" rel="noopener">Shop all deals at ' + esc(sName) + ' ' + arrow + '</a>';
       html += '<div class="fine">' + esc(D.modalFinePrint || '') + '</div></div>';

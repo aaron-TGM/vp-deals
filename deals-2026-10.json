@@ -109,14 +109,49 @@
         { "b": ["Smoken Promises"], "pct": "40%", "o": "Off 3.5g & 7g flower · Oct 9–11" },
         { "b": ["Smoken Promises"], "pct": "B2G1", "o": "Prerolls — buy 2, get 1 · Oct 9–11" }
       ]
+    },
+    {
+      "name": "Halloween Deals",
+      "short": "Halloween",
+      "from": 30,
+      "to": 31,
+      "replaces": true,
+      "tileHeadline": "Up to 50%|Halloween Deals",
+      "tileSecondary": "Kiva, Lost Farm & Camino 40% · PUSHA & STIIIZY vape BOGO · Kanha & Raw Garden prerolls 50%",
+      "lastDayHeadline": "50%|Made · Halloween",
+      "lastDaySecondary": "Kiva, Lost Farm & Camino 40% · PUSHA & STIIIZY vape BOGO · Alien Labs 40% cold chain",
+      "todayBig": "<em>Halloween Deals</em> are on — up to 50% off",
+      "todayBigLast": "<em>Happy Halloween</em> — Made is 50% off",
+      "todayRest": "Kiva, Lost Farm & Camino 40%, PUSHA & STIIIZY vape BOGO, Kanha & Raw Garden prerolls 50%, a free St. Ides gummy with any St. Ides beverage and a free WHOA 10mg edible with any edible purchase (while supplies last).",
+      "deals": [
+        { "b": ["Made"], "pct": "50%", "o": "Off Made 3.5g | Diamond AIO", "top": true, "only": 31 },
+        { "b": ["Kiva", "Lost Farm", "Camino"], "pct": "40%", "o": "Off · Fri 10/30 & Sat 10/31", "top": true },
+        { "b": ["Kanha", "Raw Garden"], "pct": "50%", "o": "Off Kanha · Raw Garden prerolls" },
+        { "b": ["PUSHA", "STIIIZY"], "pct": "BOGO", "o": "Vape BOGO — buy one, get one" },
+        { "b": ["St. Ides"], "pct": "FREE", "o": "Free St. Ides gummy with a St. Ides beverage purchase", "name": "St. Ides gummy" },
+        { "b": ["WHOA"], "pct": "FREE", "o": "Free WHOA 10mg edible with any edible purchase · while supplies last", "name": "WHOA 10mg edible" },
+        { "b": ["STIIIZY", "Dabwoods", "Jeeter", "PlugPlay"], "pct": "40%", "o": "Off" },
+        { "b": ["Muha Meds", "Papa's Herb", "Cowgirl", "West Coast Cure"], "pct": "40%", "o": "Off select items", "only": 30 },
+        { "b": ["Muha Meds", "Cowgirl"], "pct": "40%", "o": "Off select items", "only": 31 },
+        { "b": ["Alien Labs"], "pct": "40%", "o": "40% off cold chain · 30% off 3.5g & 10g", "only": 31 },
+        { "b": ["Timeless"], "pct": "40%", "o": "Off", "only": 31 },
+        { "b": ["Valley Pure"], "pct": "35%", "o": "Off prerolls & edibles" },
+        { "b": ["Maven", "LAX", "Vior"], "pct": "30%", "o": "Off", "only": 30 },
+        { "b": ["Heavy Hitters", "C4", "Juiced", "Daze Off"], "pct": "30%", "o": "Off", "only": 30 },
+        { "b": ["ICED", "Loud + Clear", "Flavorade", "Tiny Fires"], "pct": "30%", "o": "Off", "only": 30 },
+        { "b": ["C4", "Juiced", "Vior", "Tiny Fires"], "pct": "30%", "o": "Off", "only": 31 },
+        { "b": ["Smoken Promises", "Fig Farms", "Loud + Clear", "Geek THCX"], "pct": "30%", "o": "Off", "only": 31 },
+        { "b": ["St. Ides", "Pabst", "Not Your Father's", "Master Makers"], "pct": "30%", "o": "Off" }
+      ]
     }
   ],
-  "finePrint": "Exclusions apply · While supplies last · STIIIZY, Jeeter, Dabwoods & PlugPlay 40% off and Connected/Alien Labs straight rolls B2G1 are October only · Connected & Alien Labs flower deals are 3.5g and 10g only · Oct 9–11 sale pricing cannot be combined with daily deals. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
+  "finePrint": "Exclusions apply · While supplies last · STIIIZY, Jeeter, Dabwoods & PlugPlay 40% off and Connected/Alien Labs straight rolls B2G1 are October only · Connected & Alien Labs flower deals are 3.5g and 10g only · Halloween Deals 10/30–10/31; free St. Ides gummy & WHOA 10mg edible offers while supplies last · Oct 9–11 sale pricing cannot be combined with daily deals. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
   "modalFinePrint": "Exclusions apply. While supplies last. Connected & Alien Labs flower deals are 3.5g and 10g only. Discounts cannot be combined unless stated.",
   "everyday": {
     "deals": [
       { "b": ["Valley Pure"], "pct": "BOGO", "o": "1g BOGO $20 · 2g BOGO $30 · every day", "house": true, "name": "Valley Pure Badder Concentrate" },
       { "b": ["Valley Pure"], "pct": "2/$30", "o": "2 for $30 · every day", "house": true, "name": "Valley Pure Sauce Carts" },
+      { "b": ["Cowgirl"], "pct": "3/$30", "o": "3 for $30 · every day", "house": true, "name": "Cowgirl Vapes", "from": 27, "to": 31 },
       { "b": ["Sherbinskis"], "pct": "30%", "o": "Off Sherbinskis — the 15th of every month", "from": 15, "to": 15, "tile": "Sherbinskis 30% off (15th)" },
       { "b": ["Boutiq"], "pct": "30%", "o": "Off Boutiq — the last day of every month", "from": 31, "to": 31, "tile": "Boutiq 30% off (last day)" },
       { "b": ["Dabwoods"], "pct": "BOGO", "o": "Pods & kits — buy one, get one · through Sun Oct 4 · while supplies last", "from": 1, "to": 4, "tile": "Dabwoods pods & kits BOGO" },
@@ -130,20 +165,31 @@
   "house": {
     "brand": "Valley Pure",
     "logo": "https://aaron-tgm.github.io/vp-deals/logos/valley-pure.png",
-    "eyebrow": "Valley Pure house deals · every day",
-    "title": "Our own concentrates & carts",
-    "section": "Valley Pure house deals",
+    "eyebrow": "Valley Pure · every day",
+    "title": "House specials",
+    "section": "House specials",
     "items": [
       {
         "big": "BOGO",
-        "label": "Badder concentrate",
+        "label": "VP Badder concentrate",
         "detail": "1g $20 · 2g $30"
       },
       {
         "big": "2 for $30",
-        "label": "Sauce carts",
+        "label": "VP Sauce carts",
+        "detail": "Every day"
+      },
+      {
+        "big": "3 for $30",
+        "label": "Cowgirl vapes",
         "detail": "Every day"
       }
     ]
+  },
+  "theme": {
+    "name": "halloween",
+    "from": 27,
+    "to": 31,
+    "kicker": "Halloween Deals · Fri 10/30 & Sat 10/31"
   }
 }
