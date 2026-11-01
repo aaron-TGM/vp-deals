@@ -96,6 +96,8 @@
 #vp-deals .day .h em{font-style:normal;color:var(--c)}\
 #vp-deals .day .h.ld em{color:var(--ld-red)}\
 #vp-deals .day .h em.ph{color:var(--pusha)}\
+#vp-deals .day .h.tbd em{color:var(--tx-3)}\
+#vp-deals .tbdn{font-size:13px;color:var(--tx-2);background:var(--bg-2);border:1px dashed var(--line-2);padding:12px 14px}\
 #vp-deals .day .m{font-size:11.5px;color:var(--tx-2);line-height:1.35}\
 #vp-deals .day .more{margin-top:auto;font-size:11px;color:var(--acc);font-weight:700}\
 #vp-deals .day .hitb{position:absolute;right:8px;bottom:8px;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--acc);color:#fff;padding:3px 6px;display:none}\
@@ -293,7 +295,7 @@
     });
 
     /* ---------- legend ---------- */
-    $('vpLegend').innerHTML = DOWS.map(function (k) { return '<span><i style="--c:var(--' + k + ')"></i>' + esc(WEEK[k].id) + '</span>'; }).join('') +
+    $('vpLegend').innerHTML = DOWS.filter(function (k) { return WEEK[k].deals.length; }).map(function (k) { return '<span><i style="--c:var(--' + k + ')"></i>' + esc(WEEK[k].id) + '</span>'; }).join('') +
       SALES.map(function (S) { return '<span><i class="ld"></i>' + esc(S.name) + ' ' + M + '/' + S.from + '–' + M + '/' + S.to + '</span>'; }).join('');
 
     /* ---------- brand finder ---------- */
@@ -332,6 +334,7 @@
       if (FEATURE[day] === 'PUSHA') return { html: '<em class="ph">PUSHA</em> Pod BOGO', more: wk(day)[0] };
       if (S) return { html: split(day === S.to && S.lastDayHeadline ? S.lastDayHeadline : S.tileHeadline), cls: 'ld', sec: (day === S.to && S.lastDaySecondary) || S.tileSecondary };
       var t = wk(day)[0];
+      if (!t) return { html: '<em>New deals</em> coming soon', cls: 'tbd' };
       return { html: '<em>' + esc(t.pct) + '</em> ' + esc(t.b[0]) };
     }
     function buildGrid() {
@@ -346,6 +349,7 @@
         var promo = every(day).filter(forStore).filter(function (e) { return e.tile; }).map(function (e) { return '<b>' + esc(e.tile) + '</b>'; }).join(' · ');
         var secondary = (promo ? promo + ' · ' : '') + (h.sec || ((h.more ? esc(h.more.b[0] + ' ' + h.more.pct) + ' · ' : '') +
           w.deals.slice(1).filter(function (d) { return !(h.more && d.b[0] === 'PUSHA'); }).slice(0, 2).map(function (d) { return d.b.slice(0, 2).join(' · '); }).join(' · ')));
+        secondary = secondary.replace(/ · $/, '');
         b.innerHTML = '<div class="n"><b>' + day + '</b><span class="' + (day === todayNum ? 'tdy' : '') + '">' + (day === todayNum ? 'Today' : k) + '</span></div>' +
           '<div class="h ' + (h.cls || '') + '">' + h.html + '</div><div class="m">' + secondary + '</div>' +
           '<div class="more">See all ' + dayDeals(day).length + ' deals →</div><span class="hitb">On sale</span>';
@@ -361,6 +365,8 @@
       var el = $('vpToday'), day = todayNum || 1, k = dowOf(day), w = { id: WEEK[k].id, deals: wk(day) }, S = saleOn(day);
       el.style.setProperty('--c', S ? 'var(--ld-red)' : 'var(--' + k + ')');
       var label = todayNum ? 'Today · ' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day : 'Starts ' + DNAME[dowOf(1)] + ', ' + MONTH_NAME + ' 1';
+      var none = !S && !w.deals.length, hb = D.house && D.house.items ? D.house.items : [];
+      if (none) { el.style.setProperty('--c', 'var(--acc)'); el.innerHTML = '<div><div class="l">' + esc(label) + '</div><div class="big"><em>House specials</em> every day</div><div class="rest">' + esc(hb.map(function (i) { return i.label + ' ' + i.big; }).join(' · ') + (hb.length ? '. ' : '') + (D.tbdNote || "Today's full lineup is on your store's menu.")) + '</div></div><button type="button" class="go">See today\'s deals</button>'; el.querySelector('.go').addEventListener('click', function () { openDay(day); }); return; }
       var big = S ? (day === S.to && S.todayBigLast ? S.todayBigLast : S.todayBig) : '<em>' + esc(w.deals[0].pct) + '</em> ' + esc(w.deals[0].b[0]) + " — it's " + esc(w.id);
       var promoT = every(day).filter(forStore).filter(function (e) { return e.tile; }).map(function (e) { return e.tile; }).join(' · ');
       var rest = (promoT ? promoT + '. ' : '') + (S ? S.todayRest : 'Plus ' + w.deals.slice(1, 4).map(function (d) { return d.b.slice(0, 2).join(' & ') + ' ' + d.pct; }).join(', ') + ' and more.');
@@ -396,7 +402,8 @@
         html += '<div class="sec"><div class="st"><h4 class="ld">' + esc(S.name) + '</h4><small>' + (day === S.to ? 'Ends tonight' : 'Through ' + DNAME[dowOf(S.to)] + ' ' + M + '/' + S.to) + '</small></div><div class="deals">' + saleDeals(S, day).map(function (d) { return dealRow(d, 'var(--ld-red)'); }).join('') + '</div></div>';
         if (!S.replaces) html += '<details class="reg"><summary>Regular ' + DNAME[k] + ' deals also on today</summary><div class="deals">' + w.deals.map(function (d) { return dealRow(d, 'var(--' + k + ')'); }).join('') + '</div></details>';
       } else {
-        html += '<div class="sec"><div class="st"><h4>' + esc(w.id) + '</h4><small>Every ' + DNAME[k] + ' in ' + MONTH_NAME + '</small></div><div class="deals">' + w.deals.filter(function (d) { return !(ph && d.b.length === 1 && d.b[0] === 'PUSHA'); }).map(function (d) { return dealRow(d, 'var(--' + k + ')'); }).join('') + '</div></div>';
+        if (!w.deals.length) html += '<div class="sec"><div class="st"><h4>' + esc(w.id) + '</h4></div><p class="tbdn">' + esc(D.tbdNote || "Today's full lineup is on your store's menu.") + '</p></div>';
+        else html += '<div class="sec"><div class="st"><h4>' + esc(w.id) + '</h4><small>Every ' + DNAME[k] + ' in ' + MONTH_NAME + '</small></div><div class="deals">' + w.deals.filter(function (d) { return !(ph && d.b.length === 1 && d.b[0] === 'PUSHA'); }).map(function (d) { return dealRow(d, 'var(--' + k + ')'); }).join('') + '</div></div>';
       }
       var ev = every(day).filter(forStore).filter(function (e) { return !(ph && e.pusha) && !e.house && !covered(e, day); });
       if (ev.length) html += '<div class="sec"><div class="st"><h4>Every day</h4></div><div class="deals">' + ev.map(function (d) { return dealRow(d, d.pusha ? 'var(--pusha)' : 'var(--vp)'); }).join('') + '</div></div>';

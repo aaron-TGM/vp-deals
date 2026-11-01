@@ -1,0 +1,98 @@
+{
+  "month": "2026-11",
+  "title": "November",
+  "lede": "Every day has its own deal at Valley Pure. Tap any date to see what's on sale, then shop it at your store.",
+  "links": {
+    "base": "https://valleypure.net",
+    "storePrefix": true,
+    "brandPath": "/brands/{slug}",
+    "offersPath": "/offers",
+    "overrides": {}
+  },
+  "stores": [
+    { "id": "woodlake", "name": "Woodlake" },
+    { "id": "farmersville", "name": "Farmersville" },
+    { "id": "lindsay", "name": "Lindsay" },
+    { "id": "lemoore", "name": "Lemoore" },
+    { "id": "tulare", "name": "Tulare" }
+  ],
+  "defaultStore": "farmersville",
+  "featureDays": {},
+  "featureLabels": {},
+  "tbdNote": "This day's lineup posts soon. Your house specials and every-day deals below are on now, and your store's menu always has the latest.",
+  "week": {
+    "sun": {
+      "id": "Yummi Karma Sunday",
+      "deals": [
+        { "b": ["Yummi Karma"], "pct": "40%", "o": "Off Yummi Karma", "top": true },
+        { "b": ["PUSHA"], "pct": "BOGO", "o": "Buy one, get one" },
+        { "b": ["STIIIZY", "Jeeter", "Dabwoods"], "pct": "30%", "o": "Off" },
+        { "b": ["Care By Design", "Vior", "PlugPlay"], "pct": "30%", "o": "Off" },
+        { "b": ["Potters", "Duffy's", "C4", "Juiced"], "pct": "30%", "o": "Off select items" },
+        { "b": ["CAM", "Camino", "Kiva"], "pct": "30%", "o": "Off" }
+      ]
+    },
+    "mon": {
+      "id": "Monday Deals",
+      "deals": []
+    },
+    "tue": {
+      "id": "Tuesday Deals",
+      "deals": []
+    },
+    "wed": {
+      "id": "Wednesday Deals",
+      "deals": []
+    },
+    "thu": {
+      "id": "Thursday Deals",
+      "deals": []
+    },
+    "fri": {
+      "id": "Friday Deals",
+      "deals": []
+    },
+    "sat": {
+      "id": "Saturday Deals",
+      "deals": []
+    }
+  },
+  "sales": [],
+  "everyday": {
+    "deals": [
+      { "b": ["Valley Pure"], "pct": "BOGO", "o": "1g BOGO $20 · 2g BOGO $30 · every day", "house": true, "name": "Valley Pure Badder Concentrate" },
+      { "b": ["Valley Pure"], "pct": "2/$30", "o": "2 for $30 · every day", "house": true, "name": "Valley Pure Sauce Carts" },
+      { "b": ["Cowgirl"], "pct": "3/$30", "o": "3 for $30 · every day", "house": true, "name": "Cowgirl Vapes" },
+      { "b": ["Sherbinskis"], "pct": "30%", "o": "Off Sherbinskis — the 15th of every month", "from": 15, "to": 15, "tile": "Sherbinskis 30% off (15th)" },
+      { "b": ["Boutiq"], "pct": "30%", "o": "Off Boutiq — the last day of every month", "from": 30, "to": 30, "tile": "Boutiq 30% off (last day)" },
+      { "b": ["PlugPlay"], "pct": "30%", "o": "Off PlugPlay — every day through the end of the year", "notDow": [ "sun" ] },
+      { "b": ["Kanha"], "pct": "30%", "o": "Off Kanha — every day at Woodlake & Lindsay", "stores": [ "woodlake", "lindsay" ] }
+    ]
+  },
+  "house": {
+    "brand": "Valley Pure",
+    "logo": "https://aaron-tgm.github.io/vp-deals/logos/valley-pure.png",
+    "eyebrow": "Valley Pure · every day",
+    "title": "House specials",
+    "section": "House specials",
+    "items": [
+      {
+        "big": "BOGO",
+        "label": "VP Badder concentrate",
+        "detail": "1g $20 · 2g $30"
+      },
+      {
+        "big": "2 for $30",
+        "label": "VP Sauce carts",
+        "detail": "Every day"
+      },
+      {
+        "big": "3 for $30",
+        "label": "Cowgirl vapes",
+        "detail": "Every day"
+      }
+    ]
+  },
+  "finePrint": "Exclusions apply · While supplies last · PlugPlay 30% off every day through Dec 31 · Sherbinskis 30% off on the 15th · Boutiq 30% off on the last day of the month. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
+  "modalFinePrint": "Exclusions apply. While supplies last. Discounts cannot be combined unless stated."
+}

@@ -26,6 +26,7 @@ The calendar picks its data by the current month (Pacific time): it loads `deals
 - `month` — `"2026-10"` for October. Day-of-week math and the grid are computed from this.
 - `title` / `lede` — headline and intro sentence.
 - `week` — the seven recurring weekday deal lists. The first deal in each list is that day's headline on the calendar tile (`"top": true` gives it the highlighted row in the day view).
+  A weekday whose lineup isn't in yet can be left as `"deals": []`: its tiles read "New deals coming soon", the popup shows `tbdNote` plus the house and every-day deals, and it drops out of the legend until filled in.
 - `sales` — limited-time windows like the Labor Day Sale. Leave the array empty (`[]`) for a month with none. A deal with `"only": 7` shows on that date only. Add `"replaces": true` when the sale flyer is the whole lineup for those days (e.g. Halloween): the regular weekday list is hidden and every-day deals already covered by the sale are folded in; house deals always stay.
 - `everyday` — the always-on module (currently PUSHA Pod BOGO). `{price}` and `{store}` fill in per store.
 - `theme` — optional seasonal look, on only while today is in range: `"theme": { "name": "halloween", "from": 27, "to": 31, "kicker": "..." }`. Leave it out of next month's file and the normal look returns on its own. Preview any time with `?vptheme=halloween`.
