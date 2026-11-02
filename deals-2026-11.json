@@ -33,8 +33,14 @@
       ]
     },
     "mon": {
-      "id": "Monday Deals",
-      "deals": []
+      "id": "PUSHA Monday",
+      "deals": [
+        { "b": ["PUSHA"], "pct": "BOGO", "o": "Vape BOGO — buy one, get one", "top": true },
+        { "b": ["Jeeter", "Dabwoods", "STIIIZY", "PlugPlay"], "pct": "30%", "o": "Off select items" },
+        { "b": ["Geek THCX", "Vior"], "pct": "30%", "o": "Off" },
+        { "b": ["UpNorth", "Maven", "Tutti"], "pct": "30%", "o": "Off" },
+        { "b": ["C4", "Juiced", "Potters"], "pct": "30%", "o": "Off select items · Potters edibles" }
+      ]
     },
     "tue": {
       "id": "Tuesday Deals",
@@ -65,7 +71,7 @@
       { "b": ["Cowgirl"], "pct": "3/$30", "o": "3 for $30 · every day", "house": true, "name": "Cowgirl Vapes" },
       { "b": ["Sherbinskis"], "pct": "30%", "o": "Off Sherbinskis — the 15th of every month", "from": 15, "to": 15, "tile": "Sherbinskis 30% off (15th)" },
       { "b": ["Boutiq"], "pct": "30%", "o": "Off Boutiq — the last day of every month", "from": 30, "to": 30, "tile": "Boutiq 30% off (last day)" },
-      { "b": ["PlugPlay"], "pct": "30%", "o": "Off PlugPlay — every day through the end of the year", "notDow": [ "sun" ] },
+      { "b": ["PlugPlay"], "pct": "30%", "o": "Off PlugPlay — every day through the end of the year", "notDow": [ "sun", "mon" ] },
       { "b": ["Kanha"], "pct": "30%", "o": "Off Kanha — every day at Woodlake & Lindsay", "stores": [ "woodlake", "lindsay" ] }
     ]
   },
