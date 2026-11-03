@@ -43,20 +43,51 @@
       ]
     },
     "tue": {
-      "id": "Tuesday Deals",
-      "deals": []
+      "id": "Dime Tuesday",
+      "deals": [
+        { "b": ["Dime", "Lumpy's"], "pct": "40%", "o": "Off Dime Industries and Lumpy's Flowers", "top": true },
+        { "b": ["PUSHA"], "pct": "BOGO", "o": "Vape BOGO — buy one, get one" },
+        { "b": ["STIIIZY", "Jeeter", "Dabwoods", "PlugPlay"], "pct": "30%", "o": "Off select items" },
+        { "b": ["Terpwoods", "Papa's Herb"], "pct": "30%", "o": "Off" },
+        { "b": ["Kingroll", "Kingpen", "LAX", "Globs", "Potters"], "pct": "30%", "o": "Off Kingroll, Kingpen, LAX, Globs and Potters edibles" },
+        { "b": ["C4", "Juiced", "Vior"], "pct": "30%", "o": "Off select items" }
+      ]
     },
     "wed": {
-      "id": "Wednesday Deals",
-      "deals": []
+      "id": "Cake Wednesday",
+      "deals": [
+        { "b": ["Cake"], "pct": "40%", "o": "Off Cake — she hits different", "top": true },
+        { "b": ["PUSHA"], "pct": "BOGO", "o": "Vape BOGO — buy one, get one" },
+        { "b": ["STIIIZY", "Jeeter", "Dabwoods", "PlugPlay"], "pct": "30%", "o": "Off select items" },
+        { "b": ["Raw Garden", "Vior", "Dee Thai"], "pct": "30%", "o": "Off" },
+        { "b": ["Blem", "Lost Farm", "Maven"], "pct": "30%", "o": "Off" },
+        { "b": ["ABX", "C4", "Juiced", "Globs", "Potters"], "pct": "30%", "o": "Off select items · Potters edibles" }
+      ]
     },
     "thu": {
-      "id": "Thursday Deals",
-      "deals": []
+      "id": "Zetti × Connected Thursday",
+      "deals": [
+        { "b": ["Zetti"], "pct": "50%", "o": "Off Zetti", "top": true },
+        { "b": ["Connected"], "pct": "40%", "o": "40% off cold chain · 30% off 3.5g & 10g", "top": true },
+        { "b": ["Lumpy's", "PlugPlay"], "pct": "40%", "o": "Off Lumpy's Flowers and PlugPlay" },
+        { "b": ["PUSHA", "Almora"], "pct": "BOGO", "o": "Buy one, get one" },
+        { "b": ["STIIIZY", "Jeeter", "Dabwoods"], "pct": "30%", "o": "Off select items" },
+        { "b": ["C4", "Juiced", "Sense", "Vior"], "pct": "30%", "o": "Off select items" },
+        { "b": ["Sluggers", "CAM", "Potters"], "pct": "30%", "o": "Off Sluggers, CAM and Potters edibles" }
+      ]
     },
     "fri": {
-      "id": "Friday Deals",
-      "deals": []
+      "id": "Friday Stock-Up",
+      "deals": [
+        { "b": ["Cowgirl", "West Coast Cure"], "pct": "40%", "o": "Off select items", "top": true },
+        { "b": ["Valley Pure"], "pct": "35%", "o": "Off prerolls & edibles" },
+        { "b": ["PUSHA"], "pct": "BOGO", "o": "Vape BOGO — buy one, get one" },
+        { "b": ["STIIIZY", "Dabwoods", "Jeeter", "PlugPlay"], "pct": "30%", "o": "Off" },
+        { "b": ["Maven", "LAX", "Kanha", "Vior"], "pct": "30%", "o": "Off" },
+        { "b": ["Heavy Hitters", "C4", "Juiced", "Daze Off"], "pct": "30%", "o": "Off" },
+        { "b": ["ICED", "Loud + Clear", "Flavorade", "Potters"], "pct": "30%", "o": "Off ICED, Loud + Clear, Flavorade and Potters edibles" },
+        { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off" }
+      ]
     },
     "sat": {
       "id": "Saturday Deals",
@@ -71,7 +102,7 @@
       { "b": ["Cowgirl"], "pct": "3/$30", "o": "3 for $30 · every day", "house": true, "name": "Cowgirl Vapes" },
       { "b": ["Sherbinskis"], "pct": "30%", "o": "Off Sherbinskis — the 15th of every month", "from": 15, "to": 15, "tile": "Sherbinskis 30% off (15th)" },
       { "b": ["Boutiq"], "pct": "30%", "o": "Off Boutiq — the last day of every month", "from": 30, "to": 30, "tile": "Boutiq 30% off (last day)" },
-      { "b": ["PlugPlay"], "pct": "30%", "o": "Off PlugPlay — every day through the end of the year", "notDow": [ "sun", "mon" ] },
+      { "b": ["PlugPlay"], "pct": "30%", "o": "Off PlugPlay — every day through the end of the year", "notDow": [ "sun", "mon", "tue", "wed", "thu", "fri" ] },
       { "b": ["Kanha"], "pct": "30%", "o": "Off Kanha — every day at Woodlake & Lindsay", "stores": [ "woodlake", "lindsay" ] }
     ]
   },
