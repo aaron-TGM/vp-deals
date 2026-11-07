@@ -90,8 +90,18 @@
       ]
     },
     "sat": {
-      "id": "Saturday Deals",
-      "deals": []
+      "id": "Deep-Discount Saturday",
+      "deals": [
+        { "b": ["Made"], "pct": "50%", "o": "Off Made", "top": true },
+        { "b": ["Valley Pure", "PUSHA"], "pct": "BOGO", "o": "Buy one, get one · Valley Pure concentrates & PUSHA" },
+        { "b": ["Alien Labs"], "pct": "40%", "o": "40% off cold chain · 30% off 3.5g & 10g" },
+        { "b": ["Muha Meds", "Cowgirl"], "pct": "40%", "o": "Off select items" },
+        { "b": ["Valley Pure"], "pct": "35%", "o": "Off prerolls & edibles" },
+        { "b": ["STIIIZY", "Jeeter", "Dabwoods", "PlugPlay"], "pct": "30%", "o": "Off" },
+        { "b": ["Kanha", "C4", "Juiced", "Potters"], "pct": "30%", "o": "Off Kanha, C4, Juiced and Potters edibles" },
+        { "b": ["Smoken Promises", "Fig Farms", "Loud + Clear", "Geek THCX"], "pct": "30%", "o": "Off" },
+        { "b": ["St. Ides", "Pabst", "Not Your Father's", "Master Makers"], "pct": "30%", "o": "Off" }
+      ]
     }
   },
   "sales": [],
@@ -102,7 +112,6 @@
       { "b": ["Cowgirl"], "pct": "3/$30", "o": "3 for $30 · every day", "house": true, "name": "Cowgirl Vapes" },
       { "b": ["Sherbinskis"], "pct": "30%", "o": "Off Sherbinskis — the 15th of every month", "from": 15, "to": 15, "tile": "Sherbinskis 30% off (15th)" },
       { "b": ["Boutiq"], "pct": "30%", "o": "Off Boutiq — the last day of every month", "from": 30, "to": 30, "tile": "Boutiq 30% off (last day)" },
-      { "b": ["PlugPlay"], "pct": "30%", "o": "Off PlugPlay — every day through the end of the year", "notDow": [ "sun", "mon", "tue", "wed", "thu", "fri" ] },
       { "b": ["Kanha"], "pct": "30%", "o": "Off Kanha — every day at Woodlake & Lindsay", "stores": [ "woodlake", "lindsay" ] }
     ]
   },
