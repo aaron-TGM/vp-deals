@@ -296,7 +296,7 @@
 
     /* ---------- legend ---------- */
     $('vpLegend').innerHTML = DOWS.filter(function (k) { return WEEK[k].deals.length; }).map(function (k) { return '<span><i style="--c:var(--' + k + ')"></i>' + esc(WEEK[k].id) + '</span>'; }).join('') +
-      SALES.map(function (S) { return '<span><i class="ld"></i>' + esc(S.name) + ' ' + M + '/' + S.from + '–' + M + '/' + S.to + '</span>'; }).join('');
+      SALES.map(function (S) { return '<span><i class="ld"></i>' + esc(S.name) + ' ' + M + '/' + S.from + (S.to !== S.from ? '–' + M + '/' + S.to : '') + '</span>'; }).join('');
 
     /* ---------- brand finder ---------- */
     // per-store scoping: "stores": ["woodlake"] shows only there; "notStores": ["woodlake"] hides it there
@@ -378,6 +378,7 @@
     var ov = $('vpOv'), md = $('vpMd');
     var arrow = '<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4"/></svg>';
     var shopLinks = function (d) {
+      if (!d.b.length) return '<a class="shop" href="' + offersFor() + '" target="_blank" rel="noopener">Shop all deals ' + arrow + '</a>';
       return d.b.length === 1
         ? '<a class="shop" href="' + linkFor(d.b[0]) + '" target="_blank" rel="noopener">Shop ' + esc(d.b[0]) + ' ' + arrow + '</a>'
         : '<div class="shops">' + d.b.map(function (b) { return '<a href="' + linkFor(b) + '" target="_blank" rel="noopener">' + esc(b) + '</a>'; }).join('') + '</div>';
@@ -393,7 +394,7 @@
       sel = day;
       var k = dowOf(day), w = { id: WEEK[k].id, deals: wk(day) }, S = saleOn(day), ph = FEATURE[day] === 'PUSHA', sName = findStore(store).name;
       md.style.setProperty('--c', 'var(--' + k + ')');
-      var html = '<div class="band' + (S ? ' ld' : ph ? ' ph' : '') + '"><div><div class="k">' + esc(S ? S.name + ' · ' + MONTH_NAME.slice(0, 3) + ' ' + S.from + '–' + S.to : w.id) + '</div><div class="d" id="vpMdTitle">' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day + '</div><div class="s">' + (S ? 'Limited time · ' : '') + 'Shopping at ' + esc(sName) + '</div></div><button type="button" class="cl" aria-label="Close">×</button></div>';
+      var html = '<div class="band' + (S ? ' ld' : ph ? ' ph' : '') + '"><div><div class="k">' + esc(S ? S.name + ' · ' + MONTH_NAME.slice(0, 3) + ' ' + S.from + (S.to !== S.from ? '–' + S.to : '') : w.id) + '</div><div class="d" id="vpMdTitle">' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day + '</div><div class="s">' + (S ? 'Limited time · ' : '') + 'Shopping at ' + esc(sName) + '</div></div><button type="button" class="cl" aria-label="Close">×</button></div>';
       html += '<div class="nav"><button type="button" data-nav="-1"' + (day === 1 ? ' disabled style="visibility:hidden"' : '') + '>← ' + MONTH_NAME.slice(0, 3) + ' ' + (day - 1) + '</button><button type="button" data-nav="1"' + (day === daysIn ? ' disabled style="visibility:hidden"' : '') + '>' + MONTH_NAME.slice(0, 3) + ' ' + (day + 1) + ' →</button></div><div class="bd">';
       var hs = every(day).filter(forStore).filter(function (e) { return e.house; });
       if (hs.length) html += '<div class="sec"><div class="st"><h4 class="hs">' + esc((D.house && D.house.section) || 'House deals') + '</h4><small>Every day</small></div><div class="deals">' + hs.map(function (d) { return dealRow(d, 'var(--acc)').replace('class="deal', 'class="deal house-row'); }).join('') + '</div></div>';

@@ -104,7 +104,30 @@
       ]
     }
   },
-  "sales": [],
+  "sales": [
+    {
+      "name": "Veterans Day Deals",
+      "short": "Veterans Day",
+      "from": 11,
+      "to": 11,
+      "replaces": true,
+      "tileHeadline": "Vets 30%|Veterans Day Deals",
+      "tileSecondary": "Veterans get 30% off all day · STIIIZY & PUSHA vape BOGO · Papa's Herb & Potters 50% · Dabwoods, Cake, Kiva 40%",
+      "todayBig": "<em>Veterans Day Deals</em> — veterans get 30% off all day",
+      "todayRest": "Plus STIIIZY & PUSHA vape BOGO, Papa's Herb & Potters edibles 50% (Jeeter 50% for veterans), and Dabwoods, Cake, Camino, Lost Farm & Kiva 40%. Thank you for your service.",
+      "deals": [
+        { "b": [], "pct": "30%", "o": "Veterans get 30% off all day", "top": true, "name": "Veterans: 30% off all day" },
+        { "b": ["STIIIZY", "PUSHA"], "pct": "BOGO", "o": "Vape BOGO — buy one, get one", "top": true },
+        { "b": ["Papa's Herb", "Potters"], "pct": "50%", "o": "Off Papa's Herb and Potters edibles", "top": true },
+        { "b": ["Jeeter"], "pct": "50%", "o": "Off Jeeter for veterans only (30% off for everyone else)", "name": "Jeeter — veterans only" },
+        { "b": ["Dabwoods", "Cake", "Camino", "Lost Farm", "Kiva"], "pct": "40%", "o": "Off" },
+        { "b": ["Jeeter", "PlugPlay", "Raw Garden", "Maven"], "pct": "30%", "o": "Off" },
+        { "b": ["Vior", "Dee Thai", "Blem"], "pct": "30%", "o": "Off" },
+        { "b": ["ABX", "C4", "Juiced", "Globs"], "pct": "30%", "o": "Off select items" },
+        { "b": ["Pabst", "Not Your Father's"], "pct": "B2G1", "o": "Buy 2, get 1" }
+      ]
+    }
+  ],
   "everyday": {
     "deals": [
       { "b": ["Valley Pure"], "pct": "BOGO", "o": "1g BOGO $20 · 2g BOGO $30 · every day", "house": true, "name": "Valley Pure Badder Concentrate" },
@@ -139,6 +162,6 @@
       }
     ]
   },
-  "finePrint": "Exclusions apply · While supplies last · PlugPlay 30% off every day through Dec 31 · Sherbinskis 30% off on the 15th · Boutiq 30% off on the last day of the month. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
+  "finePrint": "Exclusions apply · While supplies last · Veterans Day Deals Wed 11/11 · Jeeter 50% off is for veterans only · PlugPlay 30% off every day through Dec 31 · Sherbinskis 30% off on the 15th · Boutiq 30% off on the last day of the month. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
   "modalFinePrint": "Exclusions apply. While supplies last. Discounts cannot be combined unless stated."
 }
