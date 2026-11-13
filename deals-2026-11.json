@@ -106,6 +106,25 @@
   },
   "sales": [
     {
+      "name": "Alien Labs Takeover",
+      "short": "Alien Labs Takeover",
+      "legend": "Alien Labs Takeover 11/14 · Tulare & Farmersville",
+      "from": 14,
+      "to": 14,
+      "stores": ["tulare", "farmersville"],
+      "colors": ["#2E9E3E", "#111111"],
+      "tileHeadline": "40%|Alien Labs Takeover",
+      "tileSecondary": "Alien Labs flower 40% · free battery w/ cold chain · free preroll (first 100) · free Travelin' Tom's coffee",
+      "todayBig": "<em>Alien Labs Takeover</em> — 40% off flower",
+      "todayRest": "Free battery with a cold chain cart, a free preroll for the first 100 customers with an Alien Labs vape or flower purchase, and free Travelin' Tom's coffee with any Alien Labs purchase. Tulare 12–3pm · Farmersville 4–7pm. All the regular Saturday deals are on too.",
+      "deals": [
+        { "b": ["Alien Labs"], "pct": "40%", "o": "Off Alien Labs flower — 3.5g & 10g", "top": true },
+        { "b": ["Alien Labs"], "pct": "FREE", "o": "Buy an Alien Labs cold chain cart, get a free battery", "name": "Free battery with a cold chain cart" },
+        { "b": ["Alien Labs"], "pct": "FREE", "o": "First 100 customers get a free preroll with an Alien Labs vape or flower purchase", "name": "Free preroll — first 100 customers" },
+        { "b": ["Alien Labs"], "pct": "FREE", "o": {"default": "Travelin' Tom's Coffee Truck is here — make an Alien Labs purchase and get a free beverage of your choice", "tulare": "Travelin' Tom's Coffee Truck is at Tulare 12–3pm — make an Alien Labs purchase and get a free beverage of your choice", "farmersville": "Travelin' Tom's Coffee Truck is at Farmersville 4–7pm — make an Alien Labs purchase and get a free beverage of your choice"}, "name": "Free coffee from Travelin' Tom's" }
+      ]
+    },
+    {
       "name": "Veterans Day Deals",
       "short": "Veterans Day",
       "from": 11,
@@ -162,6 +181,6 @@
       }
     ]
   },
-  "finePrint": "Exclusions apply · While supplies last · Veterans Day Deals Wed 11/11 · Jeeter 50% off is for veterans only · PlugPlay 30% off every day through Dec 31 · Sherbinskis 30% off on the 15th · Boutiq 30% off on the last day of the month. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
+  "finePrint": "Exclusions apply · While supplies last · Veterans Day Deals Wed 11/11 · Jeeter 50% off is for veterans only · Alien Labs Takeover Sat 11/14 at Tulare (12–3pm) & Farmersville (4–7pm) only; free preroll for the first 100 customers, battery and coffee offers while supplies last · PlugPlay 30% off every day through Dec 31 · Sherbinskis 30% off on the 15th · Boutiq 30% off on the last day of the month. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
   "modalFinePrint": "Exclusions apply. While supplies last. Discounts cannot be combined unless stated."
 }

@@ -241,7 +241,8 @@
     var MONTH_NAME = new Date(Y, M - 1, 1).toLocaleString('en-US', { month: 'long' });
     var dowOf = function (day) { return DOWS[(firstDow + day - 1) % 7]; };
     var WEEK = D.week, SALES = D.sales || [], EVERY = (D.everyday && D.everyday.deals) || [], FEATURE = D.featureDays || {};
-    var saleOn = function (day) { for (var i = 0; i < SALES.length; i++) if (day >= SALES[i].from && day <= SALES[i].to) return SALES[i]; return null; };
+    var saleOn = function (day) { for (var i = 0; i < SALES.length; i++) if (day >= SALES[i].from && day <= SALES[i].to && (!SALES[i].stores || SALES[i].stores.indexOf(store) !== -1)) return SALES[i]; return null; };
+    var saleColors = function (el, S) { var c = S && S.colors; if (c) { el.style.setProperty('--ld-red', c[0]); el.style.setProperty('--ld-blue', c[1] || c[0]); } else { el.style.removeProperty('--ld-red'); el.style.removeProperty('--ld-blue'); } };
     var every = function (day) { return EVERY.filter(function (e) { return (e.from == null || (day >= e.from && day <= e.to)) && !(e.notDow && e.notDow.indexOf(dowOf(day)) !== -1); }); };
 
     /* ---------- links ---------- */
@@ -296,7 +297,7 @@
 
     /* ---------- legend ---------- */
     $('vpLegend').innerHTML = DOWS.filter(function (k) { return WEEK[k].deals.length; }).map(function (k) { return '<span><i style="--c:var(--' + k + ')"></i>' + esc(WEEK[k].id) + '</span>'; }).join('') +
-      SALES.map(function (S) { return '<span><i class="ld"></i>' + esc(S.name) + ' ' + M + '/' + S.from + (S.to !== S.from ? '–' + M + '/' + S.to : '') + '</span>'; }).join('');
+      SALES.map(function (S) { return '<span><i class="ld"' + (S.colors ? ' style="--ld-red:' + esc(S.colors[0]) + ';--ld-blue:' + esc(S.colors[1] || S.colors[0]) + '"' : '') + '></i>' + esc(S.legend || S.name) + ' ' + M + '/' + S.from + (S.to !== S.from ? '–' + M + '/' + S.to : '') + '</span>'; }).join('');
 
     /* ---------- brand finder ---------- */
     // per-store scoping: "stores": ["woodlake"] shows only there; "notStores": ["woodlake"] hides it there
@@ -343,7 +344,7 @@
       for (var i = 0; i < firstDow; i++) blank();
       for (var day = 1; day <= daysIn; day++) (function (day) {
         var k = dowOf(day), w = { deals: wk(day) }, b = document.createElement('button'); b.type = 'button';
-        b.className = 'day' + (saleOn(day) ? ' ld' : ''); b.dataset.day = day; b.style.setProperty('--c', 'var(--' + k + ')');
+        b.className = 'day' + (saleOn(day) ? ' ld' : ''); b.dataset.day = day; b.style.setProperty('--c', 'var(--' + k + ')'); saleColors(b, saleOn(day));
         b.setAttribute('aria-label', MONTH_NAME + ' ' + day + ', ' + DNAME[k] + ' deals');
         var h = tileHero(day);
         var promo = every(day).filter(forStore).filter(function (e) { return e.tile; }).map(function (e) { return '<b>' + esc(e.tile) + '</b>'; }).join(' · ');
@@ -363,7 +364,7 @@
     /* ---------- today card ---------- */
     function renderToday() {
       var el = $('vpToday'), day = todayNum || 1, k = dowOf(day), w = { id: WEEK[k].id, deals: wk(day) }, S = saleOn(day);
-      el.style.setProperty('--c', S ? 'var(--ld-red)' : 'var(--' + k + ')');
+      el.style.setProperty('--c', S ? 'var(--ld-red)' : 'var(--' + k + ')'); saleColors(el, S);
       var label = todayNum ? 'Today · ' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day : 'Starts ' + DNAME[dowOf(1)] + ', ' + MONTH_NAME + ' 1';
       var none = !S && !w.deals.length, hb = D.house && D.house.items ? D.house.items : [];
       if (none) { el.style.setProperty('--c', 'var(--acc)'); el.innerHTML = '<div><div class="l">' + esc(label) + '</div><div class="big"><em>House specials</em> every day</div><div class="rest">' + esc(hb.map(function (i) { return i.label + ' ' + i.big; }).join(' · ') + (hb.length ? '. ' : '') + (D.tbdNote || "Today's full lineup is on your store's menu.")) + '</div></div><button type="button" class="go">See today\'s deals</button>'; el.querySelector('.go').addEventListener('click', function () { openDay(day); }); return; }
@@ -393,7 +394,7 @@
     function openDay(day) {
       sel = day;
       var k = dowOf(day), w = { id: WEEK[k].id, deals: wk(day) }, S = saleOn(day), ph = FEATURE[day] === 'PUSHA', sName = findStore(store).name;
-      md.style.setProperty('--c', 'var(--' + k + ')');
+      md.style.setProperty('--c', 'var(--' + k + ')'); saleColors(md, S);
       var html = '<div class="band' + (S ? ' ld' : ph ? ' ph' : '') + '"><div><div class="k">' + esc(S ? S.name + ' · ' + MONTH_NAME.slice(0, 3) + ' ' + S.from + (S.to !== S.from ? '–' + S.to : '') : w.id) + '</div><div class="d" id="vpMdTitle">' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day + '</div><div class="s">' + (S ? 'Limited time · ' : '') + 'Shopping at ' + esc(sName) + '</div></div><button type="button" class="cl" aria-label="Close">×</button></div>';
       html += '<div class="nav"><button type="button" data-nav="-1"' + (day === 1 ? ' disabled style="visibility:hidden"' : '') + '>← ' + MONTH_NAME.slice(0, 3) + ' ' + (day - 1) + '</button><button type="button" data-nav="1"' + (day === daysIn ? ' disabled style="visibility:hidden"' : '') + '>' + MONTH_NAME.slice(0, 3) + ' ' + (day + 1) + ' →</button></div><div class="bd">';
       var hs = every(day).filter(forStore).filter(function (e) { return e.house; });
