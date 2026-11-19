@@ -148,7 +148,7 @@
 #vp-deals details.reg .deals{margin-top:10px}\
 #vp-deals .foot{margin-top:20px;font-size:11.5px;color:var(--tx-3);line-height:1.5}\
 #vp-deals .err{padding:24px;color:var(--tx-2);text-align:center}\
-/* ---------- #vp-deals.th-halloweenalloween theme (data "theme" block; auto on/off by date) ---------- */\
+/* ---------- seasonal themes (data "theme" block; auto on/off by date, optional "stores") ---------- */\
 #vp-deals.th-halloween{--bg:#0B090C;--bg-2:#16121A;--bg-3:#211A26;--line:#2E2534;--line-2:#4B3B55;--tx:#F5EEE6;--tx-2:#D2C6BB;--tx-3:#9A8E98;--vp:#FF7518;--vp-2:#FF9A3D;--acc:#FF9A3D;--ink:#0B090C;--ld-red:#FF7518;--ld-blue:#9B5DE5;--mon:#FF7518;--tue:#9B5DE5;--wed:#7BD148;--thu:#FF7518;--fri:#9B5DE5;--sat:#FF7518;--sun:#7BD148;--shadow:0 10px 34px rgba(255,117,24,.22);position:relative;padding-top:72px;background:radial-gradient(1200px 420px at 50% -120px,rgba(255,117,24,.18),transparent 70%),var(--bg);color:var(--tx);overflow:hidden}\
 #vp-deals.th-halloween .drip{position:absolute;top:0;left:0;width:100%;height:56px;display:block}\
 #vp-deals.th-halloween .hd{position:relative}\
@@ -210,6 +210,86 @@
 #vp-deals.th-halloween details.reg{border-color:var(--line-2)}\
 @media (max-width:640px){#vp-deals.th-halloween{padding-top:60px}#vp-deals.th-halloween .drip{height:42px}#vp-deals.th-halloween .bats{left:auto;right:0;top:-46px;width:110px;height:40px}#vp-deals.th-halloween .bats i:nth-child(3){display:none}}\
 @media (prefers-reduced-motion:reduce){#vp-deals.th-halloween .bats i{animation:none}}\
+#vp-deals.th-anniversary{--bg:#0B090C;--bg-2:#16121A;--bg-3:#211A26;--line:#2E2534;--line-2:#4B3B55;--tx:#F5EEE6;--tx-2:#D2C6BB;--tx-3:#9A8E98;--vp:#FF7A1A;--vp-2:#FFB547;--acc:#FFB547;--ink:#0B090C;--ld-red:#FF7A1A;--ld-blue:#4CAF50;--mon:#FF7A1A;--tue:#4CAF50;--wed:#E0457B;--thu:#FFB547;--fri:#4CAF50;--sat:#FF7A1A;--sun:#E0457B;--shadow:0 10px 34px rgba(255,117,24,.22);position:relative;padding-top:72px;background:radial-gradient(1200px 420px at 50% -120px,rgba(255,122,26,.20),transparent 70%),var(--bg);color:var(--tx);overflow:hidden}\
+#vp-deals.th-anniversary .drip{position:absolute;top:0;left:0;width:100%;height:56px;display:block}\
+#vp-deals.th-anniversary .hd{position:relative}\
+#vp-deals.th-anniversary .kicker{color:var(--vp);text-shadow:0 0 12px rgba(255,117,24,.45)}\
+#vp-deals.th-anniversary h2.ttl{color:#fff;text-shadow:0 0 18px rgba(255,117,24,.55),0 2px 0 #000}\
+#vp-deals.th-anniversary h2.ttl span{color:var(--vp)}\
+#vp-deals.th-anniversary .stores button{background:var(--bg-2);border-color:var(--vp);color:var(--vp)}\
+#vp-deals.th-anniversary .stores button:hover{background:var(--bg-3)}\
+#vp-deals.th-anniversary .stores button[aria-pressed="true"]{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-anniversary .today{background:linear-gradient(135deg,#1C1222,#0B090C 70%);border:2px solid var(--vp);color:#fff}\
+#vp-deals.th-anniversary .today .big em{color:var(--vp)}\
+#vp-deals.th-anniversary .today .go{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-anniversary .today .go:hover{background:#fff;color:var(--ink)}\
+#vp-deals.th-anniversary .house{background:var(--bg-2);border-color:var(--vp)}\
+#vp-deals.th-anniversary .house .lg{background:#000;border:1px solid var(--line-2)}\
+#vp-deals.th-anniversary .house .ey{color:var(--vp)}\
+#vp-deals.th-anniversary .house .tt{color:#fff}\
+#vp-deals.th-anniversary .house .it{background:var(--bg-3);border-left-color:var(--vp)}\
+#vp-deals.th-anniversary .house .it b{color:var(--vp)}\
+#vp-deals.th-anniversary .house .it em{color:var(--tx)}\
+#vp-deals.th-anniversary .house .go{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-anniversary .house .go:hover{background:#fff;color:var(--ink)}\
+#vp-deals.th-anniversary .sec .st h4.hs{color:var(--vp)}\
+#vp-deals.th-anniversary .deal.house-row{background:var(--bg-3);border-color:var(--vp);border-left-color:var(--vp)}\
+#vp-deals.th-anniversary .finder select{background-color:var(--bg-2);color:var(--vp);border-color:var(--vp);background-image:url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'8\'%3E%3Cpath d=\'M1 1l5 5 5-5\' fill=\'none\' stroke=\'%23FF7518\' stroke-width=\'2\'/%3E%3C/svg%3E")}\
+#vp-deals.th-anniversary .finder select option{background:#16121A;color:#F5EEE6}\
+#vp-deals.th-anniversary .earlier{background:var(--bg-2)}\
+#vp-deals.th-anniversary .dows div{color:var(--tx-3)}\
+#vp-deals.th-anniversary .day{background:var(--bg-2);border-color:var(--line)}\
+#vp-deals.th-anniversary .day.blank{background:transparent;border-color:var(--line)}\
+#vp-deals.th-anniversary .day .n b{color:#fff}\
+#vp-deals.th-anniversary .day .n span.tdy{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-anniversary .day.is-today{border-color:var(--vp);box-shadow:0 0 0 2px var(--vp),0 0 22px rgba(255,117,24,.35)}\
+#vp-deals.th-anniversary .day.ld{background:linear-gradient(160deg,#2A1530,#16121A 60%);border-color:var(--vp)}\
+#vp-deals.th-anniversary .day.ld::before{background:repeating-linear-gradient(90deg,var(--ld-red) 0 12px,#000 12px 16px,var(--ld-blue) 16px 28px,#000 28px 32px)}\
+#vp-deals.th-anniversary .day.ld .h em{color:var(--vp)}\
+#vp-deals.th-anniversary .day.hit{background:#2A1A0F;border-color:var(--vp)}\
+#vp-deals.th-anniversary .day .hitb{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-anniversary .ov{background:rgba(0,0,0,.72)}\
+#vp-deals.th-anniversary .md{background:var(--bg);border-color:var(--vp);color:var(--tx)}\
+#vp-deals.th-anniversary .md .band{background:#000;border-bottom:4px solid var(--c,var(--vp))}\
+#vp-deals.th-anniversary .md .band.ld{background:linear-gradient(100deg,#3A1A05,#2A1540);border-bottom-color:var(--vp)}\
+#vp-deals.th-anniversary .md .band .d{color:#fff}\
+#vp-deals.th-anniversary .md .nav button:hover{color:var(--vp)}\
+#vp-deals.th-anniversary .sec .st h4{color:#fff}\
+#vp-deals.th-anniversary .deal{background:var(--bg-2);border-color:var(--line)}\
+#vp-deals.th-anniversary .deal.top{background:linear-gradient(90deg,color-mix(in srgb,var(--c,var(--vp)) 22%,#16121A),#16121A);border-color:var(--c,var(--vp))}\
+#vp-deals.th-anniversary .deal .shop,#vp-deals.th-anniversary .md .allbtn{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-anniversary .deal .shop:hover,#vp-deals.th-anniversary .md .allbtn:hover{background:#fff;color:var(--ink)}\
+#vp-deals.th-anniversary .shops a{border-color:var(--vp);color:var(--vp)}\
+#vp-deals.th-anniversary .shops a:hover{background:var(--vp);color:var(--ink)}\
+#vp-deals.th-anniversary details.reg{border-color:var(--line-2)}\
+@media (max-width:640px){#vp-deals.th-anniversary{padding-top:60px}#vp-deals.th-anniversary .drip{height:42px}}\
+#vp-deals .drip,#vp-deals .bats{display:none}\
+#vp-deals.th-halloween .bats{display:block}\
+#vp-deals.th-anniversary .drip .d1{fill:#FF7A1A}#vp-deals.th-anniversary .drip .d2{fill:#4CAF50;opacity:.95}\
+#vp-deals.th-anniversary .ttl{letter-spacing:.1em}\
+#vp-deals .evt{position:relative;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;margin:0 0 18px;padding:22px 24px;background:radial-gradient(600px 220px at 0% 0%,rgba(255,122,26,.35),transparent 70%),linear-gradient(135deg,#1A1208,#0B0A08 65%);color:#fff;border:2px solid #FF7A1A;box-shadow:0 0 0 4px rgba(255,122,26,.15),0 14px 40px rgba(255,122,26,.25);overflow:hidden;cursor:pointer;text-align:left;width:100%}\
+#vp-deals .evt::after{content:"";position:absolute;inset:auto 0 0 0;height:6px;background:repeating-linear-gradient(90deg,#FF7A1A 0 18px,#4CAF50 18px 36px,#E0457B 36px 54px)}\
+#vp-deals .evt-ey{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:#FFB547}\
+#vp-deals .evt-h{font-weight:900;font-size:40px;line-height:1;letter-spacing:.02em;text-transform:uppercase;margin:8px 0 6px;color:#fff;text-shadow:0 0 22px rgba(255,122,26,.6)}\
+#vp-deals .evt-h em{font-style:normal;color:#FF7A1A}\
+#vp-deals .evt-s{font-size:15px;font-weight:600;color:rgba(255,255,255,.9);max-width:52ch}\
+#vp-deals .evt-x{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}\
+#vp-deals .evt-x span{border:1.5px solid rgba(255,181,71,.6);color:#FFB547;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px}\
+#vp-deals .evt-r{text-align:center;min-width:190px}\
+#vp-deals .evt-st{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:rgba(255,255,255,.7)}\
+#vp-deals .evt-cd{font-weight:900;font-size:30px;line-height:1.05;color:#FF7A1A;margin:6px 0 12px;font-variant-numeric:tabular-nums}\
+#vp-deals .evt-go{display:inline-block;background:#FF7A1A;color:#0B0A08;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:11px 14px}\
+#vp-deals .evt.live{border-color:#4CAF50;box-shadow:0 0 0 4px rgba(76,175,80,.2),0 14px 40px rgba(76,175,80,.3)}\
+#vp-deals .evt.live .evt-cd{color:#4CAF50}\
+#vp-deals .evt.live .evt-st::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#4CAF50;margin-right:7px;vertical-align:1px;animation:vpPulse 1.2s ease-in-out infinite}\
+@keyframes vpPulse{0%,100%{box-shadow:0 0 0 0 rgba(76,175,80,.7)}50%{box-shadow:0 0 0 7px rgba(76,175,80,0)}}\
+#vp-deals .md .evt{margin:4px 0 0;padding:16px 16px 20px;grid-template-columns:1fr;cursor:default}\
+#vp-deals .md .evt .evt-h{font-size:28px}\
+#vp-deals .md .evt .evt-r{text-align:left;min-width:0}\
+#vp-deals .md .evt .evt-cd{font-size:20px;margin:4px 0 0}\
+#vp-deals .md .evt .evt-go{display:none}\
+@media (max-width:640px){#vp-deals .evt{grid-template-columns:1fr;padding:18px 16px 22px}#vp-deals .evt-h{font-size:30px}#vp-deals .evt-r{text-align:left;min-width:0}#vp-deals .evt-cd{font-size:24px}}\
+@media (prefers-reduced-motion:reduce){#vp-deals .evt.live .evt-st::before{animation:none}}\
 @media (max-width:900px){#vp-deals .feat{grid-template-columns:1fr}#vp-deals h2.ttl{font-size:30px}}\
 @media (max-width:640px){#vp-deals .house .items{grid-template-columns:1fr}#vp-deals{padding:20px 12px 48px}#vp-deals .dows{display:none}#vp-deals .grid{grid-template-columns:1fr 1fr}#vp-deals .day.blank{display:none}#vp-deals .day{min-height:116px}#vp-deals .earlier.on{display:flex}#vp-deals .legend{display:none}#vp-deals .day.past.collapsed{display:none}#vp-deals .today{grid-template-columns:1fr}#vp-deals .today .go{text-align:center}#vp-deals .deal{grid-template-columns:52px 1fr}#vp-deals .deal .shop,#vp-deals .shops{grid-column:2;justify-self:start;justify-content:flex-start;max-width:none}#vp-deals .md{top:auto;bottom:0;left:0;transform:none;width:100%;max-height:90vh}}\
 @media (prefers-reduced-motion:reduce){#vp-deals *{transition:none !important}}';
@@ -268,16 +348,27 @@
     })();
 
     /* ---------- seasonal theme: "theme": { "name": "halloween", "from": 27, "to": 31 } — on only while today is in range ---------- */
-    var TH = D.theme && todayNum && todayNum >= D.theme.from && todayNum <= D.theme.to ? D.theme : null;
-    try { var tq = new URLSearchParams(location.search).get('vptheme'); if (tq && D.theme && tq === D.theme.name) TH = D.theme; } catch (e) {} // preview: ?vptheme=halloween
-    Array.prototype.slice.call(host.classList).forEach(function (c) { if (c.indexOf('th-') === 0) host.classList.remove(c); });
-    if (TH) host.classList.add('th-' + TH.name);
+    // "stores": ["farmersville"] limits a theme to those stores; it's re-checked whenever the store changes
+    var themePreview = null; try { themePreview = new URLSearchParams(location.search).get('vptheme'); } catch (e) {} // preview: ?vptheme=halloween
+    var themeNow = function () {
+      var T = D.theme; if (!T) return null;
+      if (themePreview && themePreview === T.name) return T;
+      return todayNum && todayNum >= T.from && todayNum <= T.to && (!T.stores || T.stores.indexOf(store) !== -1) ? T : null;
+    };
+    var TH = themeNow();
+    var applyTheme = function () {
+      TH = themeNow();
+      Array.prototype.slice.call(host.classList).forEach(function (c) { if (c.indexOf('th-') === 0) host.classList.remove(c); });
+      if (TH) host.classList.add('th-' + TH.name);
+      var k = host.querySelector('#vpKicker'); if (k) k.textContent = TH && TH.kicker ? TH.kicker : 'Valley Pure · Daily deals';
+    };
     var bat = '<svg viewBox="0 0 64 28" aria-hidden="true"><path fill="currentColor" d="M32 9c1.3-3 2.6-4.2 2.6-4.2l.9 3.4c1.6-.4 2.9-.1 3.9.5 2.6-4.4 9-7.2 15.6-6.4-2.4 1.6-3.4 3.8-2.8 6 2.8-.6 6.1.4 8.8 2.8-3.4.1-5.5 1.6-6 3.9-2.9-1.2-6.4-.4-8.7 1.9-1.4-2-3.9-3-6.2-2.4C38.7 18 35.6 23 32 26c-3.6-3-6.7-8-8.1-11.5-2.3-.6-4.8.4-6.2 2.4-2.3-2.3-5.8-3.1-8.7-1.9-.5-2.3-2.6-3.8-6-3.9 2.7-2.4 6-3.4 8.8-2.8.6-2.2-.4-4.4-2.8-6 6.6-.8 13 2 15.6 6.4 1-.6 2.3-.9 3.9-.5l.9-3.4S30.7 6 32 9z"/></svg>';
-    var drip = '<svg class="drip" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path fill="#FF7518" d="M0 0h1200v14c-22 0-26 30-44 30s-18-26-40-26-20 12-42 12-24 26-46 26-18-36-46-36-30 16-52 16-20-22-44-22-28 40-50 40-16-34-40-34-28 14-52 14-24-24-46-24-22 30-46 30-20-20-44-20-26 26-50 26-22-34-46-34-26 12-50 12-22 22-46 22-24-28-48-28-26 16-50 16-20-14-44-14-26 34-50 34-24-30-48-30-22 10-46 10-24 24-48 24-22-26-46-26-26 8-50 8-22 16-46 16-24-20-48-20-26 22-50 22-22-26-46-26-14 4-20 4z"/><path fill="#9B5DE5" opacity=".9" d="M0 0h1200v6c-30 0-34 18-60 18s-30-12-58-12-30 20-56 20-28-16-54-16-36 10-60 10-26 22-52 22-30-24-58-24-28 14-54 14-30-10-58-10-26 26-52 26-32-22-60-22-28 10-54 10-28 18-56 18-26-24-52-24-32 14-58 14-28-8-56-8-26 20-52 20-30-18-58-18-26 8-54 8-30 14-58 14-24-14-50-14-12 2-10 2z"/></svg>';
+    var drip = '<svg class="drip" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path class="d1" fill="#FF7518" d="M0 0h1200v14c-22 0-26 30-44 30s-18-26-40-26-20 12-42 12-24 26-46 26-18-36-46-36-30 16-52 16-20-22-44-22-28 40-50 40-16-34-40-34-28 14-52 14-24-24-46-24-22 30-46 30-20-20-44-20-26 26-50 26-22-34-46-34-26 12-50 12-22 22-46 22-24-28-48-28-26 16-50 16-20-14-44-14-26 34-50 34-24-30-48-30-22 10-46 10-24 24-48 24-22-26-46-26-26 8-50 8-22 16-46 16-24-20-48-20-26 22-50 22-22-26-46-26-14 4-20 4z"/><path class="d2" fill="#9B5DE5" opacity=".9" d="M0 0h1200v6c-30 0-34 18-60 18s-30-12-58-12-30 20-56 20-28-16-54-16-36 10-60 10-26 22-52 22-30-24-58-24-28 14-54 14-30-10-58-10-26 26-52 26-32-22-60-22-28 10-54 10-28 18-56 18-26-24-52-24-32 14-58 14-28-8-56-8-26 20-52 20-30-18-58-18-26 8-54 8-30 14-58 14-24-14-50-14-12 2-10 2z"/></svg>';
     host.innerHTML =
-      (TH ? drip : '') +
-      '<div class="in"><header class="hd"><div><div class="kicker">' + esc(TH && TH.kicker ? TH.kicker : 'Valley Pure · Daily deals') + '</div>' + (TH ? '<div class="bats"><i>' + bat + '</i><i>' + bat + '</i><i>' + bat + '</i></div>' : '') + '<h2 class="ttl">' + esc(D.title || MONTH_NAME) + ' <span>Deals</span></h2><p class="lede">' + esc(D.lede || '') + '</p></div>' +
+      (D.theme ? drip : '') +
+      '<div class="in"><header class="hd"><div><div class="kicker" id="vpKicker">Valley Pure · Daily deals</div>' + (D.theme && D.theme.name === 'halloween' ? '<div class="bats"><i>' + bat + '</i><i>' + bat + '</i><i>' + bat + '</i></div>' : '') + '<h2 class="ttl">' + esc(D.title || MONTH_NAME) + ' <span>Deals</span></h2><p class="lede">' + esc(D.lede || '') + '</p></div>' +
       '<div class="store"><div class="l">Shopping at</div><div class="stores" id="vpStores" role="group" aria-label="Choose your store"></div></div></header>' +
+      '<div id="vpEvent"></div>' +
       '<div class="feat' + ((D.everyday && D.everyday.brand) || D.house ? '' : ' one') + '"><div class="today" id="vpToday"></div>' +
       (D.house && !(D.everyday && D.everyday.brand) ? '<div class="house"><div class="lg">' + (D.house.logo ? '<img src="' + esc(D.house.logo) + '" alt="Valley Pure">' : '') + '</div><div><div class="ey">' + esc(D.house.eyebrow || '') + '</div><div class="tt">' + esc(D.house.title || '') + '</div></div><div class="items">' + (D.house.items || []).map(function (i) { return '<div class="it"><b>' + esc(i.big) + '</b><span>' + esc(i.label) + '</span><em>' + esc(i.detail || '') + '</em></div>'; }).join('') + '</div><a class="go" id="vpHouseGo" target="_blank" rel="noopener" href="#">Shop ' + esc(D.house.brand) + ' &rarr;</a></div>' : '') +
       ((D.everyday && D.everyday.brand) ? '<div class="pusha"><div><div class="brand cond">' + esc(D.everyday.brand) + '</div><div class="what cond">' + esc(D.everyday.headline) + '</div><div class="sub">' + esc(D.everyday.sub) + '</div></div><div class="price"><b id="vpPushaPrice"></b><span id="vpPushaStore"></span></div></div>' : '') + '</div>' +
@@ -297,7 +388,7 @@
 
     /* ---------- legend ---------- */
     $('vpLegend').innerHTML = DOWS.filter(function (k) { return WEEK[k].deals.length; }).map(function (k) { return '<span><i style="--c:var(--' + k + ')"></i>' + esc(WEEK[k].id) + '</span>'; }).join('') +
-      SALES.map(function (S) { return '<span><i class="ld"' + (S.colors ? ' style="--ld-red:' + esc(S.colors[0]) + ';--ld-blue:' + esc(S.colors[1] || S.colors[0]) + '"' : '') + '></i>' + esc(S.legend || S.name) + ' ' + M + '/' + S.from + (S.to !== S.from ? '–' + M + '/' + S.to : '') + '</span>'; }).join('');
+      SALES.map(function (S) { return '<span><i class="ld"' + (S.colors ? ' style="--ld-red:' + esc(S.colors[0]) + ';--ld-blue:' + esc(S.colors[1] || S.colors[0]) + '"' : '') + '></i>' + (S.legend ? esc(S.legend) : esc(S.name) + ' ' + M + '/' + S.from + (S.to !== S.from ? '–' + M + '/' + S.to : '')) + '</span>'; }).join('');
 
     /* ---------- brand finder ---------- */
     // per-store scoping: "stores": ["woodlake"] shows only there; "notStores": ["woodlake"] hides it there
@@ -361,6 +452,40 @@
       for (var j = 0; j < tail; j++) blank();
     }
 
+    /* ---------- event banner: a sale with "event": { teaserFrom, time, close, eyebrow, headline, sub, extras } ---------- */
+    var ptNow = function () {
+      try { var p = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date()); var g = function (t) { for (var i = 0; i < p.length; i++) if (p[i].type === t) return +p[i].value; }; return g('hour') * 60 + g('minute'); } catch (e) { return 0; }
+    };
+    var hm = function (t) { var a = String(t || '0:0').split(':'); return +a[0] * 60 + (+a[1] || 0); };
+    var eventSale = function () {
+      if (!todayNum) return null;
+      for (var i = 0; i < SALES.length; i++) { var S = SALES[i], E = S.event; if (!E) continue;
+        if ((S.stores && S.stores.indexOf(store) === -1) || todayNum > S.to || todayNum < (E.teaserFrom || S.from)) continue;
+        if (todayNum === S.to && E.close && ptNow() >= hm(E.close)) continue;
+        return S; }
+      return null;
+    };
+    var eventState = function (S) {
+      var E = S.event, start = hm(E.time), now = ptNow();
+      if (todayNum < S.from) { var n = S.from - todayNum; return { live: false, label: n === 1 ? 'Tomorrow' : 'In ' + n + ' days', big: DNAME[dowOf(S.from)] + ' ' + M + '/' + S.from + ' · ' + (E.timeLabel || E.time) }; }
+      if (now < start) { var m = start - now; return { live: false, label: 'Today · starts in', big: (m >= 60 ? Math.floor(m / 60) + 'h ' : '') + (m % 60) + 'm' }; }
+      return { live: true, label: 'Live now', big: E.liveLabel || 'Happening now' };
+    };
+    var eventHTML = function (S) {
+      var E = S.event, st = eventState(S);
+      return '<div class="evt-l"><div class="evt-ey">' + esc(E.eyebrow || S.name) + '</div><div class="evt-h">' + E.headline + '</div><div class="evt-s">' + esc(E.sub || '') + '</div>' +
+        '<div class="evt-x">' + (E.extras || []).map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</div></div>' +
+        '<div class="evt-r"><div class="evt-st">' + esc(st.label) + '</div><div class="evt-cd">' + esc(st.big) + '</div><span class="evt-go">' + esc(E.cta || 'See the deals') + ' →</span></div>';
+    };
+    function renderEvent() {
+      var slot = $('vpEvent'), S = eventSale();
+      if (!S) { slot.innerHTML = ''; return; }
+      var st = eventState(S);
+      slot.innerHTML = '<button type="button" class="evt' + (st.live ? ' live' : '') + '" aria-label="' + esc(S.name) + ' — see the deals">' + eventHTML(S) + '</button>';
+      slot.firstChild.addEventListener('click', function () { openDay(S.from); });
+    }
+    setInterval(function () { renderEvent(); }, 30000);
+
     /* ---------- today card ---------- */
     function renderToday() {
       var el = $('vpToday'), day = todayNum || 1, k = dowOf(day), w = { id: WEEK[k].id, deals: wk(day) }, S = saleOn(day);
@@ -397,6 +522,7 @@
       md.style.setProperty('--c', 'var(--' + k + ')'); saleColors(md, S);
       var html = '<div class="band' + (S ? ' ld' : ph ? ' ph' : '') + '"><div><div class="k">' + esc(S ? S.name + ' · ' + MONTH_NAME.slice(0, 3) + ' ' + S.from + (S.to !== S.from ? '–' + S.to : '') : w.id) + '</div><div class="d" id="vpMdTitle">' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day + '</div><div class="s">' + (S ? 'Limited time · ' : '') + 'Shopping at ' + esc(sName) + '</div></div><button type="button" class="cl" aria-label="Close">×</button></div>';
       html += '<div class="nav"><button type="button" data-nav="-1"' + (day === 1 ? ' disabled style="visibility:hidden"' : '') + '>← ' + MONTH_NAME.slice(0, 3) + ' ' + (day - 1) + '</button><button type="button" data-nav="1"' + (day === daysIn ? ' disabled style="visibility:hidden"' : '') + '>' + MONTH_NAME.slice(0, 3) + ' ' + (day + 1) + ' →</button></div><div class="bd">';
+      if (S && S.event && day === S.from && todayNum && todayNum <= S.to) { var st = eventState(S); html += '<div class="evt' + (st.live && todayNum === day ? ' live' : '') + '">' + eventHTML(S) + '</div>'; }
       var hs = every(day).filter(forStore).filter(function (e) { return e.house; });
       if (hs.length) html += '<div class="sec"><div class="st"><h4 class="hs">' + esc((D.house && D.house.section) || 'House deals') + '</h4><small>Every day</small></div><div class="deals">' + hs.map(function (d) { return dealRow(d, 'var(--acc)').replace('class="deal', 'class="deal house-row'); }).join('') + '</div></div>';
       if (ph && EVERY[0]) html += '<div class="sec"><div class="st"><h4 class="ph">' + esc((D.featureLabels && D.featureLabels[day]) || 'Featured today') + '</h4></div><div class="deals">' + dealRow(EVERY[0], 'var(--pusha)') + '</div></div>';
@@ -432,6 +558,7 @@
     earlierBtn.addEventListener('click', function () { showPast = !showPast; render(); if (!showPast) earlierBtn.scrollIntoView({ block: 'nearest' }); });
     function render() {
       var s = findStore(store);
+      applyTheme(); renderEvent();
       var pastCount = todayNum ? todayNum - 1 : 0, collapse = pastCount > 0 && !brandPick && !showPast;
       earlierBtn.classList.toggle('on', pastCount > 0 && !brandPick);
       earlierBtn.innerHTML = showPast ? 'Hide earlier days <span>&uarr;</span>' : 'Earlier this month <span>Show ' + MONTH_NAME.slice(0, 3) + ' 1&ndash;' + pastCount + '</span>';

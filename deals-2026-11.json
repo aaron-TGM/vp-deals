@@ -106,6 +106,46 @@
   },
   "sales": [
     {
+      "name": "Farmersville's 7th Anniversary",
+      "short": "7th Anniversary",
+      "legend": "Farmersville 7th Anniversary 11/21 · Farmersville only",
+      "from": 21,
+      "to": 21,
+      "stores": ["farmersville"],
+      "replaces": true,
+      "colors": ["#FF7A1A", "#4CAF50"],
+      "tileHeadline": "Up to 50%|7th Anniversary",
+      "tileSecondary": "<b>4pm mystery doorbuster</b> · $2 tacos & DJ at 4pm · STIIIZY & PUSHA BOGO · Made, Kiva, Kanha 50%",
+      "todayBig": "<em>Farmersville's 7th Anniversary</em> — up to 50% off, 9am–9pm",
+      "todayRest": "4pm mystery doorbuster for the first 100 customers who spend $50 (including tax), plus $2 tacos & a DJ at 4pm. STIIIZY vape BOGO, PUSHA BOGO, and Made, Lumpy's, Potters, Camino, Lost Farm, Kiva & Kanha 50% off.",
+      "event": {
+        "teaserFrom": 19,
+        "time": "16:00",
+        "timeLabel": "4pm",
+        "close": "21:00",
+        "eyebrow": "Farmersville's 7th Anniversary · Sat 11/21",
+        "headline": "<em>4PM</em> Mystery Doorbuster",
+        "sub": "First 100 customers who spend $50 (including tax) at 4pm get the doorbuster. What's inside is a mystery.",
+        "extras": ["$2 tacos at 4pm", "DJ at 4pm", "Open 9am–9pm", "Farmersville only"],
+        "liveLabel": "First 100 only",
+        "cta": "See the anniversary deals"
+      },
+      "deals": [
+        { "b": ["Made", "Lumpy's"], "pct": "50%", "o": "Off Made and Lumpy's Flowers", "top": true },
+        { "b": ["Potters", "Camino", "Lost Farm", "Kiva", "Kanha"], "pct": "50%", "o": "Off Potters edibles, Camino, Lost Farm, Kiva and Kanha", "top": true },
+        { "b": ["STIIIZY"], "pct": "BOGO", "o": "Vape BOGO — buy one, get one", "top": true },
+        { "b": ["STIIIZY"], "pct": "40%", "o": "Off everything else from STIIIZY" },
+        { "b": ["PUSHA"], "pct": "BOGO", "o": "Buy one, get one · first-time customers get a free battery", "top": true },
+        { "b": ["Alien Labs"], "pct": "40%", "o": "Off cold chain vapes and 3.5g & 10g flower" },
+        { "b": ["Cowgirl"], "pct": "40%", "o": "Off 3.5g flower" },
+        { "b": ["Valley Pure"], "pct": "35%", "o": "Off edibles & prerolls · plus BOGO concentrates" },
+        { "b": ["Jeeter", "Raw Garden", "Dabwoods", "PlugPlay"], "pct": "40%", "o": "Off" },
+        { "b": ["Muha Meds", "Papa's Herb"], "pct": "40%", "o": "Off" },
+        { "b": ["Geek THCX", "Vior", "Sluggers", "ICED", "Fig Farms", "Smoken Promises"], "pct": "30%", "o": "Off" },
+        { "b": ["St. Ides", "Pabst", "Not Your Father's", "Master Makers"], "pct": "30%", "o": "Off" }
+      ]
+    },
+    {
       "name": "Alien Labs Takeover",
       "short": "Alien Labs Takeover",
       "legend": "Alien Labs Takeover 11/14 · Tulare & Farmersville",
@@ -181,6 +221,7 @@
       }
     ]
   },
-  "finePrint": "Exclusions apply · While supplies last · Veterans Day Deals Wed 11/11 · Jeeter 50% off is for veterans only · Alien Labs Takeover Sat 11/14 at Tulare (12–3pm) & Farmersville (4–7pm) only; free preroll for the first 100 customers, battery and coffee offers while supplies last · PlugPlay 30% off every day through Dec 31 · Sherbinskis 30% off on the 15th · Boutiq 30% off on the last day of the month. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
+  "finePrint": "Exclusions apply · While supplies last · Veterans Day Deals Wed 11/11 · Jeeter 50% off is for veterans only · Farmersville 7th Anniversary deals valid Sat 11/21 at Farmersville only, 9am–9pm; 4pm doorbuster for the first 100 customers who spend $50 (including tax) · Alien Labs Takeover Sat 11/14 at Tulare (12–3pm) & Farmersville (4–7pm) only; free preroll for the first 100 customers, battery and coffee offers while supplies last · PlugPlay 30% off every day through Dec 31 · Sherbinskis 30% off on the 15th · Boutiq 30% off on the last day of the month. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
+  "theme": { "name": "anniversary", "from": 19, "to": 21, "stores": ["farmersville"], "kicker": "Farmersville's 7th Anniversary · Sat 11/21 · 9am–9pm" },
   "modalFinePrint": "Exclusions apply. While supplies last. Discounts cannot be combined unless stated."
 }
