@@ -210,8 +210,8 @@
 #vp-deals.th-halloween details.reg{border-color:var(--line-2)}\
 @media (max-width:640px){#vp-deals.th-halloween{padding-top:60px}#vp-deals.th-halloween .drip{height:42px}#vp-deals.th-halloween .bats{left:auto;right:0;top:-46px;width:110px;height:40px}#vp-deals.th-halloween .bats i:nth-child(3){display:none}}\
 @media (prefers-reduced-motion:reduce){#vp-deals.th-halloween .bats i{animation:none}}\
-#vp-deals.th-anniversary{--bg:#0B090C;--bg-2:#16121A;--bg-3:#211A26;--line:#2E2534;--line-2:#4B3B55;--tx:#F5EEE6;--tx-2:#D2C6BB;--tx-3:#9A8E98;--vp:#FF7A1A;--vp-2:#FFB547;--acc:#FFB547;--ink:#0B090C;--ld-red:#FF7A1A;--ld-blue:#4CAF50;--mon:#FF7A1A;--tue:#4CAF50;--wed:#E0457B;--thu:#FFB547;--fri:#4CAF50;--sat:#FF7A1A;--sun:#E0457B;--shadow:0 10px 34px rgba(255,117,24,.22);position:relative;padding-top:72px;background:radial-gradient(1200px 420px at 50% -120px,rgba(255,122,26,.20),transparent 70%),var(--bg);color:var(--tx);overflow:hidden}\
-#vp-deals.th-anniversary .drip{position:absolute;top:0;left:0;width:100%;height:56px;display:block}\
+#vp-deals.th-anniversary{--bg:#0B090C;--bg-2:#16121A;--bg-3:#211A26;--line:#2E2534;--line-2:#4B3B55;--tx:#F5EEE6;--tx-2:#D2C6BB;--tx-3:#9A8E98;--vp:#FF7A1A;--vp-2:#FFB547;--acc:#FFB547;--ink:#0B090C;--ld-red:#FF7A1A;--ld-blue:#4CAF50;--mon:#FF7A1A;--tue:#4CAF50;--wed:#E0457B;--thu:#FFB547;--fri:#4CAF50;--sat:#FF7A1A;--sun:#E0457B;--shadow:0 10px 34px rgba(255,117,24,.22);position:relative;padding-top:32px;background:radial-gradient(1200px 420px at 50% -120px,rgba(255,122,26,.20),transparent 70%),var(--bg);color:var(--tx);overflow:hidden}\
+#vp-deals.th-anniversary .drip{display:none}\
 #vp-deals.th-anniversary .hd{position:relative}\
 #vp-deals.th-anniversary .kicker{color:var(--vp);text-shadow:0 0 12px rgba(255,117,24,.45)}\
 #vp-deals.th-anniversary h2.ttl{color:#fff;text-shadow:0 0 18px rgba(255,117,24,.55),0 2px 0 #000}\
@@ -262,13 +262,12 @@
 #vp-deals.th-anniversary .shops a{border-color:var(--vp);color:var(--vp)}\
 #vp-deals.th-anniversary .shops a:hover{background:var(--vp);color:var(--ink)}\
 #vp-deals.th-anniversary details.reg{border-color:var(--line-2)}\
-@media (max-width:640px){#vp-deals.th-anniversary{padding-top:60px}#vp-deals.th-anniversary .drip{height:42px}}\
+@media (max-width:640px){#vp-deals.th-anniversary{padding-top:20px}}\
 #vp-deals .drip,#vp-deals .bats{display:none}\
 #vp-deals.th-halloween .bats{display:block}\
 #vp-deals.th-anniversary .drip .d1{fill:#FF7A1A}#vp-deals.th-anniversary .drip .d2{fill:#4CAF50;opacity:.95}\
 #vp-deals.th-anniversary .ttl{letter-spacing:.1em}\
 #vp-deals .evt{position:relative;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;margin:0 0 18px;padding:22px 24px;background:radial-gradient(600px 220px at 0% 0%,rgba(255,122,26,.35),transparent 70%),linear-gradient(135deg,#1A1208,#0B0A08 65%);color:#fff;border:2px solid #FF7A1A;box-shadow:0 0 0 4px rgba(255,122,26,.15),0 14px 40px rgba(255,122,26,.25);overflow:hidden;cursor:pointer;text-align:left;width:100%}\
-#vp-deals .evt::after{content:"";position:absolute;inset:auto 0 0 0;height:6px;background:repeating-linear-gradient(90deg,#FF7A1A 0 18px,#4CAF50 18px 36px,#E0457B 36px 54px)}\
 #vp-deals .evt-ey{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:#FFB547}\
 #vp-deals .evt-h{font-weight:900;font-size:40px;line-height:1;letter-spacing:.02em;text-transform:uppercase;margin:8px 0 6px;color:#fff;text-shadow:0 0 22px rgba(255,122,26,.6)}\
 #vp-deals .evt-h em{font-style:normal;color:#FF7A1A}\

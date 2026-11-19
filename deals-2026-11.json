@@ -113,7 +113,7 @@
       "to": 21,
       "stores": ["farmersville"],
       "replaces": true,
-      "colors": ["#FF7A1A", "#4CAF50"],
+      "colors": ["#FF7A1A", "#FF7A1A"],
       "tileHeadline": "Up to 50%|7th Anniversary",
       "tileSecondary": "<b>4pm mystery doorbuster</b> · $2 tacos & DJ at 4pm · STIIIZY & PUSHA BOGO · Made, Kiva, Kanha 50%",
       "todayBig": "<em>Farmersville's 7th Anniversary</em> — up to 50% off, 9am–9pm",
