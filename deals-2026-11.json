@@ -7,7 +7,7 @@
     "storePrefix": true,
     "brandPath": "/brands/{slug}",
     "offersPath": "/offers",
-    "overrides": { "grön": "/brands/gron" }
+    "overrides": { "grön": "/brands/gron", "Lost Farm": "/brands/lost-farms" }
   },
   "stores": [
     { "id": "woodlake", "name": "Woodlake" },
