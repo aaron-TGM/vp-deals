@@ -396,7 +396,8 @@
     var wk = function (day) { return WEEK[dowOf(day)].deals.filter(function (d) { return forStore(d) && inRange(d, day); }); };
     // a sale with "replaces": true is the whole lineup for its days: the regular weekday list is hidden,
     // and every-day deals whose brands are all in the sale are folded into it (house deals always stay)
-    var saleDeals = function (S, day) { return S.deals.filter(function (d) { return (!d.only || d.only === day) && forStore(d); }); };
+    var saleDeals = function (S, day) { return S.deals.filter(function (d) { return (!d.only || d.only === day) && (!d.days || d.days.indexOf(day) !== -1) && inRange(d, day) && forStore(d); }); };
+    var sday = function (S, day, k) { var o = S.byDay && S.byDay[day]; return o && o[k] != null ? o[k] : null; }; // per-day tile/today copy: "byDay": { "27": { "tileHeadline": ... } }
     var covered = function (d, day) {
       var S = saleOn(day); if (!S || !S.replaces || d.house) return false;
       var bs = {}; saleDeals(S, day).forEach(function (x) { x.b.forEach(function (b) { bs[b] = 1; }); });
@@ -423,7 +424,7 @@
     function tileHero(day) {
       var S = saleOn(day);
       if (FEATURE[day] === 'PUSHA') return { html: '<em class="ph">PUSHA</em> Pod BOGO', more: wk(day)[0] };
-      if (S) return { html: split(day === S.to && S.lastDayHeadline ? S.lastDayHeadline : S.tileHeadline), cls: 'ld', sec: (day === S.to && S.lastDaySecondary) || S.tileSecondary };
+      if (S) return { html: split(sday(S, day, 'tileHeadline') || (day === S.to && S.lastDayHeadline ? S.lastDayHeadline : S.tileHeadline)), cls: 'ld', sec: sday(S, day, 'tileSecondary') || (day === S.to && S.lastDaySecondary) || S.tileSecondary };
       var t = wk(day)[0];
       if (!t) return { html: '<em>New deals</em> coming soon', cls: 'tbd' };
       return { html: '<em>' + esc(t.pct) + '</em> ' + esc(t.b[0]) };
@@ -455,18 +456,20 @@
     var ptNow = function () {
       try { var p = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date()); var g = function (t) { for (var i = 0; i < p.length; i++) if (p[i].type === t) return +p[i].value; }; return g('hour') * 60 + g('minute'); } catch (e) { return 0; }
     };
-    var hm = function (t) { var a = String(t || '0:0').split(':'); return +a[0] * 60 + (+a[1] || 0); };
+    var hm = function (t) { if (t && typeof t === 'object') t = t[store] || t['default']; var a = String(t || '0:0').split(':'); return +a[0] * 60 + (+a[1] || 0); };
+    var eDay = function (S) { return S.event.day || S.from; };
     var eventSale = function () {
       if (!todayNum) return null;
       for (var i = 0; i < SALES.length; i++) { var S = SALES[i], E = S.event; if (!E) continue;
-        if ((S.stores && S.stores.indexOf(store) === -1) || todayNum > S.to || todayNum < (E.teaserFrom || S.from)) continue;
-        if (todayNum === S.to && E.close && ptNow() >= hm(E.close)) continue;
+        if ((S.stores && S.stores.indexOf(store) === -1) || todayNum > eDay(S) || todayNum < (E.teaserFrom || S.from)) continue;
+        if (todayNum === eDay(S) && E.close && ptNow() >= hm(E.close)) continue;
         return S; }
       return null;
     };
     var eventState = function (S) {
       var E = S.event, start = hm(E.time), now = ptNow();
-      if (todayNum < S.from) { var n = S.from - todayNum; return { live: false, label: n === 1 ? 'Tomorrow' : 'In ' + n + ' days', big: DNAME[dowOf(S.from)] + ' ' + M + '/' + S.from + ' · ' + (E.timeLabel || E.time) }; }
+      var ed = eDay(S), tl = E.timeLabel && typeof E.timeLabel === 'object' ? (E.timeLabel[store] || E.timeLabel['default']) : (E.timeLabel || E.time);
+      if (todayNum < ed) { var n = ed - todayNum; return { live: false, label: n === 1 ? 'Tomorrow' : 'In ' + n + ' days', big: DNAME[dowOf(ed)] + ' ' + M + '/' + ed + ' · ' + tl }; }
       if (now < start) { var m = start - now; return { live: false, label: 'Today · starts in', big: (m >= 60 ? Math.floor(m / 60) + 'h ' : '') + (m % 60) + 'm' }; }
       return { live: true, label: 'Live now', big: E.liveLabel || 'Happening now' };
     };
@@ -481,7 +484,7 @@
       if (!S) { slot.innerHTML = ''; return; }
       var st = eventState(S);
       slot.innerHTML = '<button type="button" class="evt' + (st.live ? ' live' : '') + '" aria-label="' + esc(S.name) + ' — see the deals">' + eventHTML(S) + '</button>';
-      slot.firstChild.addEventListener('click', function () { openDay(S.from); });
+      slot.firstChild.addEventListener('click', function () { openDay(eDay(S)); });
     }
     setInterval(function () { renderEvent(); }, 30000);
 
@@ -492,9 +495,9 @@
       var label = todayNum ? 'Today · ' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day : 'Starts ' + DNAME[dowOf(1)] + ', ' + MONTH_NAME + ' 1';
       var none = !S && !w.deals.length, hb = D.house && D.house.items ? D.house.items : [];
       if (none) { el.style.setProperty('--c', 'var(--acc)'); el.innerHTML = '<div><div class="l">' + esc(label) + '</div><div class="big"><em>House specials</em> every day</div><div class="rest">' + esc(hb.map(function (i) { return i.label + ' ' + i.big; }).join(' · ') + (hb.length ? '. ' : '') + (D.tbdNote || "Today's full lineup is on your store's menu.")) + '</div></div><button type="button" class="go">See today\'s deals</button>'; el.querySelector('.go').addEventListener('click', function () { openDay(day); }); return; }
-      var big = S ? (day === S.to && S.todayBigLast ? S.todayBigLast : S.todayBig) : '<em>' + esc(w.deals[0].pct) + '</em> ' + esc(w.deals[0].b[0]) + " — it's " + esc(w.id);
+      var big = S ? (sday(S, day, 'todayBig') || (day === S.to && S.todayBigLast ? S.todayBigLast : S.todayBig)) : '<em>' + esc(w.deals[0].pct) + '</em> ' + esc(w.deals[0].b[0]) + " — it's " + esc(w.id);
       var promoT = every(day).filter(forStore).filter(function (e) { return e.tile; }).map(function (e) { return e.tile; }).join(' · ');
-      var rest = (promoT ? promoT + '. ' : '') + (S ? S.todayRest : 'Plus ' + w.deals.slice(1, 4).map(function (d) { return d.b.slice(0, 2).join(' & ') + ' ' + d.pct; }).join(', ') + ' and more.');
+      var rest = (promoT ? promoT + '. ' : '') + (S ? (sday(S, day, 'todayRest') || S.todayRest) : 'Plus ' + w.deals.slice(1, 4).map(function (d) { return d.b.slice(0, 2).join(' & ') + ' ' + d.pct; }).join(', ') + ' and more.');
       el.innerHTML = '<div><div class="l">' + esc(label) + '</div><div class="big">' + big + '</div><div class="rest">' + esc(rest) + '</div></div><button type="button" class="go">See today\'s deals</button>';
       el.querySelector('.go').addEventListener('click', function () { openDay(day); });
     }
@@ -521,7 +524,7 @@
       md.style.setProperty('--c', 'var(--' + k + ')'); saleColors(md, S);
       var html = '<div class="band' + (S ? ' ld' : ph ? ' ph' : '') + '"><div><div class="k">' + esc(S ? S.name + ' · ' + MONTH_NAME.slice(0, 3) + ' ' + S.from + (S.to !== S.from ? '–' + S.to : '') : w.id) + '</div><div class="d" id="vpMdTitle">' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day + '</div><div class="s">' + (S ? 'Limited time · ' : '') + 'Shopping at ' + esc(sName) + '</div></div><button type="button" class="cl" aria-label="Close">×</button></div>';
       html += '<div class="nav"><button type="button" data-nav="-1"' + (day === 1 ? ' disabled style="visibility:hidden"' : '') + '>← ' + MONTH_NAME.slice(0, 3) + ' ' + (day - 1) + '</button><button type="button" data-nav="1"' + (day === daysIn ? ' disabled style="visibility:hidden"' : '') + '>' + MONTH_NAME.slice(0, 3) + ' ' + (day + 1) + ' →</button></div><div class="bd">';
-      if (S && S.event && day === S.from && todayNum && todayNum <= S.to) { var st = eventState(S); html += '<div class="evt' + (st.live && todayNum === day ? ' live' : '') + '">' + eventHTML(S) + '</div>'; }
+      if (S && S.event && day === eDay(S) && todayNum && todayNum <= eDay(S)) { var st = eventState(S); html += '<div class="evt' + (st.live && todayNum === day ? ' live' : '') + '">' + eventHTML(S) + '</div>'; }
       var hs = every(day).filter(forStore).filter(function (e) { return e.house; });
       if (hs.length) html += '<div class="sec"><div class="st"><h4 class="hs">' + esc((D.house && D.house.section) || 'House deals') + '</h4><small>Every day</small></div><div class="deals">' + hs.map(function (d) { return dealRow(d, 'var(--acc)').replace('class="deal', 'class="deal house-row'); }).join('') + '</div></div>';
       if (ph && EVERY[0]) html += '<div class="sec"><div class="st"><h4 class="ph">' + esc((D.featureLabels && D.featureLabels[day]) || 'Featured today') + '</h4></div><div class="deals">' + dealRow(EVERY[0], 'var(--pusha)') + '</div></div>';
