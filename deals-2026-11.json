@@ -7,7 +7,13 @@
     "storePrefix": true,
     "brandPath": "/brands/{slug}",
     "offersPath": "/offers",
-    "overrides": { "grön": "/brands/gron", "Lost Farm": "/brands/lost-farms", "Loud + Clear": "/brands/loud-and-clear", "Emerald Bay Extracts": "/brands/emerald-bay", "110 Labs": "/offers" }
+    "overrides": {
+      "grön": "/brands/gron",
+      "Lost Farm": "/brands/lost-farms",
+      "Loud + Clear": "/brands/loud-and-clear",
+      "Emerald Bay Extracts": "/brands/emerald-bay",
+      "110 Labs": "/offers"
+    }
   },
   "stores": [
     { "id": "woodlake", "name": "Woodlake" },
@@ -112,21 +118,26 @@
       "from": 23,
       "to": 30,
       "replaces": true,
-      "colors": ["#A87412", "#519F45"],
+      "colors": [
+        "#A87412",
+        "#519F45"
+      ],
       "tileHeadline": "Up to 50%|Thanksgiving Sale",
       "tileSecondary": "PUSHA & grön BOGO · Camino, Lost Farm, Kiva 50%",
       "todayBig": "<em>Thanksgiving Week-Long Sale</em> — up to 50% off",
-      "todayRest": "Camino, Lost Farm, Kiva, Potters & Kanha 50%, PUSHA & grön BOGO, Jeeter, Dabwoods & PlugPlay 40%. Black Friday doorbuster at store opening 11/27.",
+      "todayRest": "Camino, Lost Farm, Kiva, Potters & Kanha 50%, PUSHA & grön BOGO, Jeeter, Dabwoods & PlugPlay 40%. Black Friday doorbuster bags at opening 11/27 with a $50+ purchase.",
       "byDay": {
         "23": {
           "tileHeadline": "Up to 50%|Thanksgiving Sale",
           "tileSecondary": "PUSHA & grön BOGO · Camino, Lost Farm, Kiva 50% · Potters & Kanha 50%",
           "todayBig": "<em>Thanksgiving Week-Long Sale</em> starts today — up to 50% off",
-          "todayRest": "PUSHA & grön BOGO, Camino, Lost Farm, Kiva, Potters & Kanha 50%, STIIIZY, Jeeter & Dabwoods 40% off select items. Black Friday doorbuster at store opening 11/27."
+          "todayRest": "PUSHA & grön BOGO, Camino, Lost Farm, Kiva, Potters & Kanha 50%, STIIIZY, Jeeter & Dabwoods 40% off select items. Black Friday doorbuster bags at opening 11/27 with a $50+ purchase."
         },
         "24": {
           "tileHeadline": "Up to 50%|Thanksgiving Sale",
-          "tileSecondary": "PUSHA & grön BOGO · Camino, Lost Farm, Kiva, Potters, Kanha 50% · Jeeter, Dabwoods, PlugPlay 40%"
+          "tileSecondary": "PUSHA & grön BOGO · Camino, Lost Farm, Kiva, Potters, Kanha 50% · STIIIZY, Jeeter, Dabwoods 40%",
+          "todayBig": "<em>Thanksgiving Week-Long Sale</em> — up to 50% off",
+          "todayRest": "PUSHA & grön BOGO, Camino, Lost Farm, Kiva, Potters & Kanha 50%, STIIIZY, Jeeter, Dabwoods, Terpwoods & Dime 40% off select items. Black Friday doorbuster bags at opening 11/27 with a $50+ purchase."
         },
         "25": {
           "tileHeadline": "Up to 60%|Thanksgiving Sale",
@@ -136,15 +147,15 @@
         },
         "26": {
           "tileHeadline": "Open till 5pm|Thanksgiving Day",
-          "tileSecondary": "Farmersville open till 7pm · 110 Labs 60% · Connected, Alien Labs, Smoken Promises 50% · STIIIZY 50%",
+          "tileSecondary": "Farmersville 9am–7pm · Tulare 8am–5pm · 110 Labs 60% · Connected, Alien Labs, Smoken Promises 50%",
           "todayBig": "<em>Happy Thanksgiving</em> — open until 5pm (Farmersville 7pm)",
           "todayRest": "110 Labs 60%, Connected, Alien Labs & Smoken Promises 50%, STIIIZY 50% (excludes white flower & .5g pods) + BOGO edibles, Muha Meds & Raw Garden 50%, PUSHA & grön BOGO."
         },
         "27": {
           "tileHeadline": "Doorbuster|Black Friday",
-          "tileSecondary": "<b>Doorbuster at store opening</b> · 110 Labs 60% · Connected, Alien Labs, Smoken Promises 50% · STIIIZY 50%",
-          "todayBig": "<em>Black Friday</em> — doorbuster at store opening",
-          "todayRest": "Plus 110 Labs 60%, Connected, Alien Labs & Smoken Promises 50%, STIIIZY 50% + BOGO edibles, Muha Meds & Raw Garden 50%, and St. Ides, Pabst & NYF 30% off each."
+          "tileSecondary": "<b>Doorbuster bags at opening ($50+ purchase)</b> · 110 Labs 60% · Connected, Alien Labs, Smoken Promises 50% · STIIIZY 50%",
+          "todayBig": "<em>Black Friday</em> — doorbuster bags at opening",
+          "todayRest": "With a $50+ purchase, while they last. Plus 110 Labs 60%, Connected, Alien Labs & Smoken Promises 50%, STIIIZY 50% + BOGO edibles, Muha Meds & Raw Garden 50%, and St. Ides, Pabst & NYF 30% off each."
         },
         "28": {
           "tileHeadline": "Up to 50%|Thanksgiving Sale",
@@ -169,27 +180,86 @@
         "teaserFrom": 23,
         "day": 27,
         "time": {
-          "default": "09:00",
-          "tulare": "08:00"
+          "farmersville": "06:00",
+          "tulare": "06:00",
+          "lemoore": "07:30",
+          "lindsay": "08:30",
+          "woodlake": "08:30",
+          "default": "08:30"
         },
         "timeLabel": {
-          "default": "9am opening",
-          "tulare": "8am opening"
+          "farmersville": "6am opening",
+          "tulare": "6am opening",
+          "lemoore": "7:30am opening",
+          "lindsay": "8:30am opening",
+          "woodlake": "8:30am opening",
+          "default": "opening"
         },
         "close": {
-          "default": "21:00",
-          "tulare": "22:00"
+          "farmersville": "22:00",
+          "tulare": "22:00",
+          "lemoore": "21:00",
+          "lindsay": "21:00",
+          "woodlake": "21:00",
+          "default": "21:00"
         },
-        "palette": {"bg1": "#0B5A33", "bg2": "#043B21", "accent": "#F2C14E", "accent2": "#F3E3B5", "ink": "#043B21", "glow": "rgba(242,193,78,.28)", "ring": "rgba(242,193,78,.18)", "shadow": "rgba(4,59,33,.35)"},
+        "palette": {
+          "bg1": "#0B5A33",
+          "bg2": "#043B21",
+          "accent": "#F2C14E",
+          "accent2": "#F3E3B5",
+          "ink": "#043B21",
+          "glow": "rgba(242,193,78,.28)",
+          "ring": "rgba(242,193,78,.18)",
+          "shadow": "rgba(4,59,33,.35)"
+        },
         "eyebrow": "Thanksgiving Week-Long Sale · 11/23–11/30",
-        "headline": "<em>Black Friday</em> Doorbuster",
-        "sub": "Doorbuster at store opening on Friday 11/27 — while supplies last. Check the online menu banners for more details.",
-        "extras": [
-          "Open Thanksgiving until 5pm (Farmersville 7pm)",
-          "Sale runs 11/23–11/30",
-          "All stores"
-        ],
-        "liveLabel": "While supplies last",
+        "headline": "<em>Black Friday</em> Doorbuster Bags",
+        "sub": {
+          "farmersville": "Doorbuster bags start at opening on Friday 11/27 (6am) with a $50+ purchase. 100 bags at Farmersville — while supplies last.",
+          "tulare": "Doorbuster bags start at opening on Friday 11/27 (6am) with a $50+ purchase. 100 bags at Tulare — while supplies last.",
+          "lemoore": "Doorbuster bags start at opening on Friday 11/27 (7:30am) with a $50+ purchase. 100 bags at Lemoore — while supplies last.",
+          "lindsay": "Doorbuster bags start at opening on Friday 11/27 (8:30am) with a $50+ purchase. 100 bags at Lindsay — while supplies last.",
+          "woodlake": "Doorbuster bags start at opening on Friday 11/27 (8:30am) with a $50+ purchase. 50 bags at Woodlake — while supplies last.",
+          "default": "Doorbuster bags start at store opening on Friday 11/27 with a $50+ purchase — while supplies last."
+        },
+        "extras": {
+          "farmersville": [
+            "Thanksgiving 9am–7pm",
+            "Black Friday 6am–10pm",
+            "100 bags at Farmersville",
+            "$50+ purchase"
+          ],
+          "tulare": [
+            "Thanksgiving 8am–5pm",
+            "Black Friday 6am–10pm",
+            "100 bags at Tulare",
+            "$50+ purchase"
+          ],
+          "lemoore": [
+            "Thanksgiving 9am–5pm",
+            "Black Friday 7:30am–9pm",
+            "100 bags at Lemoore",
+            "$50+ purchase"
+          ],
+          "lindsay": [
+            "Thanksgiving 9am–5pm",
+            "Black Friday 8:30am–9pm",
+            "100 bags at Lindsay",
+            "$50+ purchase"
+          ],
+          "woodlake": [
+            "Thanksgiving 9am–5pm",
+            "Black Friday 8:30am–9pm",
+            "50 bags at Woodlake",
+            "$50+ purchase"
+          ],
+          "default": [
+            "$50+ purchase",
+            "Sale runs 11/23–11/30"
+          ]
+        },
+        "liveLabel": "While bags last",
         "cta": "See Black Friday deals"
       },
       "deals": [
@@ -204,29 +274,40 @@
         { "b": ["Greenline", "Sluggers", "ICED", "Globs"], "pct": "30%", "o": "Off", "only": 23 },
         { "b": ["UpNorth", "Maven", "Tutti", "C4", "Juiced"], "pct": "30%", "o": "Off", "only": 23 },
         { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off a half case (12)", "only": 23 },
-        { "b": [], "pct": "AT OPEN", "o": {"default": "Black Friday doorbuster at store opening (9am) — check the online menu banners for details", "tulare": "Black Friday doorbuster at store opening (8am) — check the online menu banners for details"}, "top": true, "name": "Black Friday doorbuster", "only": 27 },
-        { "b": [], "pct": "OPEN", "o": {"default": "Open Thanksgiving Day until 5pm", "farmersville": "Open Thanksgiving Day until 7pm"}, "name": "Thanksgiving Day hours", "only": 26 },
+        { "b": ["Camino", "Lost Farm", "Kiva"], "pct": "50%", "o": "Off", "top": true, "only": 24 },
+        { "b": ["Potters", "Kanha"], "pct": "50%", "o": "Off Potters edibles and Kanha", "top": true, "only": 24 },
+        { "b": ["PUSHA"], "pct": "BOGO", "o": "Buy one, get one · first-time customers get a free battery", "top": true, "only": 24 },
+        { "b": ["grön"], "pct": "BOGO", "o": "Buy one, get one", "only": 24 },
+        { "b": ["Cowgirl", "PlugPlay"], "pct": "40%", "o": "Off select items", "only": 24 },
+        { "b": ["STIIIZY", "Jeeter", "Dabwoods", "Terpwoods", "Dime"], "pct": "40%", "o": "Off select items", "only": 24, "name": "STIIIZY, Jeeter, Dabwoods, Terpwoods, Dime Industries" },
+        { "b": ["Vior", "Papa's Herb", "Lumpy's"], "pct": "40%", "o": "Off Vior, Papa's Herb and Lumpy's Flowers", "only": 24 },
+        { "b": ["Valley Pure"], "pct": "35%", "o": "Off prerolls & edibles · plus BOGO concentrates", "only": 24 },
+        { "b": ["Greenline", "Sluggers", "ICED", "Globs"], "pct": "30%", "o": "Off", "only": 24 },
+        { "b": ["UpNorth", "Maven", "Tutti", "C4", "Juiced", "Kingpen", "Kingroll"], "pct": "30%", "o": "Off", "only": 24 },
+        { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off a half case (12)", "only": 24 },
+        { "b": [], "pct": "AT OPEN", "o": { "farmersville": "Doorbuster bags at opening (6am) with a $50+ purchase · 100 bags at Farmersville · open 6am–10pm", "tulare": "Doorbuster bags at opening (6am) with a $50+ purchase · 100 bags at Tulare · open 6am–10pm", "lemoore": "Doorbuster bags at opening (7:30am) with a $50+ purchase · 100 bags at Lemoore · open 7:30am–9pm", "lindsay": "Doorbuster bags at opening (8:30am) with a $50+ purchase · 100 bags at Lindsay · open 8:30am–9pm", "woodlake": "Doorbuster bags at opening (8:30am) with a $50+ purchase · 50 bags at Woodlake · open 8:30am–9pm", "default": "Doorbuster bags at store opening with a $50+ purchase · while supplies last" }, "top": true, "name": "Black Friday doorbuster bags", "only": 27 },
+        { "b": [], "pct": "OPEN", "o": { "farmersville": "Open Thanksgiving Day 9am–7pm", "tulare": "Open Thanksgiving Day 8am–5pm", "lemoore": "Open Thanksgiving Day 9am–5pm", "lindsay": "Open Thanksgiving Day 9am–5pm", "woodlake": "Open Thanksgiving Day 9am–5pm", "default": "Open Thanksgiving Day until 5pm" }, "name": "Thanksgiving Day hours", "only": 26 },
         { "b": ["110 Labs"], "pct": "60%", "o": "Off 110 Labs · Wed–Fri (11/25–11/27)", "top": true, "from": 25, "to": 27 },
         { "b": ["Connected", "Alien Labs", "Smoken Promises"], "pct": "50%", "o": "Off Connected, Alien Labs and Smoken Promises · Wed–Fri (11/25–11/27)", "top": true, "from": 25, "to": 27 },
         { "b": ["STIIIZY"], "pct": "50%", "o": "Off STIIIZY — excludes white flower & .5g pods · 11/25–11/30", "top": true, "from": 25, "to": 30 },
         { "b": ["STIIIZY"], "pct": "BOGO", "o": "Edibles — buy one, get one · 11/25–11/30", "from": 25, "to": 30 },
         { "b": ["Muha Meds"], "pct": "50%", "o": "Off Muha Meds · 11/25–11/28", "from": 25, "to": 28 },
-        { "b": ["Raw Garden"], "pct": "50%", "o": "Off Raw Garden · Wed–Fri & Cyber Monday", "days": [25, 26, 27, 30] },
-        { "b": ["Camino", "Lost Farm", "Kiva"], "pct": "50%", "o": "Off", "top": true, "from": 24 },
-        { "b": ["Potters", "Kanha"], "pct": "50%", "o": "Off", "from": 24 },
-        { "b": ["PUSHA"], "pct": "BOGO", "o": "Buy one, get one · first-time customers get a free battery", "from": 24 },
-        { "b": ["grön"], "pct": "BOGO", "o": "Buy one, get one", "from": 24 },
-        { "b": ["Cowgirl"], "pct": "40%", "o": "Off 3.5g flower", "from": 24 },
+        { "b": ["Raw Garden"], "pct": "50%", "o": "Off Raw Garden · Wed–Fri & Cyber Monday", "days": [ 25, 26, 27, 30 ] },
+        { "b": ["Camino", "Lost Farm", "Kiva"], "pct": "50%", "o": "Off", "top": true, "from": 25 },
+        { "b": ["Potters", "Kanha"], "pct": "50%", "o": "Off", "from": 25 },
+        { "b": ["PUSHA"], "pct": "BOGO", "o": "Buy one, get one · first-time customers get a free battery", "from": 25 },
+        { "b": ["grön"], "pct": "BOGO", "o": "Buy one, get one", "from": 25 },
+        { "b": ["Cowgirl"], "pct": "40%", "o": "Off 3.5g flower", "from": 25 },
         { "b": ["Rosin Tech Labs"], "pct": "40%", "o": "Off Rosin Tech Labs · Wed–Fri (11/25–11/27)", "from": 25, "to": 27 },
-        { "b": ["Emerald Bay Extracts"], "pct": "40%", "o": "Off Emerald Bay Extracts · through 11/27", "from": 24, "to": 27 },
+        { "b": ["Emerald Bay Extracts"], "pct": "40%", "o": "Off Emerald Bay Extracts · through 11/27", "from": 25, "to": 27 },
         { "b": ["CAM", "LAX"], "pct": "40%", "o": "Off CAM and LAX · 11/25–11/30", "from": 25, "to": 30 },
-        { "b": ["Jeeter", "Dabwoods", "Terpwoods", "PlugPlay"], "pct": "40%", "o": "Off", "from": 24 },
-        { "b": ["Vior", "Papa's Herb"], "pct": "40%", "o": "Off", "from": 24 },
-        { "b": ["UpNorth", "Sense", "Fig Farms"], "pct": "40%", "o": "Off UpNorth, Sense and Fig Farms · 11/23–11/27 & 11/30", "days": [24, 25, 26, 27, 30] },
-        { "b": ["Valley Pure"], "pct": "35%", "o": "Off edibles & prerolls · plus BOGO concentrates", "from": 24 },
-        { "b": ["Greenline", "Globs", "Sluggers", "ICED"], "pct": "30%", "o": "Off", "from": 24 },
+        { "b": ["Jeeter", "Dabwoods", "Terpwoods", "PlugPlay"], "pct": "40%", "o": "Off", "from": 25 },
+        { "b": ["Vior", "Papa's Herb"], "pct": "40%", "o": "Off", "from": 25 },
+        { "b": ["UpNorth", "Sense", "Fig Farms"], "pct": "40%", "o": "Off UpNorth, Sense and Fig Farms · 11/23–11/27 & 11/30", "days": [ 25, 26, 27, 30 ] },
+        { "b": ["Valley Pure"], "pct": "35%", "o": "Off edibles & prerolls · plus BOGO concentrates", "from": 25 },
+        { "b": ["Greenline", "Globs", "Sluggers", "ICED"], "pct": "30%", "o": "Off", "from": 25 },
         { "b": ["Master Makers"], "pct": "30%", "o": "Off Master Makers · Wed–Fri (11/25–11/27)", "from": 25, "to": 27 },
-        { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off a half case (12)", "from": 24 },
+        { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off a half case (12)", "from": 25 },
         { "b": ["St. Ides", "Pabst", "Not Your Father's"], "pct": "30%", "o": "Off each · 11/27–11/28", "from": 27, "to": 28 }
       ]
     },
@@ -236,9 +317,14 @@
       "legend": "Farmersville 7th Anniversary 11/21 · Farmersville only",
       "from": 21,
       "to": 21,
-      "stores": ["farmersville"],
+      "stores": [
+        "farmersville"
+      ],
       "replaces": true,
-      "colors": ["#FF7A1A", "#FF7A1A"],
+      "colors": [
+        "#FF7A1A",
+        "#FF7A1A"
+      ],
       "tileHeadline": "Up to 50%|7th Anniversary",
       "tileSecondary": "<b>4pm mystery doorbuster</b> · $2 tacos & DJ at 4pm · STIIIZY & PUSHA BOGO · Made, Kiva, Kanha 50%",
       "todayBig": "<em>Farmersville's 7th Anniversary</em> — up to 50% off, 9am–9pm",
@@ -251,7 +337,12 @@
         "eyebrow": "Farmersville's 7th Anniversary · Sat 11/21",
         "headline": "<em>4PM</em> Mystery Doorbuster",
         "sub": "First 100 customers who spend $50 (including tax) at 4pm get the doorbuster. What's inside is a mystery.",
-        "extras": ["$2 tacos at 4pm", "DJ at 4pm", "Open 9am–9pm", "Farmersville only"],
+        "extras": [
+          "$2 tacos at 4pm",
+          "DJ at 4pm",
+          "Open 9am–9pm",
+          "Farmersville only"
+        ],
         "liveLabel": "First 100 only",
         "cta": "See the anniversary deals"
       },
@@ -276,8 +367,14 @@
       "legend": "Alien Labs Takeover 11/14 · Tulare & Farmersville",
       "from": 14,
       "to": 14,
-      "stores": ["tulare", "farmersville"],
-      "colors": ["#2E9E3E", "#111111"],
+      "stores": [
+        "tulare",
+        "farmersville"
+      ],
+      "colors": [
+        "#2E9E3E",
+        "#111111"
+      ],
       "tileHeadline": "40%|Alien Labs Takeover",
       "tileSecondary": "Alien Labs flower 40% · free battery w/ cold chain · free preroll (first 100) · free Travelin' Tom's coffee",
       "todayBig": "<em>Alien Labs Takeover</em> — 40% off flower",
@@ -286,7 +383,7 @@
         { "b": ["Alien Labs"], "pct": "40%", "o": "Off Alien Labs flower — 3.5g & 10g", "top": true },
         { "b": ["Alien Labs"], "pct": "FREE", "o": "Buy an Alien Labs cold chain cart, get a free battery", "name": "Free battery with a cold chain cart" },
         { "b": ["Alien Labs"], "pct": "FREE", "o": "First 100 customers get a free preroll with an Alien Labs vape or flower purchase", "name": "Free preroll — first 100 customers" },
-        { "b": ["Alien Labs"], "pct": "FREE", "o": {"default": "Travelin' Tom's Coffee Truck is here — make an Alien Labs purchase and get a free beverage of your choice", "tulare": "Travelin' Tom's Coffee Truck is at Tulare 12–3pm — make an Alien Labs purchase and get a free beverage of your choice", "farmersville": "Travelin' Tom's Coffee Truck is at Farmersville 4–7pm — make an Alien Labs purchase and get a free beverage of your choice"}, "name": "Free coffee from Travelin' Tom's" }
+        { "b": ["Alien Labs"], "pct": "FREE", "o": { "default": "Travelin' Tom's Coffee Truck is here — make an Alien Labs purchase and get a free beverage of your choice", "tulare": "Travelin' Tom's Coffee Truck is at Tulare 12–3pm — make an Alien Labs purchase and get a free beverage of your choice", "farmersville": "Travelin' Tom's Coffee Truck is at Farmersville 4–7pm — make an Alien Labs purchase and get a free beverage of your choice" }, "name": "Free coffee from Travelin' Tom's" }
       ]
     },
     {
@@ -346,7 +443,15 @@
       }
     ]
   },
-  "finePrint": "Exclusions apply · While supplies last · Thanksgiving Week-Long Sale 11/23–11/30 unless otherwise specified · Black Friday doorbuster at store opening 11/27 · Open Thanksgiving Day until 5pm (Farmersville 7pm) · STIIIZY 50% excludes white flower & .5g pods · Veterans Day Deals Wed 11/11 · Jeeter 50% off is for veterans only · Farmersville 7th Anniversary deals valid Sat 11/21 at Farmersville only, 9am–9pm; 4pm doorbuster for the first 100 customers who spend $50 (including tax) · Alien Labs Takeover Sat 11/14 at Tulare (12–3pm) & Farmersville (4–7pm) only; free preroll for the first 100 customers, battery and coffee offers while supplies last · PlugPlay 30% off every day through Dec 31 · Sherbinskis 30% off on the 15th · Boutiq 30% off on the last day of the month. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
-  "theme": { "name": "anniversary", "from": 19, "to": 21, "stores": ["farmersville"], "kicker": "Farmersville's 7th Anniversary · Sat 11/21 · 9am–9pm" },
+  "finePrint": "Exclusions apply · While supplies last · Thanksgiving Week-Long Sale 11/23–11/30 unless otherwise specified · Black Friday doorbuster bags start at store opening 11/27 with a $50+ purchase, while supplies last (100 bags per store; 50 at Woodlake) · Thanksgiving hours: Farmersville 9am–7pm, Tulare 8am–5pm, Lemoore/Lindsay/Woodlake 9am–5pm · Black Friday hours: Farmersville & Tulare 6am–10pm, Lemoore 7:30am–9pm, Lindsay & Woodlake 8:30am–9pm · STIIIZY 50% excludes white flower & .5g pods · Veterans Day Deals Wed 11/11 · Jeeter 50% off is for veterans only · Farmersville 7th Anniversary deals valid Sat 11/21 at Farmersville only, 9am–9pm; 4pm doorbuster for the first 100 customers who spend $50 (including tax) · Alien Labs Takeover Sat 11/14 at Tulare (12–3pm) & Farmersville (4–7pm) only; free preroll for the first 100 customers, battery and coffee offers while supplies last · PlugPlay 30% off every day through Dec 31 · Sherbinskis 30% off on the 15th · Boutiq 30% off on the last day of the month. Deals may vary by location; see your store's menu for details. Must be 21+ or 18+ with a valid medical recommendation. License numbers on each store page.",
+  "theme": {
+    "name": "anniversary",
+    "from": 19,
+    "to": 21,
+    "stores": [
+      "farmersville"
+    ],
+    "kicker": "Farmersville's 7th Anniversary · Sat 11/21 · 9am–9pm"
+  },
   "modalFinePrint": "Exclusions apply. While supplies last. Discounts cannot be combined unless stated."
 }

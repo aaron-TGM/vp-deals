@@ -475,9 +475,9 @@
     };
     var evtStyle = function (S) { var P = S.event.palette || {}, m = { bg1: '--evt-bg1', bg2: '--evt-bg2', accent: '--evt-a', accent2: '--evt-a2', ink: '--evt-ink', glow: '--evt-glow', ring: '--evt-ring', shadow: '--evt-shadow' }, out = ''; for (var k in m) if (P[k]) out += m[k] + ':' + P[k] + ';'; return out ? ' style="' + esc(out) + '"' : ''; };
     var eventHTML = function (S) {
-      var E = S.event, st = eventState(S);
-      return '<div class="evt-l"><div class="evt-ey">' + esc(E.eyebrow || S.name) + '</div><div class="evt-h">' + E.headline + '</div><div class="evt-s">' + esc(E.sub || '') + '</div>' +
-        '<div class="evt-x">' + (E.extras || []).map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</div></div>' +
+      var E = S.event, st = eventState(S), per = function (v) { return v && typeof v === 'object' && !Array.isArray(v) ? (v[store] || v['default']) : v; };
+      return '<div class="evt-l"><div class="evt-ey">' + esc(E.eyebrow || S.name) + '</div><div class="evt-h">' + E.headline + '</div><div class="evt-s">' + esc(per(E.sub) || '') + '</div>' +
+        '<div class="evt-x">' + (per(E.extras) || []).map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</div></div>' +
         '<div class="evt-r"><div class="evt-st">' + esc(st.label) + '</div><div class="evt-cd">' + esc(st.big) + '</div><span class="evt-go">' + esc(E.cta || 'See the deals') + ' →</span></div>';
     };
     function renderEvent() {
