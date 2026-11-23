@@ -267,17 +267,17 @@
 #vp-deals.th-halloween .bats{display:block}\
 #vp-deals.th-anniversary .drip .d1{fill:#FF7A1A}#vp-deals.th-anniversary .drip .d2{fill:#4CAF50;opacity:.95}\
 #vp-deals.th-anniversary .ttl{letter-spacing:.1em}\
-#vp-deals .evt{position:relative;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;margin:0 0 18px;padding:22px 24px;background:radial-gradient(600px 220px at 0% 0%,rgba(255,122,26,.35),transparent 70%),linear-gradient(135deg,#1A1208,#0B0A08 65%);color:#fff;border:2px solid #FF7A1A;box-shadow:0 0 0 4px rgba(255,122,26,.15),0 14px 40px rgba(255,122,26,.25);overflow:hidden;cursor:pointer;text-align:left;width:100%}\
-#vp-deals .evt-ey{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:#FFB547}\
-#vp-deals .evt-h{font-weight:900;font-size:40px;line-height:1;letter-spacing:.02em;text-transform:uppercase;margin:8px 0 6px;color:#fff;text-shadow:0 0 22px rgba(255,122,26,.6)}\
-#vp-deals .evt-h em{font-style:normal;color:#FF7A1A}\
+#vp-deals .evt{position:relative;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;margin:0 0 18px;padding:22px 24px;background:radial-gradient(600px 220px at 0% 0%,var(--evt-glow,rgba(255,122,26,.35)),transparent 70%),linear-gradient(135deg,var(--evt-bg1,#1A1208),var(--evt-bg2,#0B0A08) 65%);color:#fff;border:2px solid var(--evt-a,#FF7A1A);box-shadow:0 0 0 4px var(--evt-ring,rgba(255,122,26,.15)),0 14px 40px var(--evt-shadow,rgba(255,122,26,.25));overflow:hidden;cursor:pointer;text-align:left;width:100%}\
+#vp-deals .evt-ey{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:var(--evt-a2,#FFB547)}\
+#vp-deals .evt-h{font-weight:900;font-size:40px;line-height:1;letter-spacing:.02em;text-transform:uppercase;margin:8px 0 6px;color:#fff;text-shadow:0 0 22px var(--evt-glow,rgba(255,122,26,.6))}\
+#vp-deals .evt-h em{font-style:normal;color:var(--evt-a,#FF7A1A)}\
 #vp-deals .evt-s{font-size:15px;font-weight:600;color:rgba(255,255,255,.9);max-width:52ch}\
 #vp-deals .evt-x{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}\
-#vp-deals .evt-x span{border:1.5px solid rgba(255,181,71,.6);color:#FFB547;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px}\
+#vp-deals .evt-x span{border:1.5px solid var(--evt-a2,#FFB547);color:var(--evt-a2,#FFB547);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px}\
 #vp-deals .evt-r{text-align:center;min-width:190px}\
 #vp-deals .evt-st{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:rgba(255,255,255,.7)}\
-#vp-deals .evt-cd{font-weight:900;font-size:30px;line-height:1.05;color:#FF7A1A;margin:6px 0 12px;font-variant-numeric:tabular-nums}\
-#vp-deals .evt-go{display:inline-block;background:#FF7A1A;color:#0B0A08;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:11px 14px}\
+#vp-deals .evt-cd{font-weight:900;font-size:30px;line-height:1.05;color:var(--evt-a,#FF7A1A);margin:6px 0 12px;font-variant-numeric:tabular-nums}\
+#vp-deals .evt-go{display:inline-block;background:var(--evt-a,#FF7A1A);color:var(--evt-ink,#0B0A08);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:11px 14px}\
 #vp-deals .evt.live{border-color:#4CAF50;box-shadow:0 0 0 4px rgba(76,175,80,.2),0 14px 40px rgba(76,175,80,.3)}\
 #vp-deals .evt.live .evt-cd{color:#4CAF50}\
 #vp-deals .evt.live .evt-st::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#4CAF50;margin-right:7px;vertical-align:1px;animation:vpPulse 1.2s ease-in-out infinite}\
@@ -473,6 +473,7 @@
       if (now < start) { var m = start - now; return { live: false, label: 'Today · starts in', big: (m >= 60 ? Math.floor(m / 60) + 'h ' : '') + (m % 60) + 'm' }; }
       return { live: true, label: 'Live now', big: E.liveLabel || 'Happening now' };
     };
+    var evtStyle = function (S) { var P = S.event.palette || {}, m = { bg1: '--evt-bg1', bg2: '--evt-bg2', accent: '--evt-a', accent2: '--evt-a2', ink: '--evt-ink', glow: '--evt-glow', ring: '--evt-ring', shadow: '--evt-shadow' }, out = ''; for (var k in m) if (P[k]) out += m[k] + ':' + P[k] + ';'; return out ? ' style="' + esc(out) + '"' : ''; };
     var eventHTML = function (S) {
       var E = S.event, st = eventState(S);
       return '<div class="evt-l"><div class="evt-ey">' + esc(E.eyebrow || S.name) + '</div><div class="evt-h">' + E.headline + '</div><div class="evt-s">' + esc(E.sub || '') + '</div>' +
@@ -483,7 +484,7 @@
       var slot = $('vpEvent'), S = eventSale();
       if (!S) { slot.innerHTML = ''; return; }
       var st = eventState(S);
-      slot.innerHTML = '<button type="button" class="evt' + (st.live ? ' live' : '') + '" aria-label="' + esc(S.name) + ' — see the deals">' + eventHTML(S) + '</button>';
+      slot.innerHTML = '<button type="button" class="evt' + (st.live ? ' live' : '') + '"' + evtStyle(S) + ' aria-label="' + esc(S.name) + ' — see the deals">' + eventHTML(S) + '</button>';
       slot.firstChild.addEventListener('click', function () { openDay(eDay(S)); });
     }
     setInterval(function () { renderEvent(); }, 30000);
@@ -524,7 +525,7 @@
       md.style.setProperty('--c', 'var(--' + k + ')'); saleColors(md, S);
       var html = '<div class="band' + (S ? ' ld' : ph ? ' ph' : '') + '"><div><div class="k">' + esc(S ? S.name + ' · ' + MONTH_NAME.slice(0, 3) + ' ' + S.from + (S.to !== S.from ? '–' + S.to : '') : w.id) + '</div><div class="d" id="vpMdTitle">' + DNAME[k] + ', ' + MONTH_NAME + ' ' + day + '</div><div class="s">' + (S ? 'Limited time · ' : '') + 'Shopping at ' + esc(sName) + '</div></div><button type="button" class="cl" aria-label="Close">×</button></div>';
       html += '<div class="nav"><button type="button" data-nav="-1"' + (day === 1 ? ' disabled style="visibility:hidden"' : '') + '>← ' + MONTH_NAME.slice(0, 3) + ' ' + (day - 1) + '</button><button type="button" data-nav="1"' + (day === daysIn ? ' disabled style="visibility:hidden"' : '') + '>' + MONTH_NAME.slice(0, 3) + ' ' + (day + 1) + ' →</button></div><div class="bd">';
-      if (S && S.event && day === eDay(S) && todayNum && todayNum <= eDay(S)) { var st = eventState(S); html += '<div class="evt' + (st.live && todayNum === day ? ' live' : '') + '">' + eventHTML(S) + '</div>'; }
+      if (S && S.event && day === eDay(S) && todayNum && todayNum <= eDay(S)) { var st = eventState(S); html += '<div class="evt' + (st.live && todayNum === day ? ' live' : '') + '"' + evtStyle(S) + '>' + eventHTML(S) + '</div>'; }
       var hs = every(day).filter(forStore).filter(function (e) { return e.house; });
       if (hs.length) html += '<div class="sec"><div class="st"><h4 class="hs">' + esc((D.house && D.house.section) || 'House deals') + '</h4><small>Every day</small></div><div class="deals">' + hs.map(function (d) { return dealRow(d, 'var(--acc)').replace('class="deal', 'class="deal house-row'); }).join('') + '</div></div>';
       if (ph && EVERY[0]) html += '<div class="sec"><div class="st"><h4 class="ph">' + esc((D.featureLabels && D.featureLabels[day]) || 'Featured today') + '</h4></div><div class="deals">' + dealRow(EVERY[0], 'var(--pusha)') + '</div></div>';

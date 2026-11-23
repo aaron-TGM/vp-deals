@@ -112,10 +112,7 @@
       "from": 23,
       "to": 30,
       "replaces": true,
-      "colors": [
-        "#6CC24A",
-        "#E8742B"
-      ],
+      "colors": ["#A87412", "#519F45"],
       "tileHeadline": "Up to 50%|Thanksgiving Sale",
       "tileSecondary": "PUSHA & grön BOGO · Camino, Lost Farm, Kiva 50%",
       "todayBig": "<em>Thanksgiving Week-Long Sale</em> — up to 50% off",
@@ -183,6 +180,7 @@
           "default": "21:00",
           "tulare": "22:00"
         },
+        "palette": {"bg1": "#0B5A33", "bg2": "#043B21", "accent": "#F2C14E", "accent2": "#F3E3B5", "ink": "#043B21", "glow": "rgba(242,193,78,.28)", "ring": "rgba(242,193,78,.18)", "shadow": "rgba(4,59,33,.35)"},
         "eyebrow": "Thanksgiving Week-Long Sale · 11/23–11/30",
         "headline": "<em>Black Friday</em> Doorbuster",
         "sub": "Doorbuster at store opening on Friday 11/27 — while supplies last. Check the online menu banners for more details.",
