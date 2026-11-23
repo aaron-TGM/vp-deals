@@ -7,7 +7,7 @@
     "storePrefix": true,
     "brandPath": "/brands/{slug}",
     "offersPath": "/offers",
-    "overrides": { "grön": "/brands/gron", "Lost Farm": "/brands/lost-farms" }
+    "overrides": { "grön": "/brands/gron", "Lost Farm": "/brands/lost-farms", "Loud + Clear": "/brands/loud-and-clear", "Emerald Bay Extracts": "/brands/emerald-bay", "110 Labs": "/offers" }
   },
   "stores": [
     { "id": "woodlake", "name": "Woodlake" },
